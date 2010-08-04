@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="ftw.billboard">
+
+<body>
+
+<div metal:fill-slot="main">
+    <metal:main-macro define-macro="main">
+        <table class="billboardAdTable">
+            <tr>
+                <th i18n:translate="billboard_label_price">price</th>
+                <td tal:content="context/getPrice"></td>
+            </tr>
+            <tr>
+                <th i18n:domain="plone" i18n:translate="label_expiration_date">expiration date</th>
+                <td tal:content="python:here.expires().strftime('%d.%m.%Y')"></td>
+            </tr>
+            <tr>
+                <th i18n:translate="billboard_label_details">Details</th>
+                <td><div class="sl-text-wrapper" tal:content="structure context/getDetails" /></td>
+            </tr>
+            <tr>
+                <th i18n:translate="">Contact</th>
+            <td tal:define="member python:context.acl_users.getUserById(context.Creator());
+                            fullname python: member and member.getProperty('fullname', context.Creator()) or context.Creator()">
+                    <span tal:content="python:fullname and fullname or member">Name</span><br />
+                    <a tal:define="mail here/contactMail | python: member.getProperty('email')" 
+                       tal:attributes="href string:mailto:${mail}" tal:content="mail">email</a><br />
+                    <span tal:condition="here/contactPhone" tal:content="here/contactPhone"></span>
+                    <tal:if condition="here/contactURL">
+                        <br/><a tal:attributes="href here/contactURL" tal:condition="here/contactURL" tal:content="here/contactURL"></a>
+                    </tal:if>
+                </td>
+            </tr>
+            <tr tal:condition="python:context.getFile().filename">
+                <th i18n:translate="">Download</th>
+                <td>
+                    <metal:fieldMacro use-macro="python:here.widget(context.getField('file').getName(), mode='view')" />
+                </td>
+            </tr>
+        </table>
+    </metal:main-macro>
+</div>
+</body>
+</html>

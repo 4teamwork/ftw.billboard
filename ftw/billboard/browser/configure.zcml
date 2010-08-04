@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="ftw.billboard">
+
+    <include package="plone.app.contentmenu" />
+
+    <browser:resourceDirectory
+        name='billboard-resources'
+        directory="resources" />
+
+    <browser:page
+        for="*"
+        name="billboard_category_view"
+        class=".category.CategoryView"
+        permission="zope.Public"
+        template="category.pt"
+        />
+
+    <browser:page
+        for="..interfaces.IBillboardAd"
+        name="billboard_ad_view"
+        class=".ad.AdView"
+        permission="zope.Public"
+        template="ad.pt"
+        />
+
+</configure>
