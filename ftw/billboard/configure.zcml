@@ -23,7 +23,4 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
-    <cmf:registerDirectory
-        name="ftw_billboard_templates"/>
-
 </configure>

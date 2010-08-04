@@ -7,7 +7,6 @@ from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import schemata
 from Products.Archetypes import atapi
 from Products.CMFCore.permissions import ManagePortal
-from Products.validation import V_REQUIRED
 from ftw.billboard import billboardMessageFactory as _
 from ftw.billboard.config import PROJECTNAME
 from ftw.billboard.interfaces import IBillboardAd
@@ -18,7 +17,7 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     atapi.TextField('details',
         searchable = True,
         required = False,
-        default_content_type = 'text/html',              
+        default_content_type = 'text/html',
         default_output_type = 'text/html',
         storage = atapi.AnnotationStorage(),
         widget = atapi.RichWidget(
@@ -43,6 +42,7 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         storage=atapi.AnnotationStorage(),
         schemata='default',
         required=True,
+        default_method='getDefaultContactMail',
         widget=atapi.StringWidget(
             label=_(u'billboard_label_contactmail', default='Contact E-Mail'),
             description=_(u'billboard_help_contactmail', default=''),
@@ -66,34 +66,10 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         storage=atapi.AnnotationStorage(),
         schemata='default',
         required=False,
+        default_method='getDefaultContactURL',
         widget=atapi.StringWidget(
             label=_(u'billboard_label_contacturl', default='Contact URL'),
             description=_(u'billboard_help_contacturl', default=''),
-        ),
-    ),
-
-    atapi.FileField('file',
-        required = False,
-        primary = True,
-        searchable = True,
-        languageIndependent = False,
-        validators = (('isNonEmptyFile', V_REQUIRED),
-                      ('checkFileMaxSize', V_REQUIRED)),
-        widget = atapi.FileWidget(
-            label = _(u"file_label_file", u"File"),
-            description = _(u"file_help_file", default=u""),
-        ),
-    ),
-
-    atapi.BooleanField('termsAccepted',
-        required = True,
-        searchable = False,
-        default = False,
-        languageIndependent = True,
-        widget = atapi.BooleanWidget(
-            label = _(u'label_tac_fake', default=u''),
-            description = _(u'help_event_terms_accepted', default=u''),
-            macro="rights_bool_widget",
         ),
     ),
 ))
@@ -131,9 +107,6 @@ if 'text' in BillboardAdSchema:
     BillboardAdSchema['text'].widget.label = _(u'Details')
     BillboardAdSchema['text'].widget.rows = 10
 
-# move terms'n'conditions at bottom
-BillboardAdSchema.moveField('termsAccepted', pos='bottom')
-
 
 class BillboardAd(folder.ATFolder):
     """Billboard Ad"""
@@ -156,5 +129,15 @@ class BillboardAd(folder.ATFolder):
         date = now + datetime.timedelta(weeks=+4)
         datetuple = date.timetuple()
         return DateTime(*datetuple[:-3])
+
+    def getDefaultContactMail(self):
+        """Return the mail of the logged-in user"""
+        member = self.portal_membership.getAuthenticatedMember()
+        return member.getProperty('email','')
+
+    def getDefaultContactURL(self):
+        """Return the URL of the logged-in user"""
+        member = self.portal_membership.getAuthenticatedMember()
+        return member.getProperty('home_page','')
 
 atapi.registerType(BillboardAd, PROJECTNAME)

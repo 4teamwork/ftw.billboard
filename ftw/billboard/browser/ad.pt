@@ -39,12 +39,6 @@
                     </tal:if>
                 </td>
             </tr>
-            <tr tal:condition="python:context.getFile().filename">
-                <th i18n:translate="">Download</th>
-                <td>
-                    <metal:fieldMacro use-macro="python:here.widget(context.getField('file').getName(), mode='view')" />
-                </td>
-            </tr>
         </table>
     </metal:main-macro>
 </div>
