@@ -3,7 +3,7 @@ import os
 
 version = open('ftw/billboard/version.txt').read().strip()
 
-maintainer = 'Jonas Baumann'
+maintainer = 'Julian Infanger'
 
 setup(name='ftw.billboard',
       version=version,
