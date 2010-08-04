@@ -28,6 +28,8 @@ setup(name='ftw.billboard',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
+        'ftw.table',
+        'Products.validation',
           'setuptools',
           # -*- Extra requirements: -*-
       ],
