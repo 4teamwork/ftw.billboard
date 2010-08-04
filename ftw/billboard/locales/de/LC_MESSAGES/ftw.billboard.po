@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2010-08-03 14:43+0000\n"
+"POT-Creation-Date: 2010-08-04 08:42+0000\n"
 "PO-Revision-Date: 2010-08-03 14:05+0000\n"
 "Last-Translator: Julian Infanger <julian.infanger@4teamwork.ch>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -9,117 +9,121 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: de\n"
-"Language-Name: Deutsch\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ftw.billboard/ftw/billboard/profiles/default/types/BillboardCategory.xml
+#: ./ftw/billboard/profiles/default/types/BillboardCategory.xml
 msgid "A folder which contain Billboard ads"
 msgstr "Ein Ordner, der Anzeigen beinhaltet"
 
-#: ftw.billboard/ftw/billboard/profiles/default/types/BillboardAd.xml
+#: ./ftw/billboard/profiles/default/types/BillboardAd.xml
 msgid "Billboard Ad"
 msgstr "Anzeige"
 
-#: ftw.billboard/ftw/billboard/profiles/default/types/BillboardAd.xml
+#: ./ftw/billboard/profiles/default/types/BillboardAd.xml
 msgid "BillboardAd"
 msgstr "Anzeige"
 
-#: ftw.billboard/ftw/billboard/profiles/default/types/BillboardCategory.xml
+#: ./ftw/billboard/profiles/default/types/BillboardCategory.xml
 msgid "BillboardCategory"
 msgstr "Anzeige Kategorie"
 
-#: ftw.billboard/ftw/billboard/browser/ad.pt:27
+#: ./ftw/billboard/browser/ad.pt:27
 msgid "Contact"
 msgstr "Kontakt"
 
-#: ftw.billboard/ftw/billboard/content/billboardad.py:123
+#: ./ftw/billboard/content/billboardad.py:131
 msgid "Details"
 msgstr "Details"
 
-#: ftw.billboard/ftw/billboard/browser/ad.pt:40
+#: ./ftw/billboard/browser/ad.pt:40
 msgid "Download"
 msgstr ""
 
-#: ftw.billboard/ftw/billboard/content/billboardad.py:36
+#: ./ftw/billboard/content/billboardad.py:48
 msgid "billboard_help_contactmail"
 msgstr ""
 
-#: ftw.billboard/ftw/billboard/content/billboardad.py:48
+#: ./ftw/billboard/content/billboardad.py:60
 msgid "billboard_help_contactphone"
 msgstr ""
 
-#: ftw.billboard/ftw/billboard/content/billboardad.py:59
+#: ./ftw/billboard/content/billboardad.py:71
 msgid "billboard_help_contacturl"
 msgstr ""
 
-#: ftw.billboard/ftw/billboard/content/billboardad.py:99
+#: ./ftw/billboard/content/billboardad.py:26
 msgid "billboard_help_details"
 msgstr ""
 
-#: ftw.billboard/ftw/billboard/content/billboard_category.py:45
+#: ./ftw/billboard/content/billboard_category.py:45
 msgid "billboard_help_image"
 msgstr ""
 
-#: ftw.billboard/ftw/billboard/content/billboardad.py:25
+#: ./ftw/billboard/content/billboardad.py:37
 msgid "billboard_help_price"
 msgstr ""
 
 #. Default: "Contact E-Mail"
-#: ftw.billboard/ftw/billboard/content/billboardad.py:35
+#: ./ftw/billboard/content/billboardad.py:47
 msgid "billboard_label_contactmail"
 msgstr "Kontakt E-Mail"
 
 #. Default: "Contact Phone"
-#: ftw.billboard/ftw/billboard/content/billboardad.py:47
+#: ./ftw/billboard/content/billboardad.py:59
 msgid "billboard_label_contactphone"
 msgstr "Kontakt Telefon"
 
 #. Default: "Contact URL"
-#: ftw.billboard/ftw/billboard/content/billboardad.py:58
+#: ./ftw/billboard/content/billboardad.py:70
 msgid "billboard_label_contacturl"
 msgstr "Kontakt URL"
 
 #. Default: "Details"
-#: ftw.billboard/ftw/billboard/browser/ad.pt:23
-#: ftw.billboard/ftw/billboard/content/billboardad.py:97
+#: ./ftw/billboard/browser/ad.pt:23
+#: ./ftw/billboard/content/billboardad.py:25
 msgid "billboard_label_details"
 msgstr "Details"
 
 #. Default: "Image"
-#: ftw.billboard/ftw/billboard/content/billboard_category.py:46
+#: ./ftw/billboard/content/billboard_category.py:46
 msgid "billboard_label_image"
 msgstr "Bild"
 
 #. Default: "price"
-#: ftw.billboard/ftw/billboard/browser/ad.pt:15
-#: ftw.billboard/ftw/billboard/content/billboardad.py:24
+#: ./ftw/billboard/browser/ad.pt:15
+#: ./ftw/billboard/content/billboardad.py:36
 msgid "billboard_label_price"
 msgstr "Preis"
 
-#: ftw.billboard/ftw/billboard/content/billboardad.py:72
+#: ./ftw/billboard/content/billboardad.py:84
 msgid "file_help_file"
 msgstr ""
 
 #. Default: "File"
-#: ftw.billboard/ftw/billboard/content/billboardad.py:71
+#: ./ftw/billboard/content/billboardad.py:83
 msgid "file_label_file"
 msgstr "Datei"
 
-#: ftw.billboard/ftw/billboard/content/billboardad.py:83
+#: ./ftw/billboard/content/billboardad.py:95
 msgid "help_event_terms_accepted"
 msgstr ""
 
-#: ftw.billboard/ftw/billboard/content/billboardad.py:82
+#: ./ftw/billboard/content/billboardad.py:94
 msgid "label_tac_fake"
 msgstr ""
 
 #. Default: "I accept the ${conditions}"
-#: ftw.billboard/ftw/billboard/skins/ftw_billboard_templates/rights_bool_widget.pt:65
+#: ./ftw/billboard/skins/ftw_billboard_templates/rights_bool_widget.pt:65
 msgid "label_terms_and_conditions"
 msgstr "Ich akzeptiere die ${conditions} für das Anschlagbrett."
 
-#: ftw.billboard/ftw/billboard/skins/ftw_billboard_templates/rights_bool_widget.pt:66
+#: ./ftw/billboard/browser/category.pt:16
+msgid "no ads"
+msgstr "Keine Anzeigen gefunden"
+
+#: ./ftw/billboard/skins/ftw_billboard_templates/rights_bool_widget.pt:66
 msgid "terms_of_use_links"
 msgstr "Publikationsbedingungen"
+
+

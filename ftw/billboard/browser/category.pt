@@ -10,7 +10,18 @@
 
 <div metal:fill-slot="main">
     <metal:main-macro define-macro="main">
-    <tal:RENDER tal:replace="structure view/render" /> 
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+    <h1 tal:content="here/Title" class="documentFirstHeading" />
+    <div tal:replace="structure provider:plone.belowcontenttitle" />
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+
+    <tal:RENDER tal:condition="view/get_elements"
+                tal:replace="structure view/render"
+                />
+    <span tal:condition="not: view/get_elements"
+          i18n:translate="">
+        no ads
+    </span>
     </metal:main-macro>
 </div>
 </body>

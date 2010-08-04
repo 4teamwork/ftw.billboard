@@ -7,9 +7,12 @@
       i18n:domain="ftw.billboard">
 
 <body>
-
 <div metal:fill-slot="main">
     <metal:main-macro define-macro="main">
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+        <h1 tal:content="here/Title" class="documentFirstHeading" />
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+        <div tal:replace="structure provider:plone.abovecontentbody" />
         <table class="billboardAdTable">
             <tr>
                 <th i18n:translate="billboard_label_price">price</th>
