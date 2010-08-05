@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-08-04 09:59+0000\n"
+"POT-Creation-Date: 2010-08-05 08:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,23 +37,27 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:105
+#: ./ftw/billboard/content/billboardad.py:116
 msgid "Details"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:47
+#: ./ftw/billboard/validators.py:36
+msgid "Validation failed($name: no valid email)"
+msgstr ""
+
+#: ./ftw/billboard/content/billboardad.py:67
 msgid "billboard_help_contactmail"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:59
+#: ./ftw/billboard/content/billboardad.py:54
+msgid "billboard_help_contactname"
+msgstr ""
+
+#: ./ftw/billboard/content/billboardad.py:80
 msgid "billboard_help_contactphone"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:70
-msgid "billboard_help_contacturl"
-msgstr ""
-
-#: ./ftw/billboard/content/billboardad.py:25
+#: ./ftw/billboard/content/billboardad.py:31
 msgid "billboard_help_details"
 msgstr ""
 
@@ -61,28 +65,28 @@ msgstr ""
 msgid "billboard_help_image"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:36
+#: ./ftw/billboard/content/billboardad.py:42
 msgid "billboard_help_price"
 msgstr ""
 
 #. Default: "Contact E-Mail"
-#: ./ftw/billboard/content/billboardad.py:46
+#: ./ftw/billboard/content/billboardad.py:66
 msgid "billboard_label_contactmail"
 msgstr ""
 
-#. Default: "Contact Phone"
-#: ./ftw/billboard/content/billboardad.py:58
-msgid "billboard_label_contactphone"
+#. Default: "Contact Name"
+#: ./ftw/billboard/content/billboardad.py:53
+msgid "billboard_label_contactname"
 msgstr ""
 
-#. Default: "Contact URL"
-#: ./ftw/billboard/content/billboardad.py:69
-msgid "billboard_label_contacturl"
+#. Default: "Contact Phone"
+#: ./ftw/billboard/content/billboardad.py:79
+msgid "billboard_label_contactphone"
 msgstr ""
 
 #. Default: "Details"
 #: ./ftw/billboard/browser/ad.pt:26
-#: ./ftw/billboard/content/billboardad.py:24
+#: ./ftw/billboard/content/billboardad.py:30
 msgid "billboard_label_details"
 msgstr ""
 
@@ -93,7 +97,7 @@ msgstr ""
 
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:18
-#: ./ftw/billboard/content/billboardad.py:35
+#: ./ftw/billboard/content/billboardad.py:41
 msgid "billboard_label_price"
 msgstr ""
 

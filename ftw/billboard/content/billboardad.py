@@ -11,7 +11,13 @@ from ftw.billboard import billboardMessageFactory as _
 from ftw.billboard.config import PROJECTNAME
 from ftw.billboard.interfaces import IBillboardAd
 from zope.interface import implements
+from Products.validation.config import validation
+from ftw.billboard import validators
 import datetime
+
+
+validation.register(validators.PhoneValidator('isPhoneNumber'))
+validation.register(validators.MailValidator('isEmail'))
 
 BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     atapi.TextField('details',
@@ -38,10 +44,23 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     ),
 
     atapi.StringField(
+        name='contactName',
+        storage=atapi.AnnotationStorage(),
+        schemata='default',
+        required=False,
+        default_method='getDefaultContactName',
+        widget=atapi.StringWidget(
+            label=_(u'billboard_label_contactname', default='Contact Name'),
+            description=_(u'billboard_help_contactname', default=''),
+        ),
+    ),
+
+    atapi.StringField(
         name='contactMail',
         storage=atapi.AnnotationStorage(),
         schemata='default',
         required=True,
+        validators=('isEmail'),
         default_method='getDefaultContactMail',
         widget=atapi.StringWidget(
             label=_(u'billboard_label_contactmail', default='Contact E-Mail'),
@@ -55,23 +74,13 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         storage=atapi.AnnotationStorage(),
         schemata='default',
         required=False,
+        validators = ('isPhoneNumber'),
         widget=atapi.StringWidget(
             label=_(u'billboard_label_contactphone', default='Contact Phone'),
             description=_(u'billboard_help_contactphone', default=''),
         ),
     ),
 
-    atapi.StringField(
-        name='contactURL',
-        storage=atapi.AnnotationStorage(),
-        schemata='default',
-        required=False,
-        default_method='getDefaultContactURL',
-        widget=atapi.StringWidget(
-            label=_(u'billboard_label_contacturl', default='Contact URL'),
-            description=_(u'billboard_help_contacturl', default=''),
-        ),
-    ),
 ))
 
 # Set storage on fields copied from ATFolderSchema, making sure
@@ -119,7 +128,7 @@ class BillboardAd(folder.ATFolder):
     title = atapi.ATFieldProperty('title')
     text = atapi.ATFieldProperty('text')
     contactMail = atapi.ATFieldProperty('contactMail')
-    contactURL = atapi.ATFieldProperty('contactURL')
+    contactName = atapi.ATFieldProperty('contactName')
     contactPhone = atapi.ATFieldProperty('contactPhone')
 
     def getDefaultExpirationDate(self):
@@ -135,9 +144,16 @@ class BillboardAd(folder.ATFolder):
         member = self.portal_membership.getAuthenticatedMember()
         return member.getProperty('email','')
 
-    def getDefaultContactURL(self):
+    def getDefaultContactName(self):
         """Return the URL of the logged-in user"""
         member = self.portal_membership.getAuthenticatedMember()
-        return member.getProperty('home_page','')
+        fullname = member.getProperty('fullname','')
+        firstname = member.getProperty('firstname','')
+        lastname = member.getProperty('lastname','')
+        if fullname:
+            return fullname
+        elif fullname or lastname:
+            return ' '.join([firstname, lastname])
+        return
 
 atapi.registerType(BillboardAd, PROJECTNAME)

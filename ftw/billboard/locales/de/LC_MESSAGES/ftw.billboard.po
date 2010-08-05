@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2010-08-04 09:59+0000\n"
+"POT-Creation-Date: 2010-08-05 08:08+0000\n"
 "PO-Revision-Date: 2010-08-03 14:05+0000\n"
 "Last-Translator: Julian Infanger <julian.infanger@4teamwork.ch>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr "Ein Ordner, der Anzeigen beinhaltet"
 
 #: ./ftw/billboard/profiles/default/types/BillboardAd.xml
 msgid "Billboard Ad"
-msgstr "Eine neue Anzeige erstellen. Mit dem Speichern akzeptieren Sie die Publikationsbedingungen."
+msgstr "Mit einer Anzeige geben Sie ein Inserat auf. Mit dem Speichern akzeptieren Sie die Publikationsbedingungen."
 
 #: ./ftw/billboard/profiles/default/types/BillboardAd.xml
 msgid "BillboardAd"
@@ -32,23 +32,27 @@ msgstr "Anzeige Kategorie"
 msgid "Contact"
 msgstr "Kontakt"
 
-#: ./ftw/billboard/content/billboardad.py:105
+#: ./ftw/billboard/content/billboardad.py:116
 msgid "Details"
 msgstr "Details"
 
-#: ./ftw/billboard/content/billboardad.py:47
+#: ./ftw/billboard/validators.py:36
+msgid "Validation failed($name: no valid email)"
+msgstr ""
+
+#: ./ftw/billboard/content/billboardad.py:67
 msgid "billboard_help_contactmail"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:59
+#: ./ftw/billboard/content/billboardad.py:54
+msgid "billboard_help_contactname"
+msgstr ""
+
+#: ./ftw/billboard/content/billboardad.py:80
 msgid "billboard_help_contactphone"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:70
-msgid "billboard_help_contacturl"
-msgstr ""
-
-#: ./ftw/billboard/content/billboardad.py:25
+#: ./ftw/billboard/content/billboardad.py:31
 msgid "billboard_help_details"
 msgstr ""
 
@@ -56,28 +60,28 @@ msgstr ""
 msgid "billboard_help_image"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:36
+#: ./ftw/billboard/content/billboardad.py:42
 msgid "billboard_help_price"
 msgstr ""
 
 #. Default: "Contact E-Mail"
-#: ./ftw/billboard/content/billboardad.py:46
+#: ./ftw/billboard/content/billboardad.py:66
 msgid "billboard_label_contactmail"
 msgstr "Kontakt E-Mail"
 
+#. Default: "Contact Name"
+#: ./ftw/billboard/content/billboardad.py:53
+msgid "billboard_label_contactname"
+msgstr "Kontakt"
+
 #. Default: "Contact Phone"
-#: ./ftw/billboard/content/billboardad.py:58
+#: ./ftw/billboard/content/billboardad.py:79
 msgid "billboard_label_contactphone"
 msgstr "Kontakt Telefon"
 
-#. Default: "Contact URL"
-#: ./ftw/billboard/content/billboardad.py:69
-msgid "billboard_label_contacturl"
-msgstr "Kontakt URL"
-
 #. Default: "Details"
 #: ./ftw/billboard/browser/ad.pt:26
-#: ./ftw/billboard/content/billboardad.py:24
+#: ./ftw/billboard/content/billboardad.py:30
 msgid "billboard_label_details"
 msgstr "Details"
 
@@ -88,12 +92,10 @@ msgstr "Bild"
 
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:18
-#: ./ftw/billboard/content/billboardad.py:35
+#: ./ftw/billboard/content/billboardad.py:41
 msgid "billboard_label_price"
 msgstr "Preis"
 
 #: ./ftw/billboard/browser/category.pt:21
 msgid "no ads"
 msgstr "Keine Anzeigen gefunden"
-
-

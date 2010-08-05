@@ -28,14 +28,14 @@
             </tr>
             <tr>
                 <th i18n:translate="">Contact</th>
-            <td tal:define="member python:context.acl_users.getUserById(context.Creator());
-                            fullname python: member and member.getProperty('fullname', context.Creator()) or context.Creator()">
-                    <span tal:content="python:fullname and fullname or member">Name</span><br />
+                <td>
+                    <b tal:content="context/contactName" /><br />
+                    <img tal:attributes="src string:${context/portal_url}/mail_icon.gif" alt="" />
                     <a tal:define="mail here/contactMail | python: member.getProperty('email')" 
-                       tal:attributes="href string:mailto:${mail}" tal:content="mail">email</a><br />
-                    <span tal:condition="here/contactPhone" tal:content="here/contactPhone"></span>
-                    <tal:if condition="here/contactURL">
-                        <br/><a tal:attributes="href here/contactURL" tal:condition="here/contactURL" tal:content="here/contactURL"></a>
+                       tal:attributes="href string:mailto:${mail}" tal:content="mail" /><br />
+                    <tal:if condition="here/contactPhone">
+                        <img tal:attributes="src string:${context/portal_url}/phone_icon.gif" />
+                        <span tal:content="here/contactPhone" />
                     </tal:if>
                 </td>
             </tr>
