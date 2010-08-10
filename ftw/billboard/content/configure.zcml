@@ -8,22 +8,12 @@
             permission="zope2.View"
             interface="..interfaces.IBillboardAd"
             />
-
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.IBillboardAd"
-            />
     </class>
     
     <class class=".billboard_category.BillboardCategory">
         <require
             permission="zope2.View"
             interface="..interfaces.IBillboardCategory"
-            />
-
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.IBillboardCategory"
             />
     </class>
 </configure>
