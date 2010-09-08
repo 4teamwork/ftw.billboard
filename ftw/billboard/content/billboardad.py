@@ -34,7 +34,6 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.StringField(
         name='price',
-        storage=atapi.AnnotationStorage(),
         schemata='default',
         required=False,
         widget=atapi.StringWidget(
@@ -45,7 +44,6 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.StringField(
         name='contactName',
-        storage=atapi.AnnotationStorage(),
         schemata='default',
         required=False,
         default_method='getDefaultContactName',
@@ -57,7 +55,6 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.StringField(
         name='contactMail',
-        storage=atapi.AnnotationStorage(),
         schemata='default',
         required=True,
         validators=('isEmail'),
@@ -71,7 +68,6 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.StringField(
         name='contactPhone',
-        storage=atapi.AnnotationStorage(),
         schemata='default',
         required=False,
         validators = ('isPhoneNumber'),
@@ -86,7 +82,6 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 # Set storage on fields copied from ATFolderSchema, making sure
 # they work well with the python bridge properties.
 
-BillboardAdSchema['title'].storage = atapi.AnnotationStorage()
 BillboardAdSchema['title'].searchable = True
 BillboardAdSchema['title'].required = True
 BillboardAdSchema['description'].widget.visible = False
@@ -125,11 +120,7 @@ class BillboardAd(folder.ATFolder):
     portal_type = "BillboardAd"
     schema = BillboardAdSchema
 
-    title = atapi.ATFieldProperty('title')
-    text = atapi.ATFieldProperty('text')
-    contactMail = atapi.ATFieldProperty('contactMail')
-    contactName = atapi.ATFieldProperty('contactName')
-    contactPhone = atapi.ATFieldProperty('contactPhone')
+    details = atapi.ATFieldProperty('details')
 
     def getDefaultExpirationDate(self):
         """Return the default expiration date, now + 1 month."""

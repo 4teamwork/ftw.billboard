@@ -51,8 +51,6 @@ BillboardCategorySchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 # Set storage on fields copied from ATFolderSchema, making sure
 # they work well with the python bridge properties.
-BillboardCategorySchema['title'].storage = atapi.AnnotationStorage()
-BillboardCategorySchema['description'].storage = atapi.AnnotationStorage()
 
 schemata.finalizeATCTSchema(BillboardCategorySchema,
                             folderish=True,
@@ -64,11 +62,7 @@ class BillboardCategory(folder.ATFolder):
     implements(IBillboardCategory)
     schema = BillboardCategorySchema
 
-    title = atapi.ATFieldProperty('title')
-    description = atapi.ATFieldProperty('description')
     image = atapi.ATFieldProperty('image')
-    start_date = atapi.ATFieldProperty('start_date')
-    end_date = atapi.ATFieldProperty('end_date')
 
     security = ClassSecurityInfo()
     security.declareProtected(View, 'tag')
