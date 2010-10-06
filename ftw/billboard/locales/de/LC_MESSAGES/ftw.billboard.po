@@ -60,6 +60,7 @@ msgstr ""
 msgid "billboard_help_image"
 msgstr ""
 
+
 #: ./ftw/billboard/content/billboardad.py:42
 msgid "billboard_help_price"
 msgstr ""
@@ -89,6 +90,11 @@ msgstr "Details"
 #: ./ftw/billboard/content/billboard_category.py:46
 msgid "billboard_label_image"
 msgstr "Bild"
+
+#. Default: "File"
+#: ./ftw/billboard/content/billboard_category.py:46
+msgid "billboard_label_file"
+msgstr "Datei"
 
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:18

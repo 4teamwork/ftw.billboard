@@ -95,6 +95,11 @@ msgstr ""
 msgid "billboard_label_image"
 msgstr ""
 
+#. Default: "File"
+#: ./ftw/billboard/content/billboard_category.py:46
+msgid "billboard_label_file"
+msgstr ""
+
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:18
 #: ./ftw/billboard/content/billboardad.py:41

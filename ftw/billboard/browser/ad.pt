@@ -40,14 +40,14 @@
                 </td>
             </tr>
             <tr tal:condition="view/get_elements" tal:define="images view/get_elements">
-                <th i18n:translate="label_image">Images</th>
+                <th i18n:translate="billboard_label_image">Images</th>
                 <td> 
                     <span tal:repeat="image images" tal:content="structure image/Title" />
                 </td>
                 <!-- <td tal:content="structure python: image[]['Title']" /> -->
             </tr>
             <tr tal:condition="view/get_files" tal:define="files view/get_files">
-                <th i18n:translate="label_file">Files</th>
+                <th i18n:translate="billboard_label_file">Files</th>
                 <td> 
                     <p tal:repeat="file files" tal:content="structure file/Title" />
                 </td>
