@@ -13,7 +13,7 @@
         for="*"
         name="billboard_category_view"
         class=".category.CategoryView"
-        permission="zope.Public"
+        permission="zope2.View"
         template="category.pt"
         />
 
@@ -21,7 +21,7 @@
         for="..interfaces.IBillboardAd"
         name="billboard_ad_view"
         class=".ad.AdView"
-        permission="zope.Public"
+        permission="zope2.View"
         template="ad.pt"
         />
 
