@@ -2,9 +2,13 @@ CHANGELOG
 =========
 
 
-1.1
+1.0.1
 ---
+* fix permissions for views
 
+1.0
+---
+* first final release
 
 0.1
 ---
