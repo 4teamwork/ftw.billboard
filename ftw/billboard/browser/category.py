@@ -1,6 +1,6 @@
 from Products.Five.browser import BrowserView
-from ftw.table.interfaces import ITableGenerator
-from zope.component import getUtility
+#from ftw.table.interfaces import ITableGenerator
+#from zope.component import getUtility
 
 
 class CategoryView(BrowserView):
@@ -24,15 +24,16 @@ class CategoryView(BrowserView):
             })
         return elements
 
-    def columns(self):
-        """Return the names of colums"""
-        return (
-            'Title',
-            'Creator',
-            'end',
-        )
-
-    def render(self):
-        """Return a generated table"""
-        generator = getUtility(ITableGenerator, 'ftw.tablegenerator')
-        return generator.generate(self.get_elements(), self.columns())
+#    def columns(self):
+#        """Return the names of colums"""
+#        return (
+#            'Title',
+#            'Creator',
+#            'end',
+#        )
+#
+#    def render(self):
+#        """Return a generated table"""
+#        generator = getUtility(ITableGenerator, 'ftw.tablegenerator')
+#        return generator.generate(self.get_elements(), self.columns())
+#

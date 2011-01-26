@@ -15,9 +15,18 @@
     <div tal:replace="structure provider:plone.belowcontenttitle" />
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
-    <tal:RENDER tal:condition="view/get_elements"
-                tal:replace="structure view/render"
-                />
+    <tal:elements condition="view/get_elements">
+        <table class="listing">
+            <tr tal:repeat="element view/get_elements">
+                <td>
+                    xx.xx.xxxx
+                </td>
+                <td>
+                    <span tal:content="structure element/Title" />
+                </td>
+            </tr>
+        </table>
+    </tal:elements>
     <span tal:condition="not: view/get_elements"
           i18n:translate="">
         no ads
