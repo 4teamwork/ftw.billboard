@@ -10,11 +10,7 @@ class AdView(BrowserView):
             'portal_type': 'Image',
         }
         for brain in catalog(query):
-            elements.append({
-                'path' : brain.getPath(),
-                'Creator': brain.Creator,
-                'end': brain.expires.strftime('%d.%m.%Y'),
-            })
+            elements.append(brain.getPath())
         return elements
 
     def get_files(self):
@@ -29,9 +25,6 @@ class AdView(BrowserView):
             elements.append({
                 'title': brain.Title,
                 'path': '%s/at_download/file' % brain.getPath(),
-                'Creator': brain.Creator,
-                'end': brain.expires.strftime('%d.%m.%Y'),
                 'icon': obj.getIcon(),
-            
             })
         return elements

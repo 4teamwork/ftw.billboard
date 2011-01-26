@@ -8,29 +8,31 @@
 
 <body>
 
-<div metal:fill-slot="main">
-    <metal:main-macro define-macro="main">
-    <div tal:replace="structure provider:plone.abovecontenttitle" />
-    <h1 tal:content="here/Title" class="documentFirstHeading" />
-    <div tal:replace="structure provider:plone.belowcontenttitle" />
-    <div tal:replace="structure provider:plone.abovecontentbody" />
-
-    <tal:elements condition="view/get_elements">
-        <table class="listing">
-            <tr tal:repeat="element view/get_elements">
-                <td>
-                    xx.xx.xxxx
-                </td>
-                <td>
-                    <span tal:content="structure element/Title" />
-                </td>
-            </tr>
-        </table>
-    </tal:elements>
-    <span tal:condition="not: view/get_elements"
-          i18n:translate="">
-        no ads
-    </span>
+<div metal:fill-slot="main"
+     class="billboardAdsListing"
+     tal:define="ads view/get_ads;
+                 toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+        <metal:main-macro define-macro="main">
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+        <h1 tal:content="here/Title" class="documentFirstHeading" />
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+        <tal:elements condition="ads">
+            <table class="listing">
+                <tr tal:repeat="ad ads">
+                    <td tal:content="python:toLocalizedTime(ad.created)" />
+                    <td>
+                        <a tal:attributes="href ad/getPath"
+                           tal:content="ad/Title"
+                           />
+                    </td>
+                </tr>
+            </table>
+        </tal:elements>
+        <span tal:condition="not: ads"
+              i18n:translate="">
+            no ads
+        </span>
     </metal:main-macro>
 </div>
 </body>

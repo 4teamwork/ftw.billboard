@@ -7,36 +7,43 @@
       i18n:domain="ftw.billboard">
 
 <body>
-<div metal:fill-slot="main">
+<div metal:fill-slot="main" class="billboardAdDetail">
     <metal:main-macro define-macro="main">
         <div tal:replace="structure provider:plone.abovecontenttitle" />
         <h1 tal:content="here/Title" class="documentFirstHeading" />
         <div tal:replace="structure provider:plone.belowcontenttitle" />
         <div tal:replace="structure provider:plone.abovecontentbody" />
         <table class="vertical listing">
-            <tr>
+            <tr tal:condition="context/getPrice">
                 <th i18n:translate="billboard_label_price">price</th>
                 <td tal:content="context/getPrice"></td>
+            </tr>
+            <tr>
+                <th i18n:translate="billboard_label_details">Details</th>
+                <td tal:content="structure context/getDetails" />
             </tr>
             <tr>
                 <th i18n:domain="plone" i18n:translate="label_expiration_date">expiration date</th>
                 <td tal:content="python:here.expires().strftime('%d.%m.%Y')"></td>
             </tr>
+            <!-- IMAGES -->
             <tr tal:condition="view/get_elements" tal:define="images view/get_elements">
                 <th i18n:translate="billboard_label_image">Images</th>
                 <td> 
                     <p tal:repeat="image images">
-                        <a tal:attributes="src python:image['path']">
-                            <img tal:attributes="src string:${image/path}/image_thumb" alt="" />
+                        <a tal:attributes="href image">
+                            <img tal:attributes="src string:${image}/image_thumb"
+                                 class="billboardAdImage"
+                                 alt="" />
                         </a>
                     </p>
                 </td>
-                <!-- <td tal:content="structure python: image[]['Title']" /> -->
             </tr>
-            <tr tal:condition="view/get_files" tal:define="files view/get_files">
+            <!-- FILES -->
+            <tr tal:condition="view/get_files">
                 <th i18n:translate="billboard_label_file">Files</th>
                 <td> 
-                    <p tal:repeat="file files">
+                    <p tal:repeat="file view/get_files">
                         <a tal:attributes="href file/path">
                             <img tal:attributes="src file/icon" alt="" />
                             <span tal:content="file/title" />
@@ -44,10 +51,7 @@
                     </p>
                 </td>
             </tr>
-            <tr>
-                <th i18n:translate="billboard_label_details">Details</th>
-                <td><div class="sl-text-wrapper" tal:content="structure context/getDetails" /></td>
-            </tr>
+            <!-- CONTACT -->
             <tr>
                 <th i18n:translate="">Contact</th>
                 <td>

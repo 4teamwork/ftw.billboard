@@ -89,12 +89,12 @@ msgstr "Details"
 #. Default: "Image"
 #: ./ftw/billboard/content/billboard_category.py:46
 msgid "billboard_label_image"
-msgstr "Bild"
+msgstr "Bilder"
 
 #. Default: "File"
 #: ./ftw/billboard/content/billboard_category.py:46
 msgid "billboard_label_file"
-msgstr "Datei"
+msgstr "Dateien"
 
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:18
