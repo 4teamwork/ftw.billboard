@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<portlets xmlns:i18n="http://namespaces.zope.org/i18n"
+          i18n:domain="plone">
+    <portlet
+      addview="billboard.actions.portlet"
+      title="billboard actions portlet"
+      description="display add/edid/del actions">
+        <for interface="plone.app.portlets.interfaces.IColumn" />
+    </portlet>
+</portlets>

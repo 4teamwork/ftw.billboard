@@ -1,55 +1,48 @@
 """Definition of the BillboardAd content type
 """
-
 from AccessControl import ClassSecurityInfo
 from DateTime import DateTime
-from Products.ATContentTypes.content import folder
-from Products.ATContentTypes.content import schemata
-from Products.Archetypes import atapi
-from Products.CMFCore.permissions import ManagePortal
+
 from ftw.billboard import billboardMessageFactory as _
+from ftw.billboard import validators
 from ftw.billboard.config import PROJECTNAME
 from ftw.billboard.interfaces import IBillboardAd
-from zope.interface import implements
+
+
+
+
+
+
+from Products.CMFCore.permissions import ManagePortal
+from Products.Archetypes import atapi
+from Products.ATContentTypes.content import folder
+from Products.ATContentTypes.content import schemata
 from Products.validation.config import validation
-from ftw.billboard import validators
-import datetime
+from zope.interface import implements
 
 
-validation.register(validators.PhoneValidator('isPhoneNumber'))
 validation.register(validators.MailValidator('isEmail'))
 
 BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
-    atapi.TextField('details',
+    atapi.TextField('description',
         searchable = True,
         required = False,
         default_content_type = 'text/html',
         default_output_type = 'text/html',
         storage = atapi.AnnotationStorage(),
         widget = atapi.RichWidget(
-            label = _(u"billboard_label_details", default=u"Details"),
-            description = _(u"billboard_help_details", default=u""),
+            label = _(u"label_description", default=u"Description"),
+            description = _(u"billboard_help_description", default=u""),
         ),
     ),
 
-    atapi.StringField(
+    atapi.FixedPointField(
         name='price',
         schemata='default',
         required=False,
-        widget=atapi.StringWidget(
-            label=_(u'billboard_label_price', default='price'),
-            description=_(u'billboard_help_price', default=''),
-        ),
-    ),
-
-    atapi.StringField(
-        name='contactName',
-        schemata='default',
-        required=False,
-        default_method='getDefaultContactName',
-        widget=atapi.StringWidget(
-            label=_(u'billboard_label_contactname', default='Contact Name'),
-            description=_(u'billboard_help_contactname', default=''),
+        widget=atapi.DecimalWidget(
+            label=_(u'label_price', default='price'),
+            description=_(u'help_price', default='Leave blank '),
         ),
     ),
 
@@ -60,20 +53,9 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         validators=('isEmail'),
         default_method='getDefaultContactMail',
         widget=atapi.StringWidget(
-            label=_(u'billboard_label_contactmail', default='Contact E-Mail'),
-            description=_(u'billboard_help_contactmail', default=''),
+            label=_(u'label_contactmail', default='Contact E-Mail'),
+            description=_(u'help_contactmail', default=''),
             i18n_domain='ftw.billboard',
-        ),
-    ),
-
-    atapi.StringField(
-        name='contactPhone',
-        schemata='default',
-        required=False,
-        validators = ('isPhoneNumber'),
-        widget=atapi.StringWidget(
-            label=_(u'billboard_label_contactphone', default='Contact Phone'),
-            description=_(u'billboard_help_contactphone', default=''),
         ),
     ),
 
@@ -84,32 +66,30 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 BillboardAdSchema['title'].searchable = True
 BillboardAdSchema['title'].required = True
-BillboardAdSchema['description'].widget.visible = False
 BillboardAdSchema['excludeFromNav'].default = True
-BillboardAdSchema['expirationDate'].required = True
 BillboardAdSchema['expirationDate'].default_method = 'getDefaultExpirationDate'
-BillboardAdSchema['effectiveDate'].write_permission = ManagePortal
+BillboardAdSchema['effectiveDate'].default_method = DateTime
 
-if 'showTitle' in BillboardAdSchema:
-    del BillboardAdSchema['showTitle']
-if 'imageClickable' in BillboardAdSchema:
-    del BillboardAdSchema['imageClickable']
-if 'image' in BillboardAdSchema:
-    del BillboardAdSchema['image']
-if 'imageAltText' in BillboardAdSchema:
-    del BillboardAdSchema['imageAltText']
-if 'imageLayout' in BillboardAdSchema:
-    del BillboardAdSchema['imageLayout']
+# hide other schematas
+BillboardAdSchema['allowDiscussion'].write_permission = ManagePortal
+BillboardAdSchema['excludeFromNav'].write_permission = ManagePortal
+BillboardAdSchema['nextPreviousEnabled'].write_permission = ManagePortal
+BillboardAdSchema['subject'].write_permission = ManagePortal
+BillboardAdSchema['relatedItems'].write_permission = ManagePortal
+BillboardAdSchema['location'].write_permission = ManagePortal
+BillboardAdSchema['language'].write_permission = ManagePortal
+BillboardAdSchema['effectiveDate'].write_permission = ManagePortal
+BillboardAdSchema['expirationDate'].write_permission = ManagePortal
+BillboardAdSchema['creation_date'].write_permission = ManagePortal
+BillboardAdSchema['modification_date'].write_permission = ManagePortal
+BillboardAdSchema['creators'].write_permission = ManagePortal
+BillboardAdSchema['contributors'].write_permission = ManagePortal
+BillboardAdSchema['rights'].write_permission = ManagePortal
+
 
 schemata.finalizeATCTSchema(BillboardAdSchema,
                             folderish=True,
                             moveDiscussion=False)
-
-BillboardAdSchema.changeSchemataForField('expirationDate', 'default')
-if 'text' in BillboardAdSchema:
-    BillboardAdSchema.moveField('text', pos='bottom')
-    BillboardAdSchema['text'].widget.label = _(u'Details')
-    BillboardAdSchema['text'].widget.rows = 10
 
 
 class BillboardAd(folder.ATFolder):
@@ -124,11 +104,7 @@ class BillboardAd(folder.ATFolder):
 
     def getDefaultExpirationDate(self):
         """Return the default expiration date, now + 1 month."""
-        now = datetime.datetime.now()
-        # + one month (4 weeks)
-        date = now + datetime.timedelta(weeks=+4)
-        datetuple = date.timetuple()
-        return DateTime(*datetuple[:-3])
+        return DateTime() + 31
 
     def getDefaultContactMail(self):
         """Return the mail of the logged-in user"""

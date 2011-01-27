@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2010-08-05 08:08+0000\n"
+"POT-Creation-Date: 2011-01-27 15:42+0000\n"
 "PO-Revision-Date: 2010-08-03 14:05+0000\n"
 "Last-Translator: Julian Infanger <julian.infanger@4teamwork.ch>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,10 @@ msgstr ""
 msgid "A folder which contain Billboard ads"
 msgstr "Ein Ordner, der Anzeigen beinhaltet"
 
+#: ./ftw/billboard/portlets/actions.pt:38
+msgid "Actions"
+msgstr "Aktionen"
+
 #: ./ftw/billboard/profiles/default/types/BillboardAd.xml
 msgid "Billboard Ad"
 msgstr "Mit einer Anzeige geben Sie ein Inserat auf. Mit dem Speichern akzeptieren Sie die Publikationsbedingungen."
@@ -28,80 +32,87 @@ msgstr "Anzeige"
 msgid "BillboardCategory"
 msgstr "Anzeige Kategorie"
 
-#: ./ftw/billboard/browser/ad.pt:30
+#: ./ftw/billboard/browser/ad.pt:56
 msgid "Contact"
 msgstr "Kontakt"
 
-#: ./ftw/billboard/content/billboardad.py:116
-msgid "Details"
-msgstr "Details"
+#: ./ftw/billboard/portlets/actions.pt:45
+msgid "Create new Billboard Ad"
+msgstr "Anzeige erstellen"
 
-#: ./ftw/billboard/validators.py:36
+#: ./ftw/billboard/portlets/actions.pt:55
+msgid "Delete Billboard Ad"
+msgstr "Anzeige löschen"
+
+#: ./ftw/billboard/portlets/actions.pt:50
+msgid "Edit Billboard Ad"
+msgstr "Anzeige bearbeiten"
+
+#: ./ftw/billboard/validators.py:41
 msgid "Validation failed($name: no valid email)"
+msgstr "Validierung gescheitert ($name: keine gültigge E-Mail Adresse)"
+
+#: ./ftw/billboard/validators.py:19
+msgid "Validation failed($name: no valid phone number)"
+msgstr "Validierung gescheitert ($name: keine Telefonnummer)"
+
+#: ./ftw/billboard/content/billboardad.py:35
+msgid "billboard_help_description"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:67
-msgid "billboard_help_contactmail"
-msgstr ""
-
-#: ./ftw/billboard/content/billboardad.py:54
-msgid "billboard_help_contactname"
-msgstr ""
-
-#: ./ftw/billboard/content/billboardad.py:80
-msgid "billboard_help_contactphone"
-msgstr ""
-
-#: ./ftw/billboard/content/billboardad.py:31
-msgid "billboard_help_details"
+#: ./ftw/billboard/content/billboardad.py:57
+msgid "help_contactmail"
 msgstr ""
 
 #: ./ftw/billboard/content/billboard_category.py:45
-msgid "billboard_help_image"
+msgid "help_image"
 msgstr ""
 
+#. Default: "Leave blank "
+#: ./ftw/billboard/content/billboardad.py:45
+msgid "help_price"
+msgstr "Preis ohne Währung eingeben. Wenn nicht SFr leer lassen und in Beschreibung angeben."
 
-#: ./ftw/billboard/content/billboardad.py:42
-msgid "billboard_help_price"
-msgstr ""
+#. Default: "Billboard Actions portlet"
+#: ./ftw/billboard/portlets/actions.py:18
+msgid "label_billboardactions"
+msgstr "Billboard Aktionen"
 
 #. Default: "Contact E-Mail"
-#: ./ftw/billboard/content/billboardad.py:66
-msgid "billboard_label_contactmail"
+#: ./ftw/billboard/content/billboardad.py:56
+msgid "label_contactmail"
 msgstr "Kontakt E-Mail"
 
-#. Default: "Contact Name"
-#: ./ftw/billboard/content/billboardad.py:53
-msgid "billboard_label_contactname"
-msgstr "Kontakt"
+#. Default: "Date"
+#: ./ftw/billboard/browser/ad.pt:18
+msgid "label_date"
+msgstr "Datum"
 
-#. Default: "Contact Phone"
-#: ./ftw/billboard/content/billboardad.py:79
-msgid "billboard_label_contactphone"
-msgstr "Kontakt Telefon"
-
-#. Default: "Details"
+#. Default: "Description"
 #: ./ftw/billboard/browser/ad.pt:26
-#: ./ftw/billboard/content/billboardad.py:30
-msgid "billboard_label_details"
-msgstr "Details"
+#: ./ftw/billboard/content/billboardad.py:34
+msgid "label_description"
+msgstr "Beschreibung"
 
-#. Default: "Image"
-#: ./ftw/billboard/content/billboard_category.py:46
-msgid "billboard_label_image"
-msgstr "Bilder"
-
-#. Default: "File"
-#: ./ftw/billboard/content/billboard_category.py:46
-msgid "billboard_label_file"
+#. Default: "Files"
+#: ./ftw/billboard/browser/ad.pt:44
+msgid "label_file"
 msgstr "Dateien"
 
+#. Default: "Images"
+#: ./ftw/billboard/browser/ad.pt:31
+#: ./ftw/billboard/content/billboard_category.py:46
+msgid "label_image"
+msgstr "Bilder"
+
 #. Default: "price"
-#: ./ftw/billboard/browser/ad.pt:18
-#: ./ftw/billboard/content/billboardad.py:41
-msgid "billboard_label_price"
+#: ./ftw/billboard/browser/ad.pt:22
+#: ./ftw/billboard/content/billboardad.py:44
+msgid "label_price"
 msgstr "Preis"
 
-#: ./ftw/billboard/browser/category.pt:21
+#: ./ftw/billboard/browser/category.pt:32
 msgid "no ads"
 msgstr "Keine Anzeigen gefunden"
+
+

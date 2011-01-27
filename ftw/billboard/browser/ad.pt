@@ -14,21 +14,21 @@
         <div tal:replace="structure provider:plone.belowcontenttitle" />
         <div tal:replace="structure provider:plone.abovecontentbody" />
         <table class="vertical listing">
+            <tr>
+                <th i18n:translate="label_date">Date</th>
+                <td tal:content="python:context.effective().strftime('%d.%m.%Y')"></td>
+            </tr>
             <tr tal:condition="context/getPrice">
-                <th i18n:translate="billboard_label_price">price</th>
+                <th i18n:translate="label_price">price</th>
                 <td tal:content="context/getPrice"></td>
             </tr>
             <tr>
-                <th i18n:translate="billboard_label_details">Details</th>
-                <td tal:content="structure context/getDetails" />
-            </tr>
-            <tr>
-                <th i18n:domain="plone" i18n:translate="label_expiration_date">expiration date</th>
-                <td tal:content="python:here.expires().strftime('%d.%m.%Y')"></td>
+                <th i18n:translate="label_description">Description</th>
+                <td tal:content="structure context/Description" />
             </tr>
             <!-- IMAGES -->
             <tr tal:condition="view/get_elements" tal:define="images view/get_elements">
-                <th i18n:translate="billboard_label_image">Images</th>
+                <th i18n:translate="label_image">Images</th>
                 <td> 
                     <p tal:repeat="image images">
                         <a tal:attributes="href image">
@@ -41,7 +41,7 @@
             </tr>
             <!-- FILES -->
             <tr tal:condition="view/get_files">
-                <th i18n:translate="billboard_label_file">Files</th>
+                <th i18n:translate="label_file">Files</th>
                 <td> 
                     <p tal:repeat="file view/get_files">
                         <a tal:attributes="href file/path">
@@ -55,14 +55,9 @@
             <tr>
                 <th i18n:translate="">Contact</th>
                 <td>
-                    <b tal:content="context/contactName" /><br />
                     <img tal:attributes="src string:${context/portal_url}/mail_icon.gif" alt="" />
-                    <a tal:define="mail here/contactMail | python: member.getProperty('email')" 
-                       tal:attributes="href string:mailto:${mail}" tal:content="mail" /><br />
-                    <tal:if condition="here/contactPhone">
-                        <img tal:attributes="src string:${context/portal_url}/phone_icon.gif" />
-                        <span tal:content="here/contactPhone" />
-                    </tal:if>
+                    <a tal:define="mail context/getContactMail" 
+                       tal:attributes="href string:mailto:${mail}" tal:content="mail" />
                 </td>
             </tr>
         </table>
