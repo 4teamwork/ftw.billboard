@@ -20,7 +20,9 @@
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
   </permission-map>
-  <permission-map name="Delete objects" acquired="False">
+  <permission-map name="Delete objects" acquired="True">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
@@ -29,9 +31,6 @@
    <permission-role>Owner</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
-   <permission-role>Authenticated</permission-role>
-  </permission-map>
-  <permission-map name="ftw.blog: Add BlogEntry" acquired="False">
    <permission-role>Authenticated</permission-role>
   </permission-map>
  </state>

@@ -21,4 +21,11 @@
         template="ad.pt"
         />
 
+    <browser:page
+        for="Products.ATContentTypes.interface.folder.IATFolder"
+        name="category_listing"
+        permission="zope2.View"
+        template="category_listing.pt"
+        />
+
 </configure>

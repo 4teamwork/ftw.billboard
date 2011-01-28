@@ -8,11 +8,6 @@ from ftw.billboard import validators
 from ftw.billboard.config import PROJECTNAME
 from ftw.billboard.interfaces import IBillboardAd
 
-
-
-
-
-
 from Products.CMFCore.permissions import ManagePortal
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder

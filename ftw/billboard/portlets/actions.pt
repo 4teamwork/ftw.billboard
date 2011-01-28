@@ -51,6 +51,16 @@
                     Edit Billboard Ad
                 </a>
             </li>
+            <li tal:condition="view/can_edit">
+                <a href="./createObject?type_name=Image"  i18n:translate="">
+                    Add Picture
+                </a>
+            </li>
+            <li tal:condition="view/can_edit">
+                <a href="./createObject?type_name=File"  i18n:translate="">
+                    Add File
+                </a>
+            </li>
             <li tal:condition="view/can_del">
                 <a href="./delete_confirmation" i18n:translate="" id="deleteentry">
                     Delete Billboard Ad

@@ -3,37 +3,42 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
-      metal:use-macro="here/main_template/macros/master"
+      metal:use-macro="context/main_template/macros/master"
       i18n:domain="ftw.billboard">
 
 <body>
 
-<div metal:fill-slot="main"
-     class="billboardAdsListing"
-     tal:define="ads view/get_ads;
-                 toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-        <metal:main-macro define-macro="main">
-        <div tal:replace="structure provider:plone.abovecontenttitle" />
-        <h1 tal:content="here/Title" class="documentFirstHeading" />
-        <div tal:replace="structure provider:plone.belowcontenttitle" />
-        <div tal:replace="structure provider:plone.abovecontentbody" />
-        <tal:elements condition="ads">
-            <table class="listing">
-                <tr tal:repeat="ad ads">
-                    <td tal:content="python:toLocalizedTime(ad.created)" />
-                    <td>
-                        <a tal:attributes="href ad/getPath"
-                           tal:content="ad/Title"
-                           />
-                    </td>
-                </tr>
-            </table>
-        </tal:elements>
-        <span tal:condition="not: ads"
-              i18n:translate="">
-            no ads
-        </span>
-    </metal:main-macro>
-</div>
+    <metal:content-description fill-slot="content-description">
+        <metal:description define-macro="content-description">
+            <!-- no desc -->
+        </metal:description>
+    </metal:content-description>
+
+    <metal:content-core fill-slot="content-core">
+        <metal:content-core define-macro="content-core">
+            <div class="billboardAdsListing"
+                 tal:define="plone here/@@plone;
+                             toLocalizedTime nocall:plone/toLocalizedTime;
+                             ads view/get_ads;">
+                <table class="listing" tal:condition="ads">
+                    <tal:ads tal:repeat="ad ads">
+                        <tr tal:define="oddrow repeat/ad/odd"
+                                tal:attributes="class python:oddrow and 'even' or 'odd'">
+                            <td tal:content="python:toLocalizedTime(ad.created)" />
+                            <td>
+                                <a tal:attributes="href ad/getPath"
+                                   tal:content="ad/Title"
+                                   />
+                            </td>
+                        </tr>
+                    </tal:ads>
+                </table>
+                <span tal:condition="not: ads"
+                      i18n:translate="">
+                    no ads
+                </span>
+            </div>
+        </metal:content-core>
+    </metal:content-core>
 </body>
 </html>
