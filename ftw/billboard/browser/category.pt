@@ -20,7 +20,7 @@
                  tal:define="plone here/@@plone;
                              toLocalizedTime nocall:plone/toLocalizedTime;
                              ads view/get_ads;">
-                <table class="listing linkListing" tal:condition="ads">
+                <table class="vertical linkListing" tal:condition="ads">
                     <tal:ads tal:repeat="ad ads">
                         <tr tal:define="oddrow repeat/ad/odd"
                                 tal:attributes="class python:oddrow and 'even' or 'odd'">

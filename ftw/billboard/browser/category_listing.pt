@@ -12,7 +12,7 @@
             <div class="billboardCategoryListing"
                  tal:define="plone here/@@plone;
                              toLocalizedTime nocall:plone/toLocalizedTime">
-                <table class="linkListing listing">
+                <table class="linkListing vertical">
                     <tal:categories tal:repeat="category python:context.getFolderContents({'portal_type':'BillboardCategory'})">
                         <tr tal:define="oddrow repeat/category/odd"
                             tal:attributes="class python:oddrow and 'even' or 'odd'">
