@@ -20,11 +20,11 @@
                  tal:define="plone here/@@plone;
                              toLocalizedTime nocall:plone/toLocalizedTime;
                              ads view/get_ads;">
-                <table class="listing" tal:condition="ads">
+                <table class="listing linkListing" tal:condition="ads">
                     <tal:ads tal:repeat="ad ads">
                         <tr tal:define="oddrow repeat/ad/odd"
                                 tal:attributes="class python:oddrow and 'even' or 'odd'">
-                            <td tal:content="python:toLocalizedTime(ad.created)" />
+                            <td class="dateColumn" tal:content="python:toLocalizedTime(ad.created)" />
                             <td>
                                 <a tal:attributes="href ad/getPath"
                                    tal:content="ad/Title"
