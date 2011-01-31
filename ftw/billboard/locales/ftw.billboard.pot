@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-01-27 16:23+0000\n"
+"POT-Creation-Date: 2011-01-31 12:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr ""
 msgid "BillboardCategory"
 msgstr ""
 
-#: ./ftw/billboard/browser/ad.pt:53
+#: ./ftw/billboard/browser/ad.pt:62
 msgid "Contact"
 msgstr ""
 
@@ -97,35 +97,34 @@ msgid "label_contactmail"
 msgstr ""
 
 #. Default: "Date"
-#: ./ftw/billboard/browser/ad.pt:15
+#: ./ftw/billboard/browser/ad.pt:24
 msgid "label_date"
 msgstr ""
 
 #. Default: "Description"
-#: ./ftw/billboard/browser/ad.pt:23
+#: ./ftw/billboard/browser/ad.pt:32
 #: ./ftw/billboard/content/billboardad.py:29
 msgid "label_description"
 msgstr ""
 
 #. Default: "Files"
-#: ./ftw/billboard/browser/ad.pt:41
+#: ./ftw/billboard/browser/ad.pt:50
 msgid "label_file"
 msgstr ""
 
 #. Default: "Images"
-#: ./ftw/billboard/browser/ad.pt:28
+#: ./ftw/billboard/browser/ad.pt:37
 #: ./ftw/billboard/content/billboard_category.py:46
 msgid "label_image"
 msgstr ""
 
 #. Default: "price"
-#: ./ftw/billboard/browser/ad.pt:19
+#: ./ftw/billboard/browser/ad.pt:28
 #: ./ftw/billboard/content/billboardad.py:39
 msgid "label_price"
 msgstr ""
 
-#: ./ftw/billboard/browser/category.pt:32
-#: ./ftw/billboard/browser/category_listing.pt:32
+#: ./ftw/billboard/browser/category.pt:36
 msgid "no ads"
 msgstr ""
 

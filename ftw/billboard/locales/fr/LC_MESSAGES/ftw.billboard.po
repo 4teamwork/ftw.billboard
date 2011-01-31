@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2011-01-31 12:36+0000\n"
-"PO-Revision-Date: 2010-08-03 14:05+0000\n"
-"Last-Translator: Julian Infanger <julian.infanger@4teamwork.ch>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -14,55 +14,55 @@ msgstr ""
 
 #: ./ftw/billboard/profiles/default/types/BillboardCategory.xml
 msgid "A folder which contain Billboard ads"
-msgstr "Ein Ordner, der Anzeigen beinhaltet"
+msgstr "Un dossier qui contient des annonces."
 
 #: ./ftw/billboard/portlets/actions.pt:38
 msgid "Actions"
-msgstr "Aktionen"
+msgstr "Actions"
 
 #: ./ftw/billboard/portlets/actions.pt:60
 msgid "Add File"
-msgstr "Datei hinzufügen"
+msgstr "Ajouter une fichier"
 
 #: ./ftw/billboard/portlets/actions.pt:55
 msgid "Add Picture"
-msgstr "Bild hinzufügen"
+msgstr "Ajouter une image"
 
 #: ./ftw/billboard/profiles/default/types/BillboardAd.xml
 msgid "Billboard Ad"
-msgstr "Mit einer Anzeige geben Sie ein Inserat auf. Mit dem Speichern akzeptieren Sie die Publikationsbedingungen."
+msgstr "Vous ajoutez une annonce. Si vous enregistrez, vous acceptez la condition de publication."
 
 #: ./ftw/billboard/profiles/default/types/BillboardAd.xml
 msgid "BillboardAd"
-msgstr "Anzeige"
+msgstr "Annonce"
 
 #: ./ftw/billboard/profiles/default/types/BillboardCategory.xml
 msgid "BillboardCategory"
-msgstr "Anzeige Kategorie"
+msgstr "Categorie d'annonce"
 
 #: ./ftw/billboard/browser/ad.pt:62
 msgid "Contact"
-msgstr "Kontakt"
+msgstr "Contact"
 
 #: ./ftw/billboard/portlets/actions.pt:45
 msgid "Create new Billboard Ad"
-msgstr "Anzeige erstellen"
+msgstr "Constituer une annonce."
 
 #: ./ftw/billboard/portlets/actions.pt:65
 msgid "Delete Billboard Ad"
-msgstr "Anzeige löschen"
+msgstr "Supprimer une annonce"
 
 #: ./ftw/billboard/portlets/actions.pt:50
 msgid "Edit Billboard Ad"
-msgstr "Anzeige bearbeiten"
+msgstr "Modifer une annonce"
 
 #: ./ftw/billboard/validators.py:41
 msgid "Validation failed($name: no valid email)"
-msgstr "Validierung gescheitert ($name: keine gültigge E-Mail Adresse)"
+msgstr "Cas d'erreur en validation: ($name: pas une adresse email valable)"
 
 #: ./ftw/billboard/validators.py:19
 msgid "Validation failed($name: no valid phone number)"
-msgstr "Validierung gescheitert ($name: keine Telefonnummer)"
+msgstr "Cas d'erreur en validation: ($name: pas une numéro téléphon valable)'"
 
 #: ./ftw/billboard/content/billboardad.py:30
 msgid "billboard_help_description"
@@ -79,48 +79,48 @@ msgstr ""
 #. Default: "Leave blank "
 #: ./ftw/billboard/content/billboardad.py:40
 msgid "help_price"
-msgstr "Preis ohne Währung eingeben. Wenn nicht SFr leer lassen und in Beschreibung angeben."
+msgstr ""
 
 #. Default: "Billboard Actions portlet"
 #: ./ftw/billboard/portlets/actions.py:18
 msgid "label_billboardactions"
-msgstr "Billboard Aktionen"
+msgstr "Actions billboard"
 
 #. Default: "Contact E-Mail"
 #: ./ftw/billboard/content/billboardad.py:51
 msgid "label_contactmail"
-msgstr "Kontakt E-Mail"
+msgstr "Contact email"
 
 #. Default: "Date"
 #: ./ftw/billboard/browser/ad.pt:24
 msgid "label_date"
-msgstr "Datum"
+msgstr "Date"
 
 #. Default: "Description"
 #: ./ftw/billboard/browser/ad.pt:32
 #: ./ftw/billboard/content/billboardad.py:29
 msgid "label_description"
-msgstr "Beschreibung"
+msgstr "Description"
 
 #. Default: "Files"
 #: ./ftw/billboard/browser/ad.pt:50
 msgid "label_file"
-msgstr "Dateien"
+msgstr "Fichiers"
 
 #. Default: "Images"
 #: ./ftw/billboard/browser/ad.pt:37
 #: ./ftw/billboard/content/billboard_category.py:46
 msgid "label_image"
-msgstr "Bilder"
+msgstr "Images"
 
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:28
 #: ./ftw/billboard/content/billboardad.py:39
 msgid "label_price"
-msgstr "Preis"
+msgstr "prix"
 
 #: ./ftw/billboard/browser/category.pt:36
 msgid "no ads"
-msgstr "Keine Anzeigen gefunden"
+msgstr "Pas trouvé des annonces"
 
 
