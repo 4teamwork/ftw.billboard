@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-01-31 12:36+0000\n"
+"POT-Creation-Date: 2011-02-01 07:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,15 +21,12 @@ msgstr ""
 msgid "A folder which contain Billboard ads"
 msgstr ""
 
-#: ./ftw/billboard/portlets/actions.pt:38
+#: ./ftw/billboard/portlets/actions.pt:47
 msgid "Actions"
 msgstr ""
 
-#: ./ftw/billboard/portlets/actions.pt:60
-msgid "Add File"
-msgstr ""
-
-#: ./ftw/billboard/portlets/actions.pt:55
+#: ./ftw/billboard/browser/add_image.pt:45
+#: ./ftw/billboard/portlets/actions.pt:69
 msgid "Add Picture"
 msgstr ""
 
@@ -45,19 +42,19 @@ msgstr ""
 msgid "BillboardCategory"
 msgstr ""
 
-#: ./ftw/billboard/browser/ad.pt:62
+#: ./ftw/billboard/browser/ad.pt:86
 msgid "Contact"
 msgstr ""
 
-#: ./ftw/billboard/portlets/actions.pt:45
+#: ./ftw/billboard/portlets/actions.pt:54
 msgid "Create new Billboard Ad"
 msgstr ""
 
-#: ./ftw/billboard/portlets/actions.pt:65
+#: ./ftw/billboard/portlets/actions.pt:64
 msgid "Delete Billboard Ad"
 msgstr ""
 
-#: ./ftw/billboard/portlets/actions.pt:50
+#: ./ftw/billboard/portlets/actions.pt:59
 msgid "Edit Billboard Ad"
 msgstr ""
 
@@ -97,31 +94,44 @@ msgid "label_contactmail"
 msgstr ""
 
 #. Default: "Date"
-#: ./ftw/billboard/browser/ad.pt:24
+#: ./ftw/billboard/browser/ad.pt:55
 msgid "label_date"
 msgstr ""
 
+#: ./ftw/billboard/browser/ad.pt:76
+msgid "label_deleteimage"
+msgstr ""
+
 #. Default: "Description"
-#: ./ftw/billboard/browser/ad.pt:32
+#: ./ftw/billboard/browser/ad.pt:63
 #: ./ftw/billboard/content/billboardad.py:29
 msgid "label_description"
 msgstr ""
 
-#. Default: "Files"
-#: ./ftw/billboard/browser/ad.pt:50
-msgid "label_file"
-msgstr ""
-
 #. Default: "Images"
-#: ./ftw/billboard/browser/ad.pt:37
+#: ./ftw/billboard/browser/ad.pt:68
 #: ./ftw/billboard/content/billboard_category.py:46
 msgid "label_image"
 msgstr ""
 
+#. Default: "Not an image"
+#: ./ftw/billboard/browser/add_image.py:20
+msgid "label_no_image"
+msgstr ""
+
+#. Default: "Not allowd content type"
+#: ./ftw/billboard/browser/add_image.py:25
+msgid "label_not_image"
+msgstr ""
+
 #. Default: "price"
-#: ./ftw/billboard/browser/ad.pt:28
+#: ./ftw/billboard/browser/ad.pt:59
 #: ./ftw/billboard/content/billboardad.py:39
 msgid "label_price"
+msgstr ""
+
+#: ./ftw/billboard/browser/add_image.pt:64
+msgid "label_upload"
 msgstr ""
 
 #: ./ftw/billboard/browser/category.pt:36

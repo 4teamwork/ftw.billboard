@@ -7,7 +7,38 @@
       i18n:domain="ftw.billboard">
 
 <body>
-
+    <metal:js fill-slot="javascript_head_slot">
+        <script type="text/javascript">
+            jq(function() {
+                function noformerrorshow(el, noform) {
+                    var o = $(el),
+                        emsg = o.find('dl.portalMessage.error');
+                    if (emsg.length) {
+                        o.children().replaceWith(emsg);
+                        return false;
+                    } else {
+                        return noform;
+                    }
+                }
+                var base_url = jq('base').attr('href').split('/');
+                cutted = base_url.splice(-1,1); // cut off last element
+                $('a.deleteImage').prepOverlay(
+                    {
+                        subtype: 'ajax',
+                        filter: common_content_filter,
+                        formselector: 'form',
+                        noform: function(el) {return noformerrorshow(el, 'redirect');},
+                        redirect: base_url.join('/'),
+                        closeselector: '[name=form.button.Cancel]',
+                        width:'50%'
+                    }
+                );
+                jq('.overlayImage').prepOverlay({
+                    subtype: 'image'
+                });
+            });
+        </script>
+    </metal:js>
     <metal:content-description fill-slot="content-description">
         <metal:description define-macro="content-description">
             <!-- no desc -->
@@ -37,22 +68,15 @@
                         <th i18n:translate="label_image">Images</th>
                         <td> 
                             <p tal:repeat="image images">
-                                <a tal:attributes="href image">
+                                <a tal:attributes="href image" class="overlayImage">
                                     <img tal:attributes="src string:${image}/image_thumb"
                                          class="billboardAdImage"
                                          alt="" />
                                 </a>
-                            </p>
-                        </td>
-                    </tr>
-                    <!-- FILES -->
-                    <tr tal:condition="view/get_files">
-                        <th i18n:translate="label_file">Files</th>
-                        <td> 
-                            <p tal:repeat="file view/get_files">
-                                <a tal:attributes="href file/path">
-                                    <img tal:attributes="src file/icon" alt="" />
-                                    <span tal:content="file/title" />
+                                <a tal:attributes="href string:${image}/delete_confirmation"
+                                   class="deleteImage"
+                                   i18n:attributes="title label_deleteimage">
+                                    x
                                 </a>
                             </p>
                         </td>

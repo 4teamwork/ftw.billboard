@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ftw.billboard">
+
+<body>
+    <metal:js fill-slot="javascript_head_slot">
+        <script type="text/javascript">
+            jq(function() {
+                function noformerrorshow(el, noform) {
+                    var o = $(el),
+                        emsg = o.find('dl.portalMessage.error');
+                    if (emsg.length) {
+                        o.children().replaceWith(emsg);
+                        return false;
+                    } else {
+                        return noform;
+                    }
+                }
+                var base_url = jq('base').attr('href').split('/');
+                cutted = base_url.splice(-1,1); // cut off last element
+                $('a.deleteImage').prepOverlay(
+                    {
+                        subtype: 'ajax',
+                        filter: common_content_filter,
+                        formselector: 'form',
+                        noform: function(el) {return noformerrorshow(el, 'redirect');},
+                        redirect: base_url.join('/'),
+                        closeselector: '[name=form.button.Cancel]',
+                        width:'50%'
+                    }
+                );
+                jq('.overlayImage').prepOverlay({
+                    subtype: 'image'
+                });
+            });
+        </script>
+    </metal:js>
+    
+    <metal:content-title fill-slot="content-title">
+        <metal:title define-macro="content-title">
+            <h1 class="documentFirstHeading" i18n:translate="">
+                Add Picture
+            </h1>
+        </metal:title>
+    </metal:content-title>
+
+    <metal:content-description fill-slot="content-description">
+        <metal:description define-macro="content-description">
+            <!-- no desc -->
+        </metal:description>
+    </metal:content-description>
+
+    <metal:content-core fill-slot="content-core">
+        <metal:content-core define-macro="content-core">
+            <form action="add_image" method="post" enctype="multipart/form-data">
+                <br />
+                <input type="file" name="img" />
+                <input type="hidden" name="form.submitted" value="1" />
+                <br /><br />
+                <input type="submit" i18n:attributes="value label_upload" />
+            </form>
+        </metal:content-core>
+    </metal:content-core>
+</body>
+</html>
