@@ -11,7 +11,7 @@ class CategoryView(BrowserView):
     def __call__(self):
         mtool = getToolByName(self.context, 'portal_membership')
         member = mtool.getAuthenticatedMember()
-        if not member.has_permission('Manage portal', self.context):
+        if not member.has_permission('Modify portal content', self.context):
             self.request.set('disable_border', 1)
         return self.template()
 
