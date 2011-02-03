@@ -6,6 +6,7 @@ from DateTime import DateTime
 from ftw.billboard import billboardMessageFactory as _
 from ftw.billboard import validators
 from ftw.billboard.config import PROJECTNAME
+from ftw.billboard.config import TINYMCE_ALLOWED_BUTTONS
 from ftw.billboard.interfaces import IBillboardAd
 
 from Products.CMFCore.permissions import ManagePortal
@@ -28,6 +29,9 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         widget = atapi.RichWidget(
             label = _(u"label_description", default=u"Description"),
             description = _(u"billboard_help_description", default=u""),
+            rows=15,
+            allow_buttons=TINYMCE_ALLOWED_BUTTONS,
+
         ),
     ),
 
