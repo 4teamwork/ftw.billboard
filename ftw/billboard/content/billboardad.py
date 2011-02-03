@@ -63,7 +63,7 @@ BillboardAdSchema['title'].searchable = True
 BillboardAdSchema['title'].required = True
 BillboardAdSchema['excludeFromNav'].default = True
 BillboardAdSchema['expirationDate'].default_method = 'getDefaultExpirationDate'
-BillboardAdSchema['effectiveDate'].default_method = DateTime
+BillboardAdSchema['effectiveDate'].default_method = 'getDefaultEffectiveDate'
 
 # hide other schematas
 BillboardAdSchema['allowDiscussion'].write_permission = ManagePortal
@@ -100,6 +100,12 @@ class BillboardAd(folder.ATFolder):
     def getDefaultExpirationDate(self):
         """Return the default expiration date, now + 1 month."""
         return DateTime() + 31
+
+    def getDefaultEffectiveDate(self):
+        """Returns the default effective date (now) - appr. 5 min, because of
+           limited accuracy of the DateTime widget
+        """
+        return DateTime() - 0.004
 
     def getDefaultContactMail(self):
         """Return the mail of the logged-in user"""
