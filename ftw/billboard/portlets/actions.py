@@ -37,8 +37,9 @@ class Renderer(base.Renderer):
             self.context) and self.context.portal_type=='BillboardAd'
 
     def available(self):
+        if self.context.checkCreationFlag():
+            return False
         return self.can_add or self.can_edit or self.can_del
-        return not self.context.checkCreationFlag()
 
     render = ViewPageTemplateFile('actions.pt')
 
