@@ -17,7 +17,7 @@
                         <tr tal:define="oddrow repeat/category/odd"
                             tal:attributes="class python:oddrow and 'even' or 'odd'">
                             <td>
-                                <a tal:attributes="href category/getPath"
+                                <a tal:attributes="href category/getURL"
                                    tal:content="category/Title"
                                    />
                                 (<span tal:content="python:len(category.getObject().getFolderContents())" />)
