@@ -35,4 +35,9 @@
         template="category_listing.pt"
         />
 
+    <browser:resourceDirectory
+        name="ftw.billboard"
+        directory="resources"
+        />
+
 </configure>

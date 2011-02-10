@@ -5,40 +5,15 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="ftw.billboard">
+<!-- NO JS
 
-<body>
+<head tal:define="portal_url context/@@plone_portal_state/portal_url">
     <metal:js fill-slot="javascript_head_slot">
-        <script type="text/javascript">
-            jq(function() {
-                function noformerrorshow(el, noform) {
-                    var o = $(el),
-                        emsg = o.find('dl.portalMessage.error');
-                    if (emsg.length) {
-                        o.children().replaceWith(emsg);
-                        return false;
-                    } else {
-                        return noform;
-                    }
-                }
-                var base_url = jq('base').attr('href').split('/');
-                cutted = base_url.splice(-1,1); // cut off last element
-                $('a.deleteImage').prepOverlay(
-                    {
-                        subtype: 'ajax',
-                        filter: common_content_filter,
-                        formselector: 'form',
-                        noform: function(el) {return noformerrorshow(el, 'redirect');},
-                        redirect: base_url.join('/'),
-                        closeselector: '[name=form.button.Cancel]',
-                        width:'50%'
-                    }
-                );
-                jq('.overlayImage').prepOverlay({
-                    subtype: 'image'
-                });
-            });
-        </script>
+        <script language="javascript" tal:attributes="src string:${portal_url}/++resource++ftw.billboard/billboard.js"></script>
     </metal:js>
+</head>
+-->
+<body>
     <metal:content-description fill-slot="content-description">
         <metal:description define-macro="content-description">
             <!-- no desc -->
@@ -61,7 +36,7 @@
                     </tr>
                     <tr>
                         <th i18n:translate="label_description">Description</th>
-                        <td tal:content="structure context/Description" />
+                        <td tal:content="structure context/getText" />
                     </tr>
                     <!-- IMAGES -->
                     <tr tal:condition="view/get_elements" tal:define="images view/get_elements">

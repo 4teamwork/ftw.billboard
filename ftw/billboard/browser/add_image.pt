@@ -7,39 +7,7 @@
       i18n:domain="ftw.billboard">
 
 <body>
-    <metal:js fill-slot="javascript_head_slot">
-        <script type="text/javascript">
-            jq(function() {
-                function noformerrorshow(el, noform) {
-                    var o = $(el),
-                        emsg = o.find('dl.portalMessage.error');
-                    if (emsg.length) {
-                        o.children().replaceWith(emsg);
-                        return false;
-                    } else {
-                        return noform;
-                    }
-                }
-                var base_url = jq('base').attr('href').split('/');
-                cutted = base_url.splice(-1,1); // cut off last element
-                $('a.deleteImage').prepOverlay(
-                    {
-                        subtype: 'ajax',
-                        filter: common_content_filter,
-                        formselector: 'form',
-                        noform: function(el) {return noformerrorshow(el, 'redirect');},
-                        redirect: base_url.join('/'),
-                        closeselector: '[name=form.button.Cancel]',
-                        width:'50%'
-                    }
-                );
-                jq('.overlayImage').prepOverlay({
-                    subtype: 'image'
-                });
-            });
-        </script>
-    </metal:js>
-    
+
     <metal:content-title fill-slot="content-title">
         <metal:title define-macro="content-title">
             <h1 class="documentFirstHeading" i18n:translate="">

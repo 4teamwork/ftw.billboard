@@ -20,18 +20,20 @@ from zope.interface import implements
 validation.register(validators.MailValidator('isEmail'))
 
 BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
-    atapi.TextField('description',
+    atapi.TextField('text',
         searchable = True,
         required = False,
+        allowable_content_types=('text/html',),
         default_content_type = 'text/html',
-        default_output_type = 'text/html',
+        validators = ('isTidyHtmlWithCleanup',),
+        default_output_type = 'text/x-html-safe',
+        default_input_type = 'text/html',
         storage = atapi.AnnotationStorage(),
         widget = atapi.RichWidget(
             label = _(u"label_description", default=u"Description"),
             description = _(u"billboard_help_description", default=u""),
             rows=15,
             allow_buttons=TINYMCE_ALLOWED_BUTTONS,
-
         ),
     ),
 
@@ -68,6 +70,7 @@ BillboardAdSchema['title'].required = True
 BillboardAdSchema['excludeFromNav'].default = True
 BillboardAdSchema['expirationDate'].default_method = 'getDefaultExpirationDate'
 BillboardAdSchema['effectiveDate'].default_method = 'getDefaultEffectiveDate'
+BillboardAdSchema['description'].widget.visible = -1
 
 # hide other schematas
 BillboardAdSchema['allowDiscussion'].write_permission = ManagePortal
