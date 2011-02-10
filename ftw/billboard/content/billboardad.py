@@ -103,7 +103,7 @@ class BillboardAd(folder.ATFolder):
 
     def getDefaultExpirationDate(self):
         """Return the default expiration date, now + 1 month."""
-        return DateTime() + 31
+        return DateTime() + 92
 
     def getDefaultEffectiveDate(self):
         """Returns the default effective date (now) - appr. 5 min, because of
