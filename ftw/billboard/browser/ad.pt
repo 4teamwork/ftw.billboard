@@ -4,15 +4,13 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="ftw.billboard">
-<!-- NO JS
-
-<head tal:define="portal_url context/@@plone_portal_state/portal_url">
+      i18n:domain="ftw.billboard"
+      tal:define="portal_url context/@@plone_portal_state/portal_url">
+<head>
     <metal:js fill-slot="javascript_head_slot">
         <script language="javascript" tal:attributes="src string:${portal_url}/++resource++ftw.billboard/billboard.js"></script>
     </metal:js>
 </head>
--->
 <body>
     <metal:content-description fill-slot="content-description">
         <metal:description define-macro="content-description">
@@ -49,9 +47,28 @@
                                          alt="" />
                                 </a>
                                 <a tal:attributes="href string:${image}/delete_confirmation"
+                                   tal:condition="view/can_edit"
                                    class="deleteImage"
                                    i18n:attributes="title label_deleteimage">
-                                    x
+                                    <img tal:attributes="src string:${portal_url}/delete_icon.png"
+                                         alt=""/>
+                                </a>
+                            </p>
+                        </td>
+                    </tr>
+                    <!-- FILES -->
+                    <tr tal:condition="view/get_files" tal:define="files view/get_files">
+                        <th i18n:translate="label_files">Files</th>
+                        <td> 
+                            <p tal:repeat="file files">
+                                <a tal:attributes="href file/url"
+                                   tal:content="file/title" />
+                                <a tal:attributes="href string:${file/url}/delete_confirmation"
+                                   tal:condition="view/can_edit"
+                                   class="deleteImage"
+                                   i18n:attributes="title label_deletefile">
+                                    <img tal:attributes="src string:${portal_url}/delete_icon.png"
+                                         alt=""/>
                                 </a>
                             </p>
                         </td>
@@ -60,7 +77,7 @@
                     <tr>
                         <th i18n:translate="">Contact</th>
                         <td>
-                            <img tal:attributes="src string:${context/portal_url}/mail_icon.gif" alt="" />
+                            <img tal:attributes="src string:${portal_url}/mail_icon.gif" alt="" />
                             <a tal:define="mail context/getContactMail" 
                                tal:attributes="href string:mailto:${mail}" tal:content="mail" />
                         </td>

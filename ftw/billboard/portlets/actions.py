@@ -35,6 +35,8 @@ class Renderer(base.Renderer):
         self.can_del = member.has_permission(
             'Delete objects',
             self.context) and self.context.portal_type=='BillboardAd'
+        self.allowed_types = [term.id for term in 
+                             self.context.allowedContentTypes()]
 
     def available(self):
         if self.context.checkCreationFlag():

@@ -6,12 +6,12 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="ftw.billboard">
 
-<body>
+<body tal:define="portal_url context/@@plone_portal_state/portal_url">
 
     <metal:content-title fill-slot="content-title">
         <metal:title define-macro="content-title">
             <h1 class="documentFirstHeading" i18n:translate="">
-                Add Picture
+                Add <tal:type content="view/create_type" />
             </h1>
         </metal:title>
     </metal:content-title>
@@ -24,12 +24,15 @@
 
     <metal:content-core fill-slot="content-core">
         <metal:content-core define-macro="content-core">
-            <form action="add_image" method="post" enctype="multipart/form-data">
+            <form tal:attributes="action string:${context/absolute_url}/${view/view_name}" method="post" enctype="multipart/form-data">
                 <br />
-                <input type="file" name="img" />
+                <input type="file" name="upload_file" />
                 <input type="hidden" name="form.submitted" value="1" />
                 <br /><br />
-                <input type="submit" i18n:attributes="value label_upload" />
+                <input type="submit"
+                       tal:attributes="value string:Add ${view/create_type}"
+                       i18n:attributes="value"
+                       />
             </form>
         </metal:content-core>
     </metal:content-core>

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-02-01 07:44+0000\n"
+"POT-Creation-Date: 2011-02-11 13:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,12 +21,22 @@ msgstr ""
 msgid "A folder which contain Billboard ads"
 msgstr ""
 
-#: ./ftw/billboard/portlets/actions.pt:47
+#: ./ftw/billboard/portlets/actions.pt:4
 msgid "Actions"
 msgstr ""
 
-#: ./ftw/billboard/browser/add_image.pt:45
-#: ./ftw/billboard/portlets/actions.pt:69
+#: ./ftw/billboard/browser/simple_upload.pt:14
+msgid "Add ${DYNAMIC_CONTENT}"
+msgstr ""
+
+#: ./ftw/billboard/portlets/actions.pt:31
+msgid "Add File"
+msgstr ""
+
+msgid "Add Image"
+msgstr ""
+
+#: ./ftw/billboard/portlets/actions.pt:26
 msgid "Add Picture"
 msgstr ""
 
@@ -42,19 +52,19 @@ msgstr ""
 msgid "BillboardCategory"
 msgstr ""
 
-#: ./ftw/billboard/browser/ad.pt:86
+#: ./ftw/billboard/browser/ad.pt:78
 msgid "Contact"
 msgstr ""
 
-#: ./ftw/billboard/portlets/actions.pt:54
+#: ./ftw/billboard/portlets/actions.pt:11
 msgid "Create new Billboard Ad"
 msgstr ""
 
-#: ./ftw/billboard/portlets/actions.pt:64
+#: ./ftw/billboard/portlets/actions.pt:21
 msgid "Delete Billboard Ad"
 msgstr ""
 
-#: ./ftw/billboard/portlets/actions.pt:59
+#: ./ftw/billboard/portlets/actions.pt:16
 msgid "Edit Billboard Ad"
 msgstr ""
 
@@ -66,11 +76,11 @@ msgstr ""
 msgid "Validation failed($name: no valid phone number)"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:30
+#: ./ftw/billboard/content/billboardad.py:34
 msgid "billboard_help_description"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:52
+#: ./ftw/billboard/content/billboardad.py:58
 msgid "help_contactmail"
 msgstr ""
 
@@ -79,7 +89,7 @@ msgid "help_image"
 msgstr ""
 
 #. Default: "Leave blank "
-#: ./ftw/billboard/content/billboardad.py:40
+#: ./ftw/billboard/content/billboardad.py:46
 msgid "help_price"
 msgstr ""
 
@@ -89,49 +99,54 @@ msgid "label_billboardactions"
 msgstr ""
 
 #. Default: "Contact E-Mail"
-#: ./ftw/billboard/content/billboardad.py:51
+#: ./ftw/billboard/content/billboardad.py:57
 msgid "label_contactmail"
 msgstr ""
 
 #. Default: "Date"
-#: ./ftw/billboard/browser/ad.pt:55
+#: ./ftw/billboard/browser/ad.pt:28
 msgid "label_date"
 msgstr ""
 
-#: ./ftw/billboard/browser/ad.pt:76
+#: ./ftw/billboard/browser/ad.pt:66
+msgid "label_deletefile"
+msgstr ""
+
+#: ./ftw/billboard/browser/ad.pt:49
 msgid "label_deleteimage"
 msgstr ""
 
 #. Default: "Description"
-#: ./ftw/billboard/browser/ad.pt:63
-#: ./ftw/billboard/content/billboardad.py:29
+#: ./ftw/billboard/browser/ad.pt:36
+#: ./ftw/billboard/content/billboardad.py:33
 msgid "label_description"
 msgstr ""
 
+#. Default: "Files"
+#: ./ftw/billboard/browser/ad.pt:61
+msgid "label_files"
+msgstr ""
+
 #. Default: "Images"
-#: ./ftw/billboard/browser/ad.pt:68
+#: ./ftw/billboard/browser/ad.pt:41
 #: ./ftw/billboard/content/billboard_category.py:46
 msgid "label_image"
 msgstr ""
 
-#. Default: "Not an image"
-#: ./ftw/billboard/browser/add_image.py:20
-msgid "label_no_image"
-msgstr ""
-
-#. Default: "Not allowd content type"
-#: ./ftw/billboard/browser/add_image.py:25
-msgid "label_not_image"
+#. Default: "Not allowed type (${types})"
+#: ./ftw/billboard/browser/simple_upload.py:43
+msgid "label_notallowedtype"
 msgstr ""
 
 #. Default: "price"
-#: ./ftw/billboard/browser/ad.pt:59
-#: ./ftw/billboard/content/billboardad.py:39
+#: ./ftw/billboard/browser/ad.pt:32
+#: ./ftw/billboard/content/billboardad.py:45
 msgid "label_price"
 msgstr ""
 
-#: ./ftw/billboard/browser/add_image.pt:64
-msgid "label_upload"
+#. Default: "Required field"
+#: ./ftw/billboard/browser/simple_upload.py:37
+msgid "label_required"
 msgstr ""
 
 #: ./ftw/billboard/browser/category.pt:36

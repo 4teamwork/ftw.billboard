@@ -1,3 +1,4 @@
+var common_content_filter = '#content>*:not(div.configlet),dl.portalMessage.error,dl.portalMessage.info';
 jq(function(){
     function noformerrorshow(el, noform) {
         var o = jq(el),
@@ -14,7 +15,7 @@ jq(function(){
     jq('.portletBillboardActions ul a#deleteentry').prepOverlay(
         {
             subtype: 'ajax',
-            filter: '#content',
+            filter: common_content_filter,
             formselector: 'form',
             noform: function(el) {return noformerrorshow(el, 'redirect');},
             redirect: base_url.join('/'),
@@ -27,7 +28,7 @@ jq(function(){
     jq('.portletBillboardActions ul a#uploadimage').prepOverlay(
         {
             subtype: 'ajax',
-            filter: '#content',
+            filter: common_content_filter,
             formselector: 'form',
             noform: function(el) {return noformerrorshow(el, 'redirect');},
             redirect: upload_url.join('/'),
@@ -40,7 +41,7 @@ jq(function(){
     jq('a.deleteImage').prepOverlay(
         {
             subtype: 'ajax',
-            filter: '#content',
+            filter: common_content_filter,
             formselector: 'form',
             noform: function(el) {return noformerrorshow(el, 'redirect');},
             redirect: base_url.join('/'),

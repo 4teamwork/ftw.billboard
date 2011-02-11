@@ -24,7 +24,14 @@
     <browser:page
         for="..interfaces.IBillboardAd"
         name="add_image"
-        class=".add_image.AddImage"
+        class=".simple_upload.AddImage"
+        permission="cmf.ModifyPortalContent"
+        />
+
+    <browser:page
+        for="..interfaces.IBillboardAd"
+        name="add_file"
+        class=".simple_upload.AddFile"
         permission="cmf.ModifyPortalContent"
         />
 
