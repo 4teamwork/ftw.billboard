@@ -39,12 +39,11 @@ class AddFile(BrowserView):
             return _(u'label_required', default=u'Required field')
         else:
             root, extension = os.path.splitext(upload.filename)
-            if extension and extension[0] in self.allowed_extensions:
-                return False
-            else:
+            if extension not in self.allowed_extensions:
                 return _(u'label_notallowedtype',
                          default=u'Not allowed type (${types})',
                          mapping={u'types': ', '.join(self.allowed_extensions)})
+        return False
 
 
 class AddImage(AddFile):
