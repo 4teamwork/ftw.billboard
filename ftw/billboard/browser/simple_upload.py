@@ -1,3 +1,4 @@
+import os
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
@@ -37,7 +38,7 @@ class AddFile(BrowserView):
         if not upload:
             return _(u'label_required', default=u'Required field')
         else:
-            extension = upload.filename.split('.')[1:]
+            root, extension = os.path.splitext(upload.filename)
             if extension and extension[0] in self.allowed_extensions:
                 return False
             else:
