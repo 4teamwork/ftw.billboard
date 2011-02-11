@@ -10,7 +10,7 @@ class AddFile(BrowserView):
     """Form to upload a file"""
 
     template=ViewPageTemplateFile("simple_upload.pt")
-    allowed_extensions = ['pdf', 'doc', 'docx', 'xls', 'xlsx']
+    allowed_extensions = ['.pdf', '.doc', '.docx', '.xls', '.xlsx']
     create_type = 'File'
     field_name = 'file'
     view_name = 'add_file'
@@ -50,7 +50,7 @@ class AddFile(BrowserView):
 class AddImage(AddFile):
     """Form to upload an image"""
 
-    allowed_extensions = ['jpg', 'jpeg', 'png', 'gif']
+    allowed_extensions = ['.jpg', '.jpeg', '.png', '.gif']
     create_type = 'Image'
     field_name = 'image'
     view_name = 'add_image'
