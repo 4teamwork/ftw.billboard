@@ -15,6 +15,7 @@ class AddFile(BrowserView):
     view_name = 'add_file'
 
     def __call__(self):
+        self.request.set('disable_border', 1)
         if self.request.form.get('form.submitted', None):
             status = IStatusMessage(self.context.REQUEST)
             upload_file = self.request.form.get('upload_file', None)
