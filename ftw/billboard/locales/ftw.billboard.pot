@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-02-11 13:21+0000\n"
+"POT-Creation-Date: 2011-02-14 13:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -145,7 +145,7 @@ msgid "label_price"
 msgstr ""
 
 #. Default: "Required field"
-#: ./ftw/billboard/browser/simple_upload.py:37
+#: ./ftw/billboard/browser/simple_upload.py:39
 msgid "label_required"
 msgstr ""
 

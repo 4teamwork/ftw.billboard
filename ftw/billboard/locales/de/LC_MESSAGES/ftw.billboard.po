@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2011-02-11 13:21+0000\n"
+"POT-Creation-Date: 2011-02-14 13:47+0000\n"
 "PO-Revision-Date: 2010-08-03 14:05+0000\n"
 "Last-Translator: Julian Infanger <julian.infanger@4teamwork.ch>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: ftw.billboard\n"
 
 #: ./ftw/billboard/profiles/default/types/BillboardCategory.xml
 msgid "A folder which contain Billboard ads"
@@ -140,7 +140,7 @@ msgid "label_price"
 msgstr "Preis"
 
 #. Default: "Required field"
-#: ./ftw/billboard/browser/simple_upload.py:37
+#: ./ftw/billboard/browser/simple_upload.py:39
 msgid "label_required"
 msgstr "Bitte eine Datei auswählen"
 
