@@ -5,6 +5,30 @@ CHANGELOG
 1.0.2
 -----
 
+* Issue #19 ftw.billboard fuer tamedia
+  https://extranet.4teamwork.ch/projects/0285-tamedia-realisierung/tracker-tamedia-realisierung/19
+  delete images and files in view, updated permission in workflow
+  [14.02.2011, jinfanger]
+
+* Issue #19 ftw.billboard fuer tamedia
+  https://extranet.4teamwork.ch/projects/0285-tamedia-realisierung/tracker-tamedia-realisierung/19
+  created simple_image_upload and simple_file_upload
+  [01.02.2011, jinfanger]
+
+* Issue #19 ftw.billboard fuer tamedia
+  https://extranet.4teamwork.ch/projects/0285-tamedia-realisierung/tracker-tamedia-realisierung/19
+  added translations, created action portlet
+  [31.01.2011, jinfanger]
+
+* Issue #19 ftw.billboard fuer tamedia
+  https://extranet.4teamwork.ch/projects/0285-tamedia-realisierung/tracker-tamedia-realisierung/19
+  created workflow for ad and category
+  [27.01.2011, jinfanger]
+
+* Issue #19 ftw.billboard fuer tamedia
+  https://extranet.4teamwork.ch/projects/0285-tamedia-realisierung/tracker-tamedia-realisierung/19
+  refactoring views
+  [26.01.2011, jinfanger]
 
 1.0.1
 ---
