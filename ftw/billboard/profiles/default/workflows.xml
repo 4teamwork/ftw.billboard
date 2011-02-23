@@ -2,11 +2,11 @@
 <object name="portal_workflow" meta_type="Plone Workflow Tool">
  <property
     name="title">Contains workflow definitions for your portal</property>
- <object name="ftw_billboard_categoty_workflow" meta_type="Workflow"/>
+ <object name="ftw_billboard_category_workflow" meta_type="Workflow"/>
  <object name="ftw_billboard_ad_workflow" meta_type="Workflow"/>
  <bindings>
   <type type_id="BillboardCategory">
-   <bound-workflow workflow_id="ftw_billboard_categoty_workflow"/>
+   <bound-workflow workflow_id="ftw_billboard_category_workflow"/>
   </type>
   <type type_id="BillboardAd">
    <bound-workflow workflow_id="ftw_billboard_ad_workflow"/>
