@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+1.1 (unreleased)
+----------------
+
+- Added support for LinguaPlone.
+  [buchi]
+
+- Some refactoring and cleanup.
+  [buchi]
 
 1.0.2
 -----
