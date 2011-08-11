@@ -26,7 +26,10 @@
                 <table class="vertical listing">
                     <tr>
                         <th i18n:translate="label_date">Date</th>
-                        <td tal:content="python:toLocalizedTime(context.effective())" />
+                        <td>
+                            <span tal:condition="python:context.effective().year() >= 1900"
+                                  tal:content="python:toLocalizedTime(context.effective())" />
+                        </td>
                     </tr>
                     <tr tal:condition="context/getPrice">
                         <th i18n:translate="label_price">price</th>

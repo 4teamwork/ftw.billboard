@@ -4,7 +4,10 @@ CHANGELOG
 1.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+* Issue #510 Fehler Anschlagbrett
+  https://extranet.4teamwork.ch/intranet/10-interne-projekte/4teamwork-egov/tracker-4teamwork-egov/510/
+  check if effective date is < 1900 before toLocalizedTime
+  [11.08.2011, jinfanger]
 
 
 1.1 (2011-02-25)
