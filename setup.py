@@ -2,21 +2,20 @@ from setuptools import setup, find_packages
 import os
 
 version = '1.1.2dev'
-
 maintainer = 'Julian Infanger'
 
 setup(name='ftw.billboard',
       version=version,
-      description="Auf dem Anschlagbrett koennen Inserate (Kaufen, Verkaufen, etc) erstellt werden. (%s)" % maintainer,
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      description='Billboard for plone for publishing advertisements.',
+      long_description=open('README.txt').read() + '\n' +
+                       open(os.path.join('docs', 'HISTORY.txt')).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
-        "Framework :: Plone",
-        "Framework :: Zope2",
-        "Framework :: Zope3",
-        "Programming Language :: Python",
-        "Topic :: Software Development :: Libraries :: Python Modules",
+        'Framework :: Plone',
+        'Framework :: Zope2',
+        'Framework :: Zope3',
+        'Programming Language :: Python',
+        'Topic :: Software Development :: Libraries :: Python Modules',
         ],
       keywords='',
       author='%s, 4teamwork GmbH' % maintainer,
@@ -32,7 +31,7 @@ setup(name='ftw.billboard',
           'setuptools',
           # -*- Extra requirements: -*-
       ],
-      entry_points="""
+      entry_points='''
       # -*- Entry points: -*-
-      """,
+      ''',
       )
