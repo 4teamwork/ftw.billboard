@@ -28,3 +28,9 @@ Links
 - Package repository: https://github.com/4teamwork/ftw.billboard
 - Issue tracker: https://github.com/4teamwork/ftw.billboard/issues
 - Package on pypi: http://pypi.python.org/pypi/ftw.billboard
+
+
+Maintainer
+==========
+
+This package is produced and maintained by `4teamwork GmbH <http://www.4teamwork.ch/>`_.
