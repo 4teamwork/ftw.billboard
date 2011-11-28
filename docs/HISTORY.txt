@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+
 1.1.2 (unreleased)
 ------------------
 
@@ -10,10 +11,8 @@ CHANGELOG
 1.1.1 (2011-08-11)
 ------------------
 
-* Issue #510 Fehler Anschlagbrett
-  https://extranet.4teamwork.ch/intranet/10-interne-projekte/4teamwork-egov/tracker-4teamwork-egov/510/
-  check if effective date is < 1900 before toLocalizedTime
-  [11.08.2011, jinfanger]
+- check if effective date is < 1900 before toLocalizedTime
+  [jinfanger]
 
 
 1.1 (2011-02-25)
@@ -25,46 +24,42 @@ CHANGELOG
 - Some refactoring and cleanup.
   [buchi]
 
+
 1.0.2
 -----
 
-* Issue #19 ftw.billboard fuer tamedia
-  https://extranet.4teamwork.ch/projects/0285-tamedia-realisierung/tracker-tamedia-realisierung/19
-  delete images and files in view, updated permission in workflow
-  [14.02.2011, jinfanger]
+- delete images and files in view, updated permission in workflow
+  [jinfanger]
 
-* Issue #19 ftw.billboard fuer tamedia
-  https://extranet.4teamwork.ch/projects/0285-tamedia-realisierung/tracker-tamedia-realisierung/19
-  created simple_image_upload and simple_file_upload
-  [01.02.2011, jinfanger]
+- created simple_image_upload and simple_file_upload
+  [jinfanger]
 
-* Issue #19 ftw.billboard fuer tamedia
-  https://extranet.4teamwork.ch/projects/0285-tamedia-realisierung/tracker-tamedia-realisierung/19
-  added translations, created action portlet
-  [31.01.2011, jinfanger]
+- added translations, created action portlet
+  [jinfanger]
 
-* Issue #19 ftw.billboard fuer tamedia
-  https://extranet.4teamwork.ch/projects/0285-tamedia-realisierung/tracker-tamedia-realisierung/19
-  created workflow for ad and category
-  [27.01.2011, jinfanger]
+- created workflow for ad and category
+  [jinfanger]
 
-* Issue #19 ftw.billboard fuer tamedia
-  https://extranet.4teamwork.ch/projects/0285-tamedia-realisierung/tracker-tamedia-realisierung/19
-  refactoring views
-  [26.01.2011, jinfanger]
+- refactoring views
+  [jinfanger]
+
 
 1.0.1
 ---
-* fix permissions for views
+
+- fix permissions for views
+
 
 1.0
 ---
-* first final release
+
+- first final release
+
 
 0.1
 ---
 
-* Removed AnnotationStorage from some fields
-  [08.09.2010, jbaumann]
+- Removed AnnotationStorage from some fields
+  [jbaumann]
 
-* initial version
+- initial version
