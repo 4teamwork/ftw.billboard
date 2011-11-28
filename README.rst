@@ -33,4 +33,4 @@ Links
 Maintainer
 ==========
 
-This package is produced and maintained by `4teamwork GmbH <http://www.4teamwork.ch/>`_.
+This package is produced and maintained by `4teamwork <http://www.4teamwork.ch/>`_ company.
