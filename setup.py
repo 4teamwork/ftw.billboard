@@ -1,37 +1,47 @@
 from setuptools import setup, find_packages
 import os
 
+
 version = '1.1.2dev'
 maintainer = 'Julian Infanger'
+
 
 setup(name='ftw.billboard',
       version=version,
       description='Billboard for plone for publishing advertisements.',
-      long_description=open('README.txt').read() + '\n' +
-                       open(os.path.join('docs', 'HISTORY.rst')).read(),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      long_description=open('README.rst').read() + '\n' + \
+          open(os.path.join('docs', 'HISTORY.txt')).read(),
+
+      # Get more strings from
+      # http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         'Framework :: Plone',
+        'Framework :: Plone :: 4.1',
         'Framework :: Zope2',
-        'Framework :: Zope3',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
         ],
-      keywords='',
-      author='%s, 4teamwork GmbH' % maintainer,
+
+      keywords='plone billboard ads advertisement ftw',
+      author='4teamwork GmbH',
       author_email='mailto:info@4teamwork.ch',
       maintainer=maintainer,
-      url='http://psc.4teamwork.ch/4teamwork/ftw/ftw-billboard',
+      url='https://github.com/4teamwork/ftw.billboard',
       license='GPL2',
+
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['ftw'],
       include_package_data=True,
       zip_safe=False,
+
       install_requires=[
-          'setuptools',
-          # -*- Extra requirements: -*-
-      ],
+        'setuptools',
+        # -*- Extra requirements: -*-
+        ],
+
       entry_points='''
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       ''',
       )
