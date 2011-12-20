@@ -5,7 +5,8 @@ CHANGELOG
 1.1.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- add assignments for action-portlet
+  [eschmutz]
 
 
 1.1.1 (2011-08-11)

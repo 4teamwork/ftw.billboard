@@ -7,4 +7,22 @@
       description="display add/edid/del actions">
         <for interface="plone.app.portlets.interfaces.IColumn" />
     </portlet>
+    
+    <assignment 
+        name="billboard-actions"
+        category="content_type"
+        key="BillboardCategory"
+        manager="plone.rightcolumn"
+        type="ftw.billboard.portlets.actions"
+        weight="15"
+    />
+    <assignment
+        name="billboard-actions"
+        category="content_type"
+        key="BillboardAd"
+        manager="plone.rightcolumn"
+        type="ftw.billboard.portlets.actions"
+        weight="15"
+    />
+
 </portlets>
