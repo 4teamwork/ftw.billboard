@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 
 
-version = '1.1.2dev'
+version = open('ftw/billboard/version.txt').read().strip()
 maintainer = 'Julian Infanger'
 tests_require = ['zope.testing',
                  'plone.app.testing',
