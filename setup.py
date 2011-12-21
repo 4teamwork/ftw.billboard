@@ -4,7 +4,10 @@ import os
 
 version = '1.1.2dev'
 maintainer = 'Julian Infanger'
-
+tests_require = ['zope.testing',
+                 'plone.app.testing',
+                 'plone.mocktestcase',
+                 ]
 
 setup(name='ftw.billboard',
       version=version,
@@ -33,7 +36,8 @@ setup(name='ftw.billboard',
       namespace_packages=['ftw'],
       include_package_data=True,
       zip_safe=False,
-
+      tests_require=tests_require,
+      extras_require=dict(tests=tests_require),
       install_requires=[
         'setuptools',
         # -*- Extra requirements: -*-
