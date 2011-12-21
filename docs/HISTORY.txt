@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 
-1.1.2 (unreleased)
+1.1.2 (2011-12-21)
 ------------------
 
 - add assignments for action-portlet
