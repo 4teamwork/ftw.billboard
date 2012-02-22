@@ -12,19 +12,14 @@
             <div class="billboardCategoryListing"
                  tal:define="plone here/@@plone;
                              toLocalizedTime nocall:plone/toLocalizedTime">
-                <table class="linkListing vertical">
-                    <tal:categories tal:repeat="category python:context.getFolderContents({'portal_type':'BillboardCategory'})">
-                        <tr tal:define="oddrow repeat/category/odd"
-                            tal:attributes="class python:oddrow and 'even' or 'odd'">
-                            <td>
-                                <a tal:attributes="href category/getURL"
-                                   tal:content="category/Title"
-                                   />
-                                (<span tal:content="python:len(category.getObject().getFolderContents())" />)
-                            </td>
-                        </tr>
-                    </tal:categories>
-                </table>
+                <ul class="linkListing">
+                    <li tal:repeat="category python:context.getFolderContents({'portal_type':'BillboardCategory'})">
+                        <a tal:attributes="href category/getURL"
+                           tal:content="category/Title">
+                        </a>
+                        (<span tal:content="python:len(category.getObject().getFolderContents())" />)
+                    </li>
+                </ul>
             </div>
         </metal:content-core>
     </metal:content-core>
