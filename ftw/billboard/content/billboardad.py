@@ -9,11 +9,13 @@ from ftw.billboard.config import PROJECTNAME
 from ftw.billboard.config import TINYMCE_ALLOWED_BUTTONS
 from ftw.billboard.interfaces import IBillboardAd
 
-from Products.CMFCore.permissions import ManagePortal
-from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import schemata
+from Products.Archetypes import atapi
+from Products.CMFCore.permissions import ManagePortal
 from Products.validation.config import validation
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 from zope.interface import implements
 
 
@@ -105,8 +107,14 @@ class BillboardAd(folder.ATFolder):
     details = atapi.ATFieldProperty('details')
 
     def getDefaultExpirationDate(self):
-        """Return the default expiration date, now + 1 month."""
-        return DateTime() + 92
+        """Returns the default expiration date. The number of days the ad is
+        public are defined in registry. If there is defined 0 days, there will
+        be no default value."""
+        registry = getUtility(IRegistry)
+        days = registry.get('ftw.billboard.days_to_expire', 30)
+        if days == 0:
+            return None
+        return DateTime() + days
 
     def getDefaultEffectiveDate(self):
         """Returns the default effective date (now) - appr. 5 min, because of
