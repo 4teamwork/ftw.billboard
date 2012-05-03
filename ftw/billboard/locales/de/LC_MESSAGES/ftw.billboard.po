@@ -131,7 +131,7 @@ msgstr "Bilder"
 #. Default: "Not allowed type (${types})"
 #: ./ftw/billboard/browser/simple_upload.py:43
 msgid "label_notallowedtype"
-msgstr "Ungütiger Inhaltstyp (${types})"
+msgstr "Ungültiger Inhaltstyp (${types})"
 
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:32

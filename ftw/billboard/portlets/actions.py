@@ -38,7 +38,7 @@ class Renderer(base.Renderer):
         self.can_del = mtool.checkPermission('Delete objects',
             context) and context.portal_type=='BillboardAd'
 
-        self.allowed_types = [term.id for term in 
+        self.allowed_types = [term.id for term in
                              self.context.allowedContentTypes()]
 
     def available(self):

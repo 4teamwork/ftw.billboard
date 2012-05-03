@@ -5,7 +5,8 @@ CHANGELOG
 1.1.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix typo and use image_large as image size in overlay.
+  [mathias.leimgruber]
 
 
 1.1.5 (2012-03-26)
