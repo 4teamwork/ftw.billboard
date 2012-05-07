@@ -7,3 +7,5 @@ develop-eggs/
 parts/
 var/
 *.egg-info
+eggs/
+buildout.cfg
