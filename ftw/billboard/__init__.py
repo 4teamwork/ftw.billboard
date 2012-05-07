@@ -20,7 +20,7 @@ def initialize(context):
     with Zope and the CMF.
     """
 
-    content_types, constructors, ftis = atapi.process_types(
+    content_types, constructors, _ftis = atapi.process_types(
         atapi.listTypes(config.PROJECTNAME),
         config.PROJECTNAME)
 

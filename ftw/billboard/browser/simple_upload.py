@@ -38,7 +38,7 @@ class AddFile(BrowserView):
         if not upload:
             return _(u'label_required', default=u'Required field')
         else:
-            root, extension = os.path.splitext(upload.filename)
+            _root, extension = os.path.splitext(upload.filename)
             if extension not in self.allowed_extensions:
                 return _(
                     u'label_notallowedtype',

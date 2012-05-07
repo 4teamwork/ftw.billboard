@@ -8,7 +8,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 
 class IActionsPortlet(IPortletDataProvider):
-    """
+    """Actions portlet interface.
     """
 
 
@@ -23,6 +23,13 @@ class Assignment(base.Assignment):
 
 
 class Renderer(base.Renderer):
+
+    def __init__(self, *args, **kwargs):
+        super(Renderer, self).__init__(*args, **kwargs)
+        self.can_add = False
+        self.can_edit = False
+        self.can_del = False
+        self.allowed_types = []
 
     def update(self):
         context = aq_inner(self.context)
