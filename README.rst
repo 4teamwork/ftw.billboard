@@ -1,8 +1,11 @@
 Overview
 ========
 
-The ``ftw.billboard`` package provides the content types BillboardCategory and
-BillboardAd. BillboardAds can be added to BillboardCategory by the configured users.
+``ftw.billboard`` is a plone addon for providing a market place where users
+can add ads.
+
+The ads are addable within billboard categories and can contain images and
+attachments.
 
 
 Install
@@ -28,6 +31,7 @@ Links
 - Package repository: https://github.com/4teamwork/ftw.billboard
 - Issue tracker: https://github.com/4teamwork/ftw.billboard/issues
 - Package on pypi: http://pypi.python.org/pypi/ftw.billboard
+- Continuous integration: https://jenkins.4teamwork.ch/search?q=ftw.billboard
 
 
 Copyright
