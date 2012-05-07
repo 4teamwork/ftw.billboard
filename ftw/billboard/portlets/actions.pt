@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li tal:condition="python: 'File' in view.allowed_types">
-                <a href="./add_file" i18n:translate="" id="uploadimage">
+                <a href="./add_file" i18n:translate="" id="uploadfile">
                     Add File
                 </a>
             </li>

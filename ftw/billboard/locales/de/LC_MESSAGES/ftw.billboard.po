@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2011-02-14 13:47+0000\n"
+"POT-Creation-Date: 2012-05-07 11:34+0000\n"
 "PO-Revision-Date: 2010-08-03 14:05+0000\n"
 "Last-Translator: Julian Infanger <julian.infanger@4teamwork.ch>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,14 +22,11 @@ msgstr "Aktionen"
 
 #: ./ftw/billboard/browser/simple_upload.pt:14
 msgid "Add ${DYNAMIC_CONTENT}"
-msgstr ""
+msgstr "${DYNAMIC_CONTENT} hinzufügen"
 
 #: ./ftw/billboard/portlets/actions.pt:31
 msgid "Add File"
 msgstr "Datei hinzufügen"
-
-msgid "Add Image"
-msgstr "Bild hinzufügen"
 
 #: ./ftw/billboard/portlets/actions.pt:26
 msgid "Add Picture"
@@ -47,7 +44,7 @@ msgstr "Anzeige"
 msgid "BillboardCategory"
 msgstr "Anzeige Kategorie"
 
-#: ./ftw/billboard/browser/ad.pt:78
+#: ./ftw/billboard/browser/ad.pt:81
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -71,30 +68,18 @@ msgstr "Validierung gescheitert ($name: keine gültigge E-Mail Adresse)"
 msgid "Validation failed($name: no valid phone number)"
 msgstr "Validierung gescheitert ($name: keine Telefonnummer)"
 
-#: ./ftw/billboard/content/billboardad.py:34
-msgid "billboard_help_description"
-msgstr ""
-
-#: ./ftw/billboard/content/billboardad.py:58
-msgid "help_contactmail"
-msgstr ""
-
-#: ./ftw/billboard/content/billboard_category.py:45
-msgid "help_image"
-msgstr ""
-
 #. Default: "Leave blank "
-#: ./ftw/billboard/content/billboardad.py:46
+#: ./ftw/billboard/content/billboardad.py:47
 msgid "help_price"
 msgstr "Preis ohne Währung eingeben. Wenn nicht SFr leer lassen und in Beschreibung angeben."
 
 #. Default: "Billboard Actions portlet"
-#: ./ftw/billboard/portlets/actions.py:18
+#: ./ftw/billboard/portlets/actions.py:20
 msgid "label_billboardactions"
 msgstr "Billboard Aktionen"
 
 #. Default: "Contact E-Mail"
-#: ./ftw/billboard/content/billboardad.py:57
+#: ./ftw/billboard/content/billboardad.py:58
 msgid "label_contactmail"
 msgstr "Kontakt E-Mail"
 
@@ -103,29 +88,33 @@ msgstr "Kontakt E-Mail"
 msgid "label_date"
 msgstr "Datum"
 
-#: ./ftw/billboard/browser/ad.pt:66
+#: ./ftw/billboard/browser/ad.pt:69
 msgid "label_deletefile"
 msgstr "Datei löschen"
 
-#: ./ftw/billboard/browser/ad.pt:49
+#: ./ftw/billboard/browser/ad.pt:52
 msgid "label_deleteimage"
 msgstr "Bild löschen"
 
 #. Default: "Description"
-#: ./ftw/billboard/browser/ad.pt:36
-#: ./ftw/billboard/content/billboardad.py:33
+#: ./ftw/billboard/browser/ad.pt:39
+#: ./ftw/billboard/content/billboardad.py:35
 msgid "label_description"
 msgstr "Beschreibung"
 
 #. Default: "Files"
-#: ./ftw/billboard/browser/ad.pt:61
+#: ./ftw/billboard/browser/ad.pt:64
 msgid "label_files"
 msgstr "Dateien"
 
-#. Default: "Images"
-#: ./ftw/billboard/browser/ad.pt:41
-#: ./ftw/billboard/content/billboard_category.py:46
+#. Default: "Image"
+#: ./ftw/billboard/content/billboard_category.py:45
 msgid "label_image"
+msgstr "Bild"
+
+#. Default: "Images"
+#: ./ftw/billboard/browser/ad.pt:44
+msgid "label_images"
 msgstr "Bilder"
 
 #. Default: "Not allowed type (${types})"
@@ -134,8 +123,8 @@ msgid "label_notallowedtype"
 msgstr "Ungültiger Inhaltstyp (${types})"
 
 #. Default: "price"
-#: ./ftw/billboard/browser/ad.pt:32
-#: ./ftw/billboard/content/billboardad.py:45
+#: ./ftw/billboard/browser/ad.pt:35
+#: ./ftw/billboard/content/billboardad.py:46
 msgid "label_price"
 msgstr "Preis"
 

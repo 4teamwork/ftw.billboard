@@ -41,7 +41,7 @@
                     </tr>
                     <!-- IMAGES -->
                     <tr tal:condition="view/get_elements" tal:define="images view/get_elements">
-                        <th i18n:translate="label_image">Images</th>
+                        <th i18n:translate="label_images">Images</th>
                         <td>
                             <p tal:repeat="image images">
                                 <a tal:attributes="href string:${image}/image_large" class="overlayImage">

@@ -42,7 +42,6 @@ BillboardCategorySchema = folder.ATFolderSchema.copy() + atapi.Schema((
                 ('isNonEmptyFile', V_REQUIRED),
                 ('checkImageMaxSize', V_REQUIRED)),
             widget=atapi.ImageWidget(
-                description=_(u'help_image', default=u""),
                 label=_(u"label_image", default=u"Image"),
                 show_content_type=False,
                 )
