@@ -15,7 +15,7 @@ tests_require = [
 
 setup(name='ftw.billboard',
       version=version,
-      description='Billboard for plone for publishing advertisements.',
+      description='Simple market place addon for plone.',
       long_description=open('README.rst').read() + '\n' + \
           open(os.path.join('docs', 'HISTORY.txt')).read(),
 
