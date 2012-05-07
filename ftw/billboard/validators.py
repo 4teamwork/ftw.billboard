@@ -9,7 +9,7 @@ import re
 class PhoneValidator:
     """Validates a phone number."""
     implements(IValidator)
-    
+
     def __init__(self, name):
         self.name = name
 
@@ -18,10 +18,10 @@ class PhoneValidator:
         if not phone.match(value):
             msg = _(
                 "Validation failed($name: no valid phone number)",
-                mapping = {
+                mapping={
                     'name': safe_unicode(self.name),
-                },
-            )
+                    },
+                )
             return msg
         return True
 
@@ -35,14 +35,14 @@ class MailValidator:
 
     def __call__(self, value, *args, **kwargs):
         mail = re.compile("^(\w&.%#$&'\*+-/=?^_`{}|~]+!)*[\w&.%#$&'\*+-/=" +\
-                "?^_`{}|~]+@(([0-9a-z]([0-9a-z-]*[0-9a-z])?" +\
-                "\.)+[a-z]{2,6}|([0-9]{1,3}\.){3}[0-9]{1,3})$")
+                              "?^_`{}|~]+@(([0-9a-z]([0-9a-z-]*[0-9a-z])?" +\
+                              "\.)+[a-z]{2,6}|([0-9]{1,3}\.){3}[0-9]{1,3})$")
         if not mail.match(value):
             msg = _(
                 "Validation failed($name: no valid email)",
-                mapping = {
+                mapping={
                     'name': safe_unicode(self.name),
-                },
-            )
+                    },
+                )
             return recursiveTranslate(msg)
         return True

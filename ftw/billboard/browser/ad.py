@@ -6,7 +6,7 @@ from Products.CMFCore.utils import getToolByName
 class AdView(BrowserView):
     """Shows a billboard ad."""
 
-    template=ViewPageTemplateFile("ad.pt")
+    template = ViewPageTemplateFile("ad.pt")
 
     def __call__(self):
         mtool = getToolByName(self.context, 'portal_membership')
@@ -25,7 +25,7 @@ class AdView(BrowserView):
         query = {
             'path': '/'.join(self.context.getPhysicalPath()),
             'portal_type': 'Image',
-        }
+            }
         for brain in catalog(query):
             elements.append(brain.getURL())
         return elements
@@ -36,9 +36,9 @@ class AdView(BrowserView):
         query = {
             'path': '/'.join(self.context.getPhysicalPath()),
             'portal_type': 'File',
-        }
+            }
         for brain in catalog(query):
             files.append(dict(
-                title = brain.Title,
-                url = brain.getURL()))
+                    title=brain.Title,
+                    url=brain.getURL()))
         return files

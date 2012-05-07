@@ -7,7 +7,7 @@ from Products.CMFCore.utils import getToolByName
 class CategoryView(BrowserView):
     """Shows a billboard category."""
 
-    template=ViewPageTemplateFile("category.pt")
+    template = ViewPageTemplateFile("category.pt")
 
     def __call__(self):
         mtool = getToolByName(self.context, 'portal_membership')
@@ -25,11 +25,11 @@ class CategoryView(BrowserView):
         # should be shown.
         if not hasattr(context, 'getTranslations'):
             return ct(
-                path = '/'.join(self.context.getPhysicalPath()),
-                portal_type = 'BillboardAd',
-                sort_on = 'created',
-                sort_order = 'descending',
-            )
+                path='/'.join(self.context.getPhysicalPath()),
+                portal_type='BillboardAd',
+                sort_on='created',
+                sort_order='descending',
+                )
         else:
             translations = context.getTranslations().values()
             paths = ['/'.join(t[0].getPhysicalPath()) for t in translations]
@@ -38,5 +38,5 @@ class CategoryView(BrowserView):
                 portal_type='BillboardAd',
                 Language='all',
                 sort_on='created',
-                sort_order = 'descending',
-            )
+                sort_order='descending',
+                )

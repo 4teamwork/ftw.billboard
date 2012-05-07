@@ -30,13 +30,13 @@ class Renderer(base.Renderer):
                          name=u'plone_tools').membership()
 
         self.can_add = mtool.checkPermission('ftw.billboard: Add BillboardAd',
-            context) and context.portal_type=='BillboardCategory'
+            context) and context.portal_type == 'BillboardCategory'
 
         self.can_edit = mtool.checkPermission('Modify portal content',
-            context) and context.portal_type=='BillboardAd'
+            context) and context.portal_type == 'BillboardAd'
 
         self.can_del = mtool.checkPermission('Delete objects',
-            context) and context.portal_type=='BillboardAd'
+            context) and context.portal_type == 'BillboardAd'
 
         self.allowed_types = [term.id for term in
                              self.context.allowedContentTypes()]

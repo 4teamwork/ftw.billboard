@@ -1,19 +1,18 @@
 """Definition of the BillboardAd content type
 """
+
 from AccessControl import ClassSecurityInfo
 from DateTime import DateTime
-
-from ftw.billboard import billboardMessageFactory as _
-from ftw.billboard import validators
-from ftw.billboard.config import PROJECTNAME
-from ftw.billboard.config import TINYMCE_ALLOWED_BUTTONS
-from ftw.billboard.interfaces import IBillboardAd
-
 from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import schemata
 from Products.Archetypes import atapi
 from Products.CMFCore.permissions import ManagePortal
 from Products.validation.config import validation
+from ftw.billboard import billboardMessageFactory as _
+from ftw.billboard import validators
+from ftw.billboard.config import PROJECTNAME
+from ftw.billboard.config import TINYMCE_ALLOWED_BUTTONS
+from ftw.billboard.interfaces import IBillboardAd
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
 from zope.interface import implements
@@ -21,19 +20,20 @@ from zope.interface import implements
 
 validation.register(validators.MailValidator('isEmail'))
 
+
 BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     atapi.TextField('text',
-        searchable = True,
-        required = False,
+        searchable=True,
+        required=False,
         allowable_content_types=('text/html',),
-        default_content_type = 'text/html',
-        validators = ('isTidyHtmlWithCleanup',),
-        default_output_type = 'text/x-html-safe',
-        default_input_type = 'text/html',
-        storage = atapi.AnnotationStorage(),
-        widget = atapi.RichWidget(
-            label = _(u"label_description", default=u"Description"),
-            description = _(u"billboard_help_description", default=u""),
+        default_content_type='text/html',
+        validators=('isTidyHtmlWithCleanup',),
+        default_output_type='text/x-html-safe',
+        default_input_type='text/html',
+        storage=atapi.AnnotationStorage(),
+        widget=atapi.RichWidget(
+            label=_(u"label_description", default=u"Description"),
+            description=_(u"billboard_help_description", default=u""),
             rows=15,
             allow_buttons=TINYMCE_ALLOWED_BUTTONS,
         ),
@@ -125,14 +125,14 @@ class BillboardAd(folder.ATFolder):
     def getDefaultContactMail(self):
         """Return the mail of the logged-in user"""
         member = self.portal_membership.getAuthenticatedMember()
-        return member.getProperty('email','')
+        return member.getProperty('email', '')
 
     def getDefaultContactName(self):
         """Return the URL of the logged-in user"""
         member = self.portal_membership.getAuthenticatedMember()
-        fullname = member.getProperty('fullname','')
-        firstname = member.getProperty('firstname','')
-        lastname = member.getProperty('lastname','')
+        fullname = member.getProperty('fullname', '')
+        firstname = member.getProperty('firstname', '')
+        lastname = member.getProperty('lastname', '')
         if fullname:
             return fullname
         elif fullname or lastname:
