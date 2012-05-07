@@ -23,7 +23,6 @@ class TestPortlet(unittest.TestCase):
         view = context.restrictedTraverse('@@plone')
         manager = getUtility(
             IPortletManager, name='plone.rightcolumn', context=context)
-        import pdb; pdb.set_trace( )
         assignment = actions.Assignment()
 
         renderer = getMultiAdapter(
