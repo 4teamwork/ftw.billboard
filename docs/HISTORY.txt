@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 
-1.1.6 (unreleased)
+1.1.6 (2012-05-09)
 ------------------
 
 - Fix typo and use image_large as image size in overlay.
