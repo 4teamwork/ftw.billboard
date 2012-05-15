@@ -24,7 +24,7 @@
             </li>
             <li tal:condition="python: 'Image' in view.allowed_types">
                 <a href="./add_image" i18n:translate="" id="uploadimage" class="uploadOverlay">
-                    Add Picture
+                    Add Image
                 </a>
             </li>
             <li tal:condition="python: 'File' in view.allowed_types">
