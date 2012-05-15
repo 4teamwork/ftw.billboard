@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 
-1.1.8 (unreleased)
+1.1.8 (2012-05-15)
 ------------------
 
 - Fix actions portlet transaltions
