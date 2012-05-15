@@ -5,7 +5,8 @@ CHANGELOG
 1.1.7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix add image translation and use overlay for adding a file.
+  [mathias.leimgruber]
 
 
 1.1.6 (2012-05-09)
