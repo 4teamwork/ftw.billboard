@@ -29,7 +29,7 @@ msgid "Add File"
 msgstr "Datei hinzufügen"
 
 #: ./ftw/billboard/portlets/actions.pt:26
-msgid "Add Picture"
+msgid "Add Image"
 msgstr "Bild hinzufügen"
 
 #: ./ftw/billboard/profiles/default/types/BillboardAd.xml

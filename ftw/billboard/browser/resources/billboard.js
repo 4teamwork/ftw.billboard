@@ -25,7 +25,7 @@ jq(function(){
     );
     var upload_url = jq('base').attr('href').split('/');
     cutted = upload_url.splice(-1,1); // cut off last element
-    jq('.portletBillboardActions ul a#uploadimage').prepOverlay(
+    jq('.portletBillboardActions ul a.uploadOverlay').prepOverlay(
         {
             subtype: 'ajax',
             filter: common_content_filter,

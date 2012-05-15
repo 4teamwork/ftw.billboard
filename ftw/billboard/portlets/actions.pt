@@ -23,12 +23,12 @@
                 </a>
             </li>
             <li tal:condition="python: 'Image' in view.allowed_types">
-                <a href="./add_image" i18n:translate="" id="uploadimage">
+                <a href="./add_image" i18n:translate="" id="uploadimage" class="uploadOverlay">
                     Add Picture
                 </a>
             </li>
             <li tal:condition="python: 'File' in view.allowed_types">
-                <a href="./add_file" i18n:translate="" id="uploadfile">
+                <a href="./add_file" i18n:translate="" id="uploadfile" class="uploadOverlay">
                     Add File
                 </a>
             </li>

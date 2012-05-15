@@ -34,7 +34,7 @@ msgid "Add File"
 msgstr ""
 
 #: ./ftw/billboard/portlets/actions.pt:26
-msgid "Add Picture"
+msgid "Add Image"
 msgstr ""
 
 #: ./ftw/billboard/profiles/default/types/BillboardAd.xml
