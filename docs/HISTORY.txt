@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 
-1.1.7 (unreleased)
+1.1.7 (2012-05-15)
 ------------------
 
 - Fix add image translation and use overlay for adding a file.
