@@ -17,7 +17,7 @@ Install
 
   [instance]
   eggs =
-    ftw.pdfgenerator
+    ftw.billboard
 
 - Run buildout
 
