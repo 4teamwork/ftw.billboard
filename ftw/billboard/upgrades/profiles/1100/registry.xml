@@ -1,16 +1,10 @@
 <registry>
-    <record name="ftw.billboard.days_to_expire">
-        <field type="plone.registry.field.Int">
-            <title>Ads default expires</title>
-            <description>How many days is a ad public by default?</description>
-        </field>
-        <value>30</value>
-    </record>
     <record name="ftw.billboard.currency">
         <field type="plone.registry.field.TextLine">
             <title>Currency</title>
             <description>Defines the default Currency for this Site</description>
         </field>
+        <value>SFr.</value>
     </record>
     <record name="ftw.billboard.decimalmark">
         <field type="plone.registry.field.TextLine">

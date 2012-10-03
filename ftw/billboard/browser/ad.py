@@ -1,7 +1,9 @@
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
-
+from zope.component import getUtility
+from plone.registry.interfaces import IRegistry
+from ftw.billboard.helpers import format_currency
 
 class AdView(BrowserView):
     """Shows a billboard ad."""
@@ -42,3 +44,12 @@ class AdView(BrowserView):
                     title=brain.Title,
                     url=brain.getURL()))
         return files
+
+    def get_readable_price(self):
+        registry = getUtility(IRegistry)
+        currency = registry.records['ftw.billboard.currency']
+        decimal_mark = registry.records['ftw.billboard.decimalmark']
+        thousandsseperator = registry.records['ftw.billboard.thousandsseparator']
+        formated_value = format_currency(self.context.getPrice(),
+            decimal_mark=decimal_mark.value, thousands_separator=thousandsseperator.value)
+        return formated_value + ' '+currency.value

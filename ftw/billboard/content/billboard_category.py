@@ -47,7 +47,6 @@ BillboardCategorySchema = folder.ATFolderSchema.copy() + atapi.Schema((
                 )
             ),
         ))
-
 # Set storage on fields copied from ATFolderSchema, making sure
 # they work well with the python bridge properties.
 

@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="ftw.billboard">
+
+    <genericsetup:upgradeStep
+        title="Add Registry Records"
+        description=""
+        source="0.1"
+        destination="1100"
+        handler="ftw.billboard.upgrades.to1100.AddRegistryRecords"
+        profile="ftw.billboard:default"
+        />
+
+    <genericsetup:registerProfile
+        name="1100"
+        title="ftw.billboard.upgrades.1100"
+        description=""
+        directory="profiles/1100"
+        for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+</configure>
