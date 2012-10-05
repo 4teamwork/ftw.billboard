@@ -13,6 +13,11 @@ class FtwBillboardLayer(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML
+        import plone.app.registry
+        xmlconfig.file(
+            'configure.zcml', plone.app.registry,
+                context=configurationContext)
+
         import ftw.billboard
 
         xmlconfig.file(
@@ -26,6 +31,7 @@ class FtwBillboardLayer(PloneSandboxLayer):
 
     def setUpPloneSite(self, portal):
         # Install into Plone site using portal_setup
+        applyProfile(portal, 'plone.app.registry:default')
         applyProfile(portal, 'ftw.billboard:default')
 
         setRoles(portal, TEST_USER_ID, ['Manager'])
