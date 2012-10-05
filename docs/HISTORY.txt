@@ -5,13 +5,20 @@ CHANGELOG
 1.1.9 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Make displaying currency of billboard ads configurable per site.
+  In portal_registry there are three new configuration options:
+
+  - name or symbol of the currency
+  - character for seperating floating numbers
+  - thousands seperator for grouping large numbers
+  [tschanzt]
 
 
 1.1.8 (2012-05-15)
 ------------------
 
-- Fix actions portlet transaltions
+- Fix actions portlet translations.
+  [mathias.leimgruber]
 
 
 1.1.7 (2012-05-15)
