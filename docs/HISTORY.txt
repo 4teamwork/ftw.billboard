@@ -2,8 +2,8 @@ CHANGELOG
 =========
 
 
-1.1.9 (unreleased)
-------------------
+1.2 (unreleased)
+----------------
 
 - Make displaying currency of billboard ads configurable per site.
   In portal_registry there are three new configuration options:

@@ -7,16 +7,16 @@
         title="Add Registry Records"
         description=""
         source="0.1"
-        destination="1100"
-        handler="ftw.billboard.upgrades.to1100.AddRegistryRecords"
+        destination="1200"
+        handler="ftw.billboard.upgrades.to1200.AddRegistryRecords"
         profile="ftw.billboard:default"
         />
 
     <genericsetup:registerProfile
-        name="1100"
-        title="ftw.billboard.upgrades.1100"
+        name="1200"
+        title="ftw.billboard.upgrades.1200"
         description=""
-        directory="profiles/1100"
+        directory="profiles/1200"
         for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />

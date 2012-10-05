@@ -5,4 +5,4 @@ class AddRegistryRecords(UpgradeStep):
 
     def __call__(self):
         self.setup_install_profile(
-            'profile-ftw.billboard.upgrades:1100')
+            'profile-ftw.billboard.upgrades:1200')
