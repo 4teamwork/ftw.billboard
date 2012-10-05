@@ -1,5 +1,5 @@
 from unittest import TestCase
-from ftw.billboard.utils import format_currency
+from ftw.billboard.helpers import format_currency
 
 
 class TestNumberFormatting(TestCase):
