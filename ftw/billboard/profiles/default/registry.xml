@@ -11,6 +11,7 @@
             <title>Currency</title>
             <description>Defines the default Currency for this Site</description>
         </field>
+        <value>SFr.</value>
     </record>
     <record name="ftw.billboard.decimalmark">
         <field type="plone.registry.field.TextLine">
@@ -26,5 +27,5 @@
         </field>
         <value>'</value>
     </record>
-    
+
 </registry>
