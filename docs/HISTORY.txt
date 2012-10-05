@@ -11,6 +11,7 @@ CHANGELOG
   - name or symbol of the currency
   - character for seperating floating numbers
   - thousands seperator for grouping large numbers
+
   [tschanzt]
 
 
