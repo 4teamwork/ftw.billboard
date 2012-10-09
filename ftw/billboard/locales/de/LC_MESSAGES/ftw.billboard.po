@@ -71,7 +71,7 @@ msgstr "Validierung gescheitert ($name: keine Telefonnummer)"
 #. Default: "Leave blank "
 #: ./ftw/billboard/content/billboardad.py:47
 msgid "help_price"
-msgstr "Preis ohne Währung eingeben. Wenn nicht SFr leer lassen und in Beschreibung angeben."
+msgstr "Preis ohne Währung eingeben."
 
 #. Default: "Billboard Actions portlet"
 #: ./ftw/billboard/portlets/actions.py:20
@@ -136,5 +136,3 @@ msgstr "Bitte eine Datei auswählen"
 #: ./ftw/billboard/browser/category.pt:36
 msgid "no ads"
 msgstr "Keine Anzeigen gefunden"
-
-
