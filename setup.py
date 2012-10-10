@@ -44,6 +44,7 @@ setup(name='ftw.billboard',
       install_requires=[
         'plone.testing',
         'setuptools',
+        'ftw.colorbox',
         'ftw.upgrade',
         'plone.app.registry',
         ],

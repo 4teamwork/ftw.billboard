@@ -5,7 +5,8 @@ CHANGELOG
 1.2.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use colorbox to display images in overlay.
+  [Julian Infanger]
 
 
 1.2.1 (2012-10-17)
