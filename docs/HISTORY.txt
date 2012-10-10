@@ -5,6 +5,9 @@ CHANGELOG
 1.2.1 (unreleased)
 ------------------
 
+- Reindex file after uploading. Add class to button in simple upload form.
+  [Julian Infanger]
+
 - Updated help text for price in billboard ad. Fixed english in registry.
   [Julian Infanger]
 
