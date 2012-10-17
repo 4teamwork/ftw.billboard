@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 
-1.2.1 (unreleased)
+1.2.1 (2012-10-17)
 ------------------
 
 - Updated help text for price in billboard ad. Fixed english in registry.
