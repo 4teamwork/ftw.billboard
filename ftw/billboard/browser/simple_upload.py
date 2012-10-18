@@ -31,6 +31,7 @@ class AddFile(BrowserView):
                                        title=upload_file.filename)
             new_file = self.context.get(file_id)
             new_file.getField(self.field_name).set(new_file, upload_file)
+            new_file.reindexObject()
             return self.request.response.redirect('.')
         return self.template()
 
