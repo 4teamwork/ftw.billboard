@@ -49,7 +49,4 @@ jq(function(){
             width:'50%'
         }
     );
-    jq('.overlayImage').prepOverlay({
-        subtype: 'image'
-    });
 });

@@ -44,7 +44,7 @@
                         <th i18n:translate="label_images">Images</th>
                         <td>
                             <p tal:repeat="image images">
-                                <a tal:attributes="href string:${image}/image_large" class="overlayImage">
+                                <a tal:attributes="href string:${image}/image_large" class="colorboxLink" rel="ad">
                                     <img tal:attributes="src string:${image}/image_thumb"
                                          class="billboardAdImage"
                                          alt="" />
