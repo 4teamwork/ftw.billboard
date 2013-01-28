@@ -24,6 +24,7 @@ setup(name='ftw.billboard',
       classifiers=[
         'Framework :: Plone',
         'Framework :: Plone :: 4.1',
+        'Framework :: Plone :: 4.2',
         'Framework :: Zope2',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
