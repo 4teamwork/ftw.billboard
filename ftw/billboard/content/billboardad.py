@@ -123,7 +123,7 @@ class BillboardAd(folder.ATFolder):
     def getDefaultContactMail(self):
         """Return the mail of the logged-in user"""
         member = self.portal_membership.getAuthenticatedMember()
-        return member.getProperty('email', '')
+        return member.getProperty('email', '').lower()
 
     def getDefaultContactName(self):
         """Return the URL of the logged-in user"""

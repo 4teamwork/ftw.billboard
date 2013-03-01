@@ -1,4 +1,4 @@
-from plone.app.testing import IntegrationTesting
+from plone.app.testing import IntegrationTesting, FunctionalTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import applyProfile
@@ -41,3 +41,6 @@ class FtwBillboardLayer(PloneSandboxLayer):
 FTW_BILLBOARD_FIXTURE = FtwBillboardLayer()
 FTW_BILLBOARD_INTEGRATION_TESTING = IntegrationTesting(
     bases=(FTW_BILLBOARD_FIXTURE,), name="FtwBillboard:Integration")
+FTW_BILLBOARD_FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(FTW_BILLBOARD_FIXTURE,),
+    name="ftw.contenttemplates:functional")
