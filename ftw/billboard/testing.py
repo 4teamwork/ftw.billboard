@@ -43,4 +43,4 @@ FTW_BILLBOARD_INTEGRATION_TESTING = IntegrationTesting(
     bases=(FTW_BILLBOARD_FIXTURE,), name="FtwBillboard:Integration")
 FTW_BILLBOARD_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FTW_BILLBOARD_FIXTURE,),
-    name="ftw.contenttemplates:functional")
+    name="ftw.billboard:functional")

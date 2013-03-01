@@ -18,7 +18,7 @@ class TestSetup(unittest.TestCase):
         self.browser = Browser(self.layer['app'])
         folder = portal[portal.invokeFactory(id='folder',
                                              type_name='Folder')]
-        # create templates folder
+
         self.bc1 = folder[folder.invokeFactory(
                 id='bc1',
                 type_name='BillboardCategory')]
