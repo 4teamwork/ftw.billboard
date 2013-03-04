@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 
-1.2.2 (unreleased)
+1.2.2 (2013-03-04)
 ------------------
 
 - Use lower email address in billboardad as default contact mail.
