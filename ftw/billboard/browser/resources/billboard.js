@@ -1,7 +1,7 @@
 var common_content_filter = '#content>*:not(div.configlet),dl.portalMessage.error,dl.portalMessage.info';
-jq(function(){
+$(function(){
     function noformerrorshow(el, noform) {
-        var o = jq(el),
+        var o = $(el),
             emsg = o.find('dl.portalMessage.error');
         if (emsg.length) {
             o.children().replaceWith(emsg);
@@ -10,9 +10,9 @@ jq(function(){
             return noform;
         }
     }
-    var base_url = jq('base').attr('href').split('/');
+    var base_url = $('base').attr('href').split('/');
     var cutted = base_url.splice(-2,2); // cut off last two elements
-    jq('.portletBillboardActions ul a#deleteentry').prepOverlay(
+    $('.portletBillboardActions ul a#deleteentry').prepOverlay(
         {
             subtype: 'ajax',
             filter: common_content_filter,
@@ -23,9 +23,9 @@ jq(function(){
             width:'50%'
         }
     );
-    var upload_url = jq('base').attr('href').split('/');
+    var upload_url = $('base').attr('href').split('/');
     cutted = upload_url.splice(-1,1); // cut off last element
-    jq('.portletBillboardActions ul a.uploadOverlay').prepOverlay(
+    $('.portletBillboardActions ul a.uploadOverlay').prepOverlay(
         {
             subtype: 'ajax',
             filter: common_content_filter,
@@ -36,9 +36,9 @@ jq(function(){
             width:'50%'
         }
     );
-    base_url = jq('base').attr('href').split('/');
+    base_url = $('base').attr('href').split('/');
     cutted = base_url.splice(-1,1); // cut off last element
-    jq('a.deleteImage').prepOverlay(
+    $('a.deleteImage').prepOverlay(
         {
             subtype: 'ajax',
             filter: common_content_filter,
