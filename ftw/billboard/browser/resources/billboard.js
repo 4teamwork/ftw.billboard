@@ -19,7 +19,7 @@ $(function(){
             formselector: 'form',
             noform: function(el) {return noformerrorshow(el, 'redirect');},
             redirect: base_url.join('/'),
-            closeselector: '[name=form.button.Cancel]',
+            closeselector: '[name="form.button.Cancel"]',
             width:'50%'
         }
     );
@@ -32,7 +32,7 @@ $(function(){
             formselector: 'form',
             noform: function(el) {return noformerrorshow(el, 'redirect');},
             redirect: upload_url.join('/'),
-            closeselector: '[name=form.button.Cancel]',
+            closeselector: $('[name="form.button.Cancel"]'),
             width:'50%'
         }
     );
@@ -45,7 +45,7 @@ $(function(){
             formselector: 'form',
             noform: function(el) {return noformerrorshow(el, 'redirect');},
             redirect: base_url.join('/'),
-            closeselector: '[name=form.button.Cancel]',
+            closeselector: '[name="form.button.Cancel"]',
             width:'50%'
         }
     );

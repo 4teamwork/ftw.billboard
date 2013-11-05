@@ -5,6 +5,9 @@ CHANGELOG
 1.2.4 (unreleased)
 ------------------
 
+- Fix close selector for overlay in billboardads.
+  [Julian Infanger]
+
 - Replace jq with $ in javascript file.
   [Julian Infanger]
 
