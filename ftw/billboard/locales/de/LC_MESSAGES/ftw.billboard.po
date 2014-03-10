@@ -61,7 +61,7 @@ msgstr "Anzeige bearbeiten"
 
 #: ./ftw/billboard/content/billboardad.py:34
 msgid "Please accept the conditions."
-msgstr "Bitte akzeptieren Sie die Publikations Bedingungen"
+msgstr "Bitte akzeptieren Sie die Publikationsbedingungen"
 
 #: ./ftw/billboard/validators.py:41
 msgid "Validation failed($name: no valid email)"
@@ -79,7 +79,7 @@ msgstr "Preis ohne Währung eingeben."
 #. Default: "Conditions"
 #: ./ftw/billboard/content/billboardad.py:85
 msgid "label_accept_conditions"
-msgstr "Publikations Bedingungen akzetpieren"
+msgstr "Publikationsbedingungen akzeptieren"
 
 #. Default: "Billboard Actions portlet"
 #: ./ftw/billboard/portlets/actions.py:20
@@ -89,7 +89,7 @@ msgstr "Billboard Aktionen"
 #. Default: "Billboard conditions"
 #: ./ftw/billboard/content/billboard_category.py:33
 msgid "label_conditions"
-msgstr "Publikations Bedingungen"
+msgstr "Publikationsbedingungen"
 
 #. Default: "Contact E-Mail"
 #: ./ftw/billboard/content/billboardad.py:73

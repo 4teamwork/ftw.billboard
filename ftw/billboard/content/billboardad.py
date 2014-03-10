@@ -11,7 +11,6 @@ from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import schemata
 from Products.CMFCore.permissions import ManagePortal
 from Products.validation import validation
-from Products.validation.config import validation
 from Products.validation.interfaces import ivalidator
 from zope.component import getUtility
 from zope.interface import implements
@@ -37,7 +36,8 @@ validation.register(ConditionsValidator('acceptConditions'))
 
 
 BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
-    atapi.TextField('text',
+    atapi.TextField(
+        name='text',
         searchable=True,
         required=False,
         allowable_content_types=('text/html',),

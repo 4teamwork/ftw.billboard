@@ -1,17 +1,17 @@
 from AccessControl import ClassSecurityInfo
+from ftw.billboard import billboardMessageFactory as _
+from ftw.billboard.config import PROJECTNAME
+from ftw.billboard.config import TINYMCE_ALLOWED_BUTTONS
+from ftw.billboard.interfaces import IBillboardCategory
+from Products.Archetypes import atapi
 from Products.ATContentTypes.configuration import zconf
 from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import schemata
-from Products.Archetypes import atapi
 from Products.CMFCore.permissions import View
 from Products.validation import V_REQUIRED
 from Products.validation.config import validation
 from Products.validation.validators.SupplValidators import MaxSizeValidator
-from ftw.billboard import billboardMessageFactory as _
-from ftw.billboard.config import PROJECTNAME
-from ftw.billboard.interfaces import IBillboardCategory
 from zope.interface import implements
-from ftw.billboard.config import TINYMCE_ALLOWED_BUTTONS
 
 
 validation.register(MaxSizeValidator('checkImageMaxSize',
@@ -36,35 +36,35 @@ BillboardCategorySchema = folder.ATFolderSchema.copy() + atapi.Schema((
         ),
     ),
 
-        atapi.ImageField(
-            name='image',
-            required=False,
-            primary=True,
-            languageIndependent=True,
-            storage=atapi.AnnotationStorage(),
-            swallowResizeExceptions=zconf.swallowImageResizeExceptions.enable,
-            pil_quality=zconf.pil_config.quality,
-            pil_resize_algo=zconf.pil_config.resize_algo,
-            max_size=zconf.ATImage.max_image_dimension,
+    atapi.ImageField(
+        name='image',
+        required=False,
+        primary=True,
+        languageIndependent=True,
+        storage=atapi.AnnotationStorage(),
+        swallowResizeExceptions=zconf.swallowImageResizeExceptions.enable,
+        pil_quality=zconf.pil_config.quality,
+        pil_resize_algo=zconf.pil_config.resize_algo,
+        max_size=zconf.ATImage.max_image_dimension,
 
-            sizes={'large': (768, 768),
-                   'preview': (400, 400),
-                   'mini': (200, 200),
-                   'thumb': (128, 128),
-                   'tile': (64, 64),
-                   'icon': (32, 32),
-                   'listing': (16, 16),
-                   },
+        sizes={'large': (768, 768),
+               'preview': (400, 400),
+               'mini': (200, 200),
+               'thumb': (128, 128),
+               'tile': (64, 64),
+               'icon': (32, 32),
+               'listing': (16, 16),
+               },
 
-            validators=(
-                ('isNonEmptyFile', V_REQUIRED),
-                ('checkImageMaxSize', V_REQUIRED)),
-            widget=atapi.ImageWidget(
-                label=_(u"label_image", default=u"Image"),
-                show_content_type=False,
-                )
-            ),
-        ))
+        validators=(
+            ('isNonEmptyFile', V_REQUIRED),
+            ('checkImageMaxSize', V_REQUIRED)),
+        widget=atapi.ImageWidget(
+            label=_(u"label_image", default=u"Image"),
+            show_content_type=False,
+        )
+    ),
+))
 # Set storage on fields copied from ATFolderSchema, making sure
 # they work well with the python bridge properties.
 

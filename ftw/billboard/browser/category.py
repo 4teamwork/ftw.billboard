@@ -1,7 +1,7 @@
 from Acquisition import aq_inner
+from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from Products.CMFCore.utils import getToolByName
 
 
 class CategoryView(BrowserView):
@@ -28,8 +28,7 @@ class CategoryView(BrowserView):
                 path='/'.join(self.context.getPhysicalPath()),
                 portal_type='BillboardAd',
                 sort_on='created',
-                sort_order='descending',
-                )
+                sort_order='descending')
         else:
             translations = context.getTranslations().values()
             paths = ['/'.join(t[0].getPhysicalPath()) for t in translations]
@@ -38,5 +37,4 @@ class CategoryView(BrowserView):
                 portal_type='BillboardAd',
                 Language='all',
                 sort_on='created',
-                sort_order='descending',
-                )
+                sort_order='descending')

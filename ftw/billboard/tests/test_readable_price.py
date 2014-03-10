@@ -1,8 +1,9 @@
-from Products.CMFCore.utils import getToolByName
 from ftw.billboard.testing import FTW_BILLBOARD_INTEGRATION_TESTING
-import unittest2 as unittest
+from Products.CMFCore.utils import getToolByName
+from unittest2 import TestCase
 
-class ReadablePriceTestCase(unittest.TestCase):
+
+class ReadablePriceTestCase(TestCase):
     layer = FTW_BILLBOARD_INTEGRATION_TESTING
 
     def setUp(self):
@@ -18,7 +19,7 @@ class ReadablePriceTestCase(unittest.TestCase):
         portal = self.layer['portal']
         self.ad.price = '3485.55'
         ad_view = portal.restrictedTraverse('/'.join(
-                self.ad.getPhysicalPath()) + '/billboard_ad_view')
+            self.ad.getPhysicalPath()) + '/billboard_ad_view')
         readable_price = ad_view.get_readable_price()
         self.assertEqual(readable_price, "3'485.55 SFr.")
 
@@ -30,6 +31,6 @@ class ReadablePriceTestCase(unittest.TestCase):
         registry.records['ftw.billboard.thousandsseparator'].value = u'.'
         self.ad.price = '3485.55'
         ad_view = portal.restrictedTraverse('/'.join(
-                self.ad.getPhysicalPath()) + '/billboard_ad_view')
+            self.ad.getPhysicalPath()) + '/billboard_ad_view')
         readable_price = ad_view.get_readable_price()
         self.assertEqual(readable_price, u"3.485,55 \u20ac")

@@ -1,8 +1,8 @@
+from ftw.billboard.helpers import format_currency
+from plone.registry.interfaces import IRegistry
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from ftw.billboard.helpers import format_currency
-from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
 
 
@@ -27,8 +27,7 @@ class AdView(BrowserView):
         catalog = self.context.portal_catalog
         query = {
             'path': '/'.join(self.context.getPhysicalPath()),
-            'portal_type': 'Image',
-            }
+            'portal_type': 'Image'}
         for brain in catalog(query):
             elements.append(brain.getURL())
         return elements
@@ -39,11 +38,11 @@ class AdView(BrowserView):
         query = {
             'path': '/'.join(self.context.getPhysicalPath()),
             'portal_type': 'File',
-            }
+        }
         for brain in catalog(query):
             files.append(dict(
-                    title=brain.Title,
-                    url=brain.getURL()))
+                title=brain.Title,
+                url=brain.getURL()))
         return files
 
     def get_readable_price(self):
@@ -52,7 +51,8 @@ class AdView(BrowserView):
         decimal_mark = registry.records['ftw.billboard.decimalmark']
         thousandsseperator = registry.records[
             'ftw.billboard.thousandsseparator']
-        formated_value = format_currency(self.context.getPrice(),
+        formated_value = format_currency(
+            self.context.getPrice(),
             decimal_mark=decimal_mark.value,
             thousands_separator=thousandsseperator.value)
         return formated_value + ' ' + currency.value
