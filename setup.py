@@ -9,7 +9,6 @@ maintainer = 'Julian Infanger'
 tests_require = [
     'zope.testing',
     'plone.app.testing',
-    'plone.mocktestcase',
     ]
 
 
