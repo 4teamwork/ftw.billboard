@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-05-07 11:34+0000\n"
+"POT-Creation-Date: 2014-03-10 10:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,10 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: ftw.billboard\n"
 
 #: ./ftw/billboard/profiles/default/types/BillboardCategory.xml
 msgid "A folder which contain Billboard ads"
@@ -65,6 +62,10 @@ msgstr ""
 msgid "Edit Billboard Ad"
 msgstr ""
 
+#: ./ftw/billboard/content/billboardad.py:34
+msgid "Please accept the conditions."
+msgstr ""
+
 #: ./ftw/billboard/validators.py:41
 msgid "Validation failed($name: no valid email)"
 msgstr ""
@@ -74,8 +75,13 @@ msgid "Validation failed($name: no valid phone number)"
 msgstr ""
 
 #. Default: "Leave blank "
-#: ./ftw/billboard/content/billboardad.py:47
+#: ./ftw/billboard/content/billboardad.py:62
 msgid "help_price"
+msgstr ""
+
+#. Default: "Conditions"
+#: ./ftw/billboard/content/billboardad.py:85
+msgid "label_accept_conditions"
 msgstr ""
 
 #. Default: "Billboard Actions portlet"
@@ -83,8 +89,13 @@ msgstr ""
 msgid "label_billboardactions"
 msgstr ""
 
+#. Default: "Billboard conditions"
+#: ./ftw/billboard/content/billboard_category.py:33
+msgid "label_conditions"
+msgstr ""
+
 #. Default: "Contact E-Mail"
-#: ./ftw/billboard/content/billboardad.py:58
+#: ./ftw/billboard/content/billboardad.py:73
 msgid "label_contactmail"
 msgstr ""
 
@@ -103,7 +114,7 @@ msgstr ""
 
 #. Default: "Description"
 #: ./ftw/billboard/browser/ad.pt:39
-#: ./ftw/billboard/content/billboardad.py:35
+#: ./ftw/billboard/content/billboardad.py:50
 msgid "label_description"
 msgstr ""
 
@@ -113,7 +124,7 @@ msgid "label_files"
 msgstr ""
 
 #. Default: "Image"
-#: ./ftw/billboard/content/billboard_category.py:45
+#: ./ftw/billboard/content/billboard_category.py:63
 msgid "label_image"
 msgstr ""
 
@@ -123,22 +134,23 @@ msgid "label_images"
 msgstr ""
 
 #. Default: "Not allowed type (${types})"
-#: ./ftw/billboard/browser/simple_upload.py:43
+#: ./ftw/billboard/browser/simple_upload.py:44
 msgid "label_notallowedtype"
 msgstr ""
 
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:35
-#: ./ftw/billboard/content/billboardad.py:46
+#: ./ftw/billboard/content/billboardad.py:61
 msgid "label_price"
 msgstr ""
 
 #. Default: "Required field"
-#: ./ftw/billboard/browser/simple_upload.py:39
+#: ./ftw/billboard/browser/simple_upload.py:40
 msgid "label_required"
 msgstr ""
 
 #: ./ftw/billboard/browser/category.pt:36
 msgid "no ads"
 msgstr ""
+
 

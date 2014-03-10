@@ -56,3 +56,7 @@ class AdView(BrowserView):
             decimal_mark=decimal_mark.value,
             thousands_separator=thousandsseperator.value)
         return formated_value + ' ' + currency.value
+
+    def has_conditions(self):
+        # call conditions getter thru acquisition
+        return bool(self.context.getConditions())

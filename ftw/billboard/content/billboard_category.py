@@ -11,6 +11,7 @@ from ftw.billboard import billboardMessageFactory as _
 from ftw.billboard.config import PROJECTNAME
 from ftw.billboard.interfaces import IBillboardCategory
 from zope.interface import implements
+from ftw.billboard.config import TINYMCE_ALLOWED_BUTTONS
 
 
 validation.register(MaxSizeValidator('checkImageMaxSize',
@@ -18,6 +19,23 @@ validation.register(MaxSizeValidator('checkImageMaxSize',
 
 
 BillboardCategorySchema = folder.ATFolderSchema.copy() + atapi.Schema((
+    atapi.TextField(
+        name='conditions',
+        searchable=True,
+        required=False,
+        allowable_content_types=('text/html',),
+        default_content_type='text/html',
+        validators=('isTidyHtmlWithCleanup',),
+        default_output_type='text/x-html-safe',
+        default_input_type='text/html',
+        storage=atapi.AnnotationStorage(),
+        widget=atapi.RichWidget(
+            label=_(u"label_conditions", default=u"Billboard conditions"),
+            rows=15,
+            allow_buttons=TINYMCE_ALLOWED_BUTTONS,
+        ),
+    ),
+
         atapi.ImageField(
             name='image',
             required=False,
