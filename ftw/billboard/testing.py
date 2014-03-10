@@ -1,28 +1,33 @@
+from ftw.builder.session import BuilderSession
+from ftw.builder.testing import BUILDER_LAYER
+from ftw.builder.testing import functional_session_factory
+from ftw.builder.testing import set_builder_session_factory
+from plone.app.testing import applyProfile
 from plone.app.testing import IntegrationTesting, FunctionalTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
-from plone.app.testing import applyProfile
 from plone.app.testing import setRoles, TEST_USER_ID, TEST_USER_NAME, login
 from plone.testing import z2
 from zope.configuration import xmlconfig
+import ftw.billboard.tests.builders
 
 
 class FtwBillboardLayer(PloneSandboxLayer):
 
-    defaultBases = (PLONE_FIXTURE,)
+    defaultBases = (PLONE_FIXTURE, BUILDER_LAYER)
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML
         import plone.app.registry
         xmlconfig.file(
             'configure.zcml', plone.app.registry,
-                context=configurationContext)
+            context=configurationContext)
 
         import ftw.billboard
 
         xmlconfig.file(
             'configure.zcml', ftw.billboard,
-                context=configurationContext)
+            context=configurationContext)
 
         # installProduct() is *only* necessary for packages outside
         # the Products.* namespace which are also declared as Zope 2 products,
@@ -42,5 +47,6 @@ FTW_BILLBOARD_FIXTURE = FtwBillboardLayer()
 FTW_BILLBOARD_INTEGRATION_TESTING = IntegrationTesting(
     bases=(FTW_BILLBOARD_FIXTURE,), name="FtwBillboard:Integration")
 FTW_BILLBOARD_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(FTW_BILLBOARD_FIXTURE,),
+    bases=(FTW_BILLBOARD_FIXTURE,
+           set_builder_session_factory(functional_session_factory)),
     name="ftw.billboard:functional")
