@@ -3,7 +3,7 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
 from ftw.billboard import billboardMessageFactory as _
-from zope.app.container.interfaces import INameChooser
+from zope.container.interfaces import INameChooser
 
 
 class AddFile(BrowserView):
