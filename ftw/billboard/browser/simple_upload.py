@@ -1,9 +1,9 @@
-import os
+from ftw.billboard import billboardMessageFactory as _
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
-from ftw.billboard import billboardMessageFactory as _
 from zope.container.interfaces import INameChooser
+import os
 
 
 class AddFile(BrowserView):
@@ -24,20 +24,24 @@ class AddFile(BrowserView):
             if error:
                 status.addStatusMessage(error, type='error')
                 return self.template()
+
             chooser = INameChooser(self.context)
             file_id = chooser.chooseName(upload_file.filename, self)
             self.context.invokeFactory(self.create_type,
                                        file_id,
                                        title=upload_file.filename)
+
             new_file = self.context.get(file_id)
             new_file.getField(self.field_name).set(new_file, upload_file)
             new_file.reindexObject()
+
             return self.request.response.redirect('.')
         return self.template()
 
     def is_wrong_type(self, upload):
         if not upload:
             return _(u'label_required', default=u'Required field')
+
         else:
             _root, extension = os.path.splitext(upload.filename)
             if extension not in self.allowed_extensions:
@@ -45,6 +49,7 @@ class AddFile(BrowserView):
                     u'label_notallowedtype',
                     default=u'Not allowed type (${types})',
                     mapping={u'types': ', '.join(self.allowed_extensions)})
+
         return False
 
 

@@ -1,10 +1,10 @@
 from Acquisition import aq_inner
 from ftw.billboard import billboardMessageFactory as _
-from zope.interface import implements
-from zope.component import getMultiAdapter
-from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
+from plone.portlets.interfaces import IPortletDataProvider
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from zope.component import getMultiAdapter
+from zope.interface import implements
 
 
 class IActionsPortlet(IPortletDataProvider):
@@ -34,19 +34,22 @@ class Renderer(base.Renderer):
     def update(self):
         context = aq_inner(self.context)
         mtool = getMultiAdapter((context, self.request),
-                         name=u'plone_tools').membership()
+                                name=u'plone_tools').membership()
 
-        self.can_add = mtool.checkPermission('ftw.billboard: Add BillboardAd',
+        self.can_add = mtool.checkPermission(
+            'ftw.billboard: Add BillboardAd',
             context) and context.portal_type == 'BillboardCategory'
 
-        self.can_edit = mtool.checkPermission('Modify portal content',
+        self.can_edit = mtool.checkPermission(
+            'Modify portal content',
             context) and context.portal_type == 'BillboardAd'
 
-        self.can_del = mtool.checkPermission('Delete objects',
+        self.can_del = mtool.checkPermission(
+            'Delete objects',
             context) and context.portal_type == 'BillboardAd'
 
         self.allowed_types = [term.id for term in
-                             self.context.allowedContentTypes()]
+                              self.context.allowedContentTypes()]
 
     def available(self):
         if self.context.checkCreationFlag():

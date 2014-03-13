@@ -19,6 +19,14 @@
         class=".ad.AdView"
         permission="zope2.View"
         template="ad.pt"
+        allowed_attributes="has_conditions"
+        />
+
+    <browser:page
+        for="..interfaces.IBillboardAd"
+        name="billboard_conditions"
+        permission="zope2.View"
+        template="billboard_conditions.pt"
         />
 
     <browser:page

@@ -1,19 +1,17 @@
-"""Definition of the BillboardAd content type
-"""
-
 from AccessControl import ClassSecurityInfo
 from DateTime import DateTime
-from Products.ATContentTypes.content import folder
-from Products.ATContentTypes.content import schemata
-from Products.Archetypes import atapi
-from Products.CMFCore.permissions import ManagePortal
-from Products.validation.config import validation
 from ftw.billboard import billboardMessageFactory as _
 from ftw.billboard import validators
 from ftw.billboard.config import PROJECTNAME
 from ftw.billboard.config import TINYMCE_ALLOWED_BUTTONS
 from ftw.billboard.interfaces import IBillboardAd
 from plone.registry.interfaces import IRegistry
+from Products.Archetypes import atapi
+from Products.ATContentTypes.content import folder
+from Products.ATContentTypes.content import schemata
+from Products.CMFCore.permissions import ManagePortal
+from Products.validation import validation
+from Products.validation.interfaces import ivalidator
 from zope.component import getUtility
 from zope.interface import implements
 
@@ -21,8 +19,25 @@ from zope.interface import implements
 validation.register(validators.MailValidator('isEmail'))
 
 
+class ConditionsValidator():
+    implements(ivalidator)
+
+    def __init__(self, name):
+        self.name = name
+
+    def __call__(self, value, *args, **kwargs):
+        instance = kwargs.get('instance', None)
+
+        conditions = bool(instance.getConditions())
+        if conditions and not value:
+            return _('Please accept the conditions.')
+
+validation.register(ConditionsValidator('acceptConditions'))
+
+
 BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
-    atapi.TextField('text',
+    atapi.TextField(
+        name='text',
         searchable=True,
         required=False,
         allowable_content_types=('text/html',),
@@ -60,6 +75,23 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         ),
     ),
 
+    atapi.BooleanField(
+        name='acceptConditions',
+        schemata='default',
+        required=False,
+        default=False,
+        validators=('acceptConditions', ),
+        widget=atapi.BooleanWidget(
+            label=_(u'label_accept_conditions', default='Conditions'),
+            description=_(
+                u'help_accept_conditions',
+                default='Please accept the <a target="_blank" '
+                        'href="./billboard_conditions">'
+                        'conditions<a/>.')
+        ),
+    ),
+
+
 ))
 
 # Set storage on fields copied from ATFolderSchema, making sure
@@ -92,6 +124,11 @@ BillboardAdSchema['rights'].write_permission = ManagePortal
 schemata.finalizeATCTSchema(BillboardAdSchema,
                             folderish=True,
                             moveDiscussion=False)
+
+
+# Set condition on acceptConditions field
+BillboardAdSchema['acceptConditions'].widget.setCondition(
+    'python: here.restrictedTraverse("@@billboard_ad_view").has_conditions()')
 
 
 class BillboardAd(folder.ATFolder):

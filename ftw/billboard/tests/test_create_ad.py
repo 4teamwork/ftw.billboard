@@ -1,13 +1,13 @@
 from ftw.billboard.testing import FTW_BILLBOARD_FUNCTIONAL_TESTING
-from plone.app.testing import TEST_USER_ID, TEST_USER_NAME, TEST_USER_PASSWORD
 from plone.app.testing import login, setRoles
+from plone.app.testing import TEST_USER_ID, TEST_USER_NAME, TEST_USER_PASSWORD
 from plone.testing.z2 import Browser
 from Products.CMFCore.utils import getToolByName
+from unittest2 import TestCase
 import transaction
-import unittest2 as unittest
 
 
-class TestSetup(unittest.TestCase):
+class TestSetup(TestCase):
 
     layer = FTW_BILLBOARD_FUNCTIONAL_TESTING
 
@@ -20,8 +20,8 @@ class TestSetup(unittest.TestCase):
                                              type_name='Folder')]
 
         self.bc1 = folder[folder.invokeFactory(
-                id='bc1',
-                type_name='BillboardCategory')]
+            id='bc1',
+            type_name='BillboardCategory')]
 
         # Update email property
         mtool = getToolByName(self.bc1, 'portal_membership')
@@ -32,11 +32,12 @@ class TestSetup(unittest.TestCase):
 
     def _open_url(self, url):
         self.browser.addHeader('Authorization', 'Basic %s:%s' % (
-                TEST_USER_NAME, TEST_USER_PASSWORD))
+            TEST_USER_NAME, TEST_USER_PASSWORD))
         self.browser.open(url)
 
     def test_creation(self):
-        self._open_url("%s/createObject?type_name=BillboardAd" % self.bc1.absolute_url())
+        self._open_url("%s/createObject?type_name=BillboardAd" %
+                       self.bc1.absolute_url())
         # check for email email address
         self.assertEqual(
             self.browser.getControl(name='contactMail').value,

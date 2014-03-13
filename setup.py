@@ -9,6 +9,8 @@ maintainer = 'Julian Infanger'
 tests_require = [
     'zope.testing',
     'plone.app.testing',
+    'ftw.builder',
+    'ftw.testbrowser'
     ]
 
 
