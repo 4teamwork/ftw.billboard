@@ -5,6 +5,9 @@ CHANGELOG
 1.2.5 (unreleased)
 ------------------
 
+- Removed broken image in ads view.
+  [Julian Infanger]
+
 - Implement billboard conditions.
   [mathias.leimgruber]
 
