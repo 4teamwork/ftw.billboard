@@ -80,7 +80,6 @@
                     <tr>
                         <th i18n:translate="">Contact</th>
                         <td>
-                            <img tal:attributes="src string:${portal_url}/mail_icon.gif" alt="" />
                             <a tal:define="mail context/getContactMail"
                                tal:attributes="href string:mailto:${mail}" tal:content="mail" />
                         </td>
