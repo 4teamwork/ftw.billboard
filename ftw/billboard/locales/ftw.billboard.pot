@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-10 10:04+0000\n"
+"POT-Creation-Date: 2014-05-20 08:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Edit Billboard Ad"
 msgstr ""
 
-#: ./ftw/billboard/content/billboardad.py:34
+#: ./ftw/billboard/content/billboardad.py:33
 msgid "Please accept the conditions."
 msgstr ""
 
@@ -72,6 +72,11 @@ msgstr ""
 
 #: ./ftw/billboard/validators.py:19
 msgid "Validation failed($name: no valid phone number)"
+msgstr ""
+
+#. Default: "Please accept the <a target=\"_blank\" href=\"./billboard_conditions\">conditions<a/>."
+#: ./ftw/billboard/content/billboardad.py:86
+msgid "help_accept_conditions"
 msgstr ""
 
 #. Default: "Leave blank "
@@ -90,6 +95,7 @@ msgid "label_billboardactions"
 msgstr ""
 
 #. Default: "Billboard conditions"
+#: ./ftw/billboard/browser/billboard_conditions.pt:17
 #: ./ftw/billboard/content/billboard_category.py:33
 msgid "label_conditions"
 msgstr ""
@@ -134,7 +140,7 @@ msgid "label_images"
 msgstr ""
 
 #. Default: "Not allowed type (${types})"
-#: ./ftw/billboard/browser/simple_upload.py:44
+#: ./ftw/billboard/browser/simple_upload.py:48
 msgid "label_notallowedtype"
 msgstr ""
 
@@ -145,7 +151,7 @@ msgid "label_price"
 msgstr ""
 
 #. Default: "Required field"
-#: ./ftw/billboard/browser/simple_upload.py:40
+#: ./ftw/billboard/browser/simple_upload.py:43
 msgid "label_required"
 msgstr ""
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2014-03-10 10:04+0000\n"
+"POT-Creation-Date: 2014-05-20 08:42+0000\n"
 "PO-Revision-Date: 2010-08-03 14:05+0000\n"
 "Last-Translator: Julian Infanger <julian.infanger@4teamwork.ch>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgstr "Anzeige löschen"
 msgid "Edit Billboard Ad"
 msgstr "Anzeige bearbeiten"
 
-#: ./ftw/billboard/content/billboardad.py:34
+#: ./ftw/billboard/content/billboardad.py:33
 msgid "Please accept the conditions."
 msgstr "Bitte akzeptieren Sie die Publikationsbedingungen"
 
@@ -70,6 +70,11 @@ msgstr "Validierung gescheitert ($name: keine gültigge E-Mail Adresse)"
 #: ./ftw/billboard/validators.py:19
 msgid "Validation failed($name: no valid phone number)"
 msgstr "Validierung gescheitert ($name: keine Telefonnummer)"
+
+#. Default: "Please accept the <a target=\"_blank\" href=\"./billboard_conditions\">conditions<a/>."
+#: ./ftw/billboard/content/billboardad.py:86
+msgid "help_accept_conditions"
+msgstr "Bitte akzeptieren Sie die <a target=\"_blank\" href=\"./billboard_conditions\">Nutzungsbedingungen<a/>."
 
 #. Default: "Leave blank "
 #: ./ftw/billboard/content/billboardad.py:62
@@ -87,6 +92,7 @@ msgid "label_billboardactions"
 msgstr "Billboard Aktionen"
 
 #. Default: "Billboard conditions"
+#: ./ftw/billboard/browser/billboard_conditions.pt:17
 #: ./ftw/billboard/content/billboard_category.py:33
 msgid "label_conditions"
 msgstr "Publikationsbedingungen"
@@ -131,7 +137,7 @@ msgid "label_images"
 msgstr "Bilder"
 
 #. Default: "Not allowed type (${types})"
-#: ./ftw/billboard/browser/simple_upload.py:44
+#: ./ftw/billboard/browser/simple_upload.py:48
 msgid "label_notallowedtype"
 msgstr "Ungültiger Inhaltstyp (${types})"
 
@@ -142,12 +148,10 @@ msgid "label_price"
 msgstr "Preis"
 
 #. Default: "Required field"
-#: ./ftw/billboard/browser/simple_upload.py:40
+#: ./ftw/billboard/browser/simple_upload.py:43
 msgid "label_required"
 msgstr "Bitte eine Datei auswählen"
 
 #: ./ftw/billboard/browser/category.pt:36
 msgid "no ads"
 msgstr "Keine Anzeigen gefunden"
-
-
