@@ -32,6 +32,7 @@ BillboardCategorySchema = folder.ATFolderSchema.copy() + atapi.Schema((
         widget=atapi.RichWidget(
             label=_(u"label_conditions", default=u"Billboard conditions"),
             rows=15,
+            allow_file_upload=False,
             allow_buttons=TINYMCE_ALLOWED_BUTTONS,
         ),
     ),
