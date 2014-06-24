@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-05-20 08:42+0000\n"
+"POT-Creation-Date: 2014-06-24 06:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,17 +75,22 @@ msgid "Validation failed($name: no valid phone number)"
 msgstr ""
 
 #. Default: "Please accept the <a target=\"_blank\" href=\"./billboard_conditions\">conditions<a/>."
-#: ./ftw/billboard/content/billboardad.py:86
+#: ./ftw/billboard/content/billboardad.py:87
 msgid "help_accept_conditions"
 msgstr ""
 
 #. Default: "Leave blank "
-#: ./ftw/billboard/content/billboardad.py:62
+#: ./ftw/billboard/content/billboardad.py:63
 msgid "help_price"
 msgstr ""
 
+#. Default: "Allowed types are: ${types}"
+#: ./ftw/billboard/browser/simple_upload.py:60
+msgid "help_simple_upload"
+msgstr ""
+
 #. Default: "Conditions"
-#: ./ftw/billboard/content/billboardad.py:85
+#: ./ftw/billboard/content/billboardad.py:86
 msgid "label_accept_conditions"
 msgstr ""
 
@@ -101,7 +106,7 @@ msgid "label_conditions"
 msgstr ""
 
 #. Default: "Contact E-Mail"
-#: ./ftw/billboard/content/billboardad.py:73
+#: ./ftw/billboard/content/billboardad.py:74
 msgid "label_contactmail"
 msgstr ""
 
@@ -130,7 +135,7 @@ msgid "label_files"
 msgstr ""
 
 #. Default: "Image"
-#: ./ftw/billboard/content/billboard_category.py:63
+#: ./ftw/billboard/content/billboard_category.py:64
 msgid "label_image"
 msgstr ""
 
@@ -140,18 +145,18 @@ msgid "label_images"
 msgstr ""
 
 #. Default: "Not allowed type (${types})"
-#: ./ftw/billboard/browser/simple_upload.py:48
+#: ./ftw/billboard/browser/simple_upload.py:49
 msgid "label_notallowedtype"
 msgstr ""
 
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:35
-#: ./ftw/billboard/content/billboardad.py:61
+#: ./ftw/billboard/content/billboardad.py:62
 msgid "label_price"
 msgstr ""
 
 #. Default: "Required field"
-#: ./ftw/billboard/browser/simple_upload.py:43
+#: ./ftw/billboard/browser/simple_upload.py:44
 msgid "label_required"
 msgstr ""
 
