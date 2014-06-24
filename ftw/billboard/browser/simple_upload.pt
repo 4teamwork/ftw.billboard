@@ -25,6 +25,7 @@
     <metal:content-core fill-slot="content-core">
         <metal:content-core define-macro="content-core">
             <form tal:attributes="action string:${context/absolute_url}/${view/view_name}" method="post" enctype="multipart/form-data">
+                <div tal:content="view/description" class="discreet"/>
                 <br />
                 <input type="file" name="upload_file" />
                 <input type="hidden" name="form.submitted" value="1" />

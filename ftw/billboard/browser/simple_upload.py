@@ -3,6 +3,7 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.statusmessages.interfaces import IStatusMessage
 from zope.container.interfaces import INameChooser
+from zope.i18n import translate
 import os
 
 
@@ -51,6 +52,15 @@ class AddFile(BrowserView):
                     mapping={u'types': ', '.join(self.allowed_extensions)})
 
         return False
+
+    @property
+    def description(self):
+        types = self.allowed_extensions
+        types.sort()
+        return translate(_(u'help_simple_upload',
+                           default=u'Allowed types are: ${types}',
+                           mapping={'types': ', '.join(types)}),
+                         context=self.request)
 
 
 class AddImage(AddFile):

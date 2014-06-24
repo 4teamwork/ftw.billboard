@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2014-05-20 08:42+0000\n"
+"POT-Creation-Date: 2014-06-24 06:32+0000\n"
 "PO-Revision-Date: 2010-08-03 14:05+0000\n"
 "Last-Translator: Julian Infanger <julian.infanger@4teamwork.ch>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,17 +72,22 @@ msgid "Validation failed($name: no valid phone number)"
 msgstr "Validierung gescheitert ($name: keine Telefonnummer)"
 
 #. Default: "Please accept the <a target=\"_blank\" href=\"./billboard_conditions\">conditions<a/>."
-#: ./ftw/billboard/content/billboardad.py:86
+#: ./ftw/billboard/content/billboardad.py:87
 msgid "help_accept_conditions"
 msgstr "Bitte akzeptieren Sie die <a target=\"_blank\" href=\"./billboard_conditions\">Nutzungsbedingungen<a/>."
 
 #. Default: "Leave blank "
-#: ./ftw/billboard/content/billboardad.py:62
+#: ./ftw/billboard/content/billboardad.py:63
 msgid "help_price"
 msgstr "Preis ohne Währung eingeben."
 
+#. Default: "Allowed types are: ${types}"
+#: ./ftw/billboard/browser/simple_upload.py:60
+msgid "help_simple_upload"
+msgstr "Erlaubt sind: ${types}"
+
 #. Default: "Conditions"
-#: ./ftw/billboard/content/billboardad.py:85
+#: ./ftw/billboard/content/billboardad.py:86
 msgid "label_accept_conditions"
 msgstr "Publikationsbedingungen akzeptieren"
 
@@ -98,7 +103,7 @@ msgid "label_conditions"
 msgstr "Publikationsbedingungen"
 
 #. Default: "Contact E-Mail"
-#: ./ftw/billboard/content/billboardad.py:73
+#: ./ftw/billboard/content/billboardad.py:74
 msgid "label_contactmail"
 msgstr "Kontakt E-Mail"
 
@@ -127,7 +132,7 @@ msgid "label_files"
 msgstr "Dateien"
 
 #. Default: "Image"
-#: ./ftw/billboard/content/billboard_category.py:63
+#: ./ftw/billboard/content/billboard_category.py:64
 msgid "label_image"
 msgstr "Bild"
 
@@ -137,21 +142,23 @@ msgid "label_images"
 msgstr "Bilder"
 
 #. Default: "Not allowed type (${types})"
-#: ./ftw/billboard/browser/simple_upload.py:48
+#: ./ftw/billboard/browser/simple_upload.py:49
 msgid "label_notallowedtype"
 msgstr "Ungültiger Inhaltstyp (${types})"
 
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:35
-#: ./ftw/billboard/content/billboardad.py:61
+#: ./ftw/billboard/content/billboardad.py:62
 msgid "label_price"
 msgstr "Preis"
 
 #. Default: "Required field"
-#: ./ftw/billboard/browser/simple_upload.py:43
+#: ./ftw/billboard/browser/simple_upload.py:44
 msgid "label_required"
 msgstr "Bitte eine Datei auswählen"
 
 #: ./ftw/billboard/browser/category.pt:36
 msgid "no ads"
 msgstr "Keine Anzeigen gefunden"
+
+
