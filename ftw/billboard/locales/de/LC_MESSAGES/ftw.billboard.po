@@ -74,7 +74,7 @@ msgstr "Validierung gescheitert ($name: keine Telefonnummer)"
 #. Default: "Please accept the <a target=\"_blank\" href=\"./billboard_conditions\">conditions<a/>."
 #: ./ftw/billboard/content/billboardad.py:87
 msgid "help_accept_conditions"
-msgstr "Bitte akzeptieren Sie die <a target=\"_blank\" href=\"./billboard_conditions\">Nutzungsbedingungen<a/>."
+msgstr "Bitte akzeptieren Sie die <a target=\"_blank\" href=\"./billboard_conditions\">Publikationsbedingungen<a/>."
 
 #. Default: "Leave blank "
 #: ./ftw/billboard/content/billboardad.py:63
