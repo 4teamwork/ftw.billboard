@@ -13,8 +13,8 @@ from Products.CMFCore.permissions import ManagePortal
 from Products.validation import validation
 from Products.validation.interfaces import ivalidator
 from zope.component import getUtility
+from zope.i18n import translate
 from zope.interface import implements
-
 
 validation.register(validators.MailValidator('isEmail'))
 
@@ -30,7 +30,8 @@ class ConditionsValidator():
 
         conditions = bool(instance.getConditions())
         if conditions and not value:
-            return _('Please accept the conditions.')
+            return translate(_('Please accept the conditions.'),
+                             context=instance.REQUEST)
 
 validation.register(ConditionsValidator('acceptConditions'))
 
