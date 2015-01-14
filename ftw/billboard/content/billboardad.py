@@ -5,6 +5,7 @@ from ftw.billboard import validators
 from ftw.billboard.config import PROJECTNAME
 from ftw.billboard.config import TINYMCE_ALLOWED_BUTTONS
 from ftw.billboard.interfaces import IBillboardAd
+from ftw.calendarwidget.browser.widgets import FtwCalendarWidget
 from plone.registry.interfaces import IRegistry
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
@@ -65,6 +66,15 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         ),
     ),
 
+    atapi.DateTimeField(
+        name='adExpirationDate',
+        required=True,
+        widget=FtwCalendarWidget(
+            label=_(u'label_ad_expiration_date',
+                    default=u'Ad Expiration Date'),
+            description=_(u'help_ad_expiration_date', default=u''))
+    ),
+
     atapi.StringField(
         name='contactMail',
         schemata='default',
@@ -102,7 +112,7 @@ BillboardAdSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 BillboardAdSchema['title'].searchable = True
 BillboardAdSchema['title'].required = True
 BillboardAdSchema['excludeFromNav'].default = True
-BillboardAdSchema['expirationDate'].default_method = 'getDefaultExpirationDate'
+BillboardAdSchema['adExpirationDate'].default_method = 'getDefaultExpirationDate'
 BillboardAdSchema['effectiveDate'].default_method = 'getDefaultEffectiveDate'
 BillboardAdSchema['description'].widget.visible = -1
 

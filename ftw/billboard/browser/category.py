@@ -1,4 +1,5 @@
 from Acquisition import aq_inner
+from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -27,6 +28,7 @@ class CategoryView(BrowserView):
             return ct(
                 path='/'.join(self.context.getPhysicalPath()),
                 portal_type='BillboardAd',
+                get_ad_expiration_date={'query': DateTime(), 'range': 'min'},
                 sort_on='created',
                 sort_order='descending')
         else:
@@ -35,6 +37,7 @@ class CategoryView(BrowserView):
             return ct(
                 path=paths,
                 portal_type='BillboardAd',
+                get_ad_expiration_date={'query': DateTime(), 'range': 'min'},
                 Language='all',
                 sort_on='created',
                 sort_order='descending')

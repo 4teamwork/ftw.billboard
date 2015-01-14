@@ -39,4 +39,22 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
+    <genericsetup:registerProfile
+        name="1221"
+        title="ftw.billboard.upgrades.1221"
+        description=""
+        directory="profiles/1221"
+        for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <genericsetup:upgradeStep
+        title="Add separate expiration date to enable reactivation."
+        description=""
+        source="1220"
+        destination="1221"
+        handler="ftw.billboard.upgrades.to1221.AddExpirationDate"
+        profile="ftw.billboard:default"
+        />
+
 </configure>
