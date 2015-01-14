@@ -11,6 +11,8 @@ class AddExpirationDate(UpgradeStep):
 
     def __call__(self):
         self.setup_install_profile(
+            'profile-ftw.calendarwidget:default')
+        self.setup_install_profile(
             'profile-ftw.billboard.upgrades:1221')
 
         catalog = getToolByName(self.portal, 'portal_catalog')

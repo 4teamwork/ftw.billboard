@@ -14,6 +14,14 @@
         </metal:description>
     </metal:content-description>
 
+    <metal:css fill-slot="style_slot">
+      <style type="text/css">
+        .billboardAdsListing span.expired {
+          color: red;
+        }
+      </style>
+    </metal:css>
+
     <metal:content-core fill-slot="content-core">
         <metal:content-core define-macro="content-core">
             <div class="billboardAdsListing"
@@ -29,6 +37,11 @@
                                 <a tal:attributes="href ad/getURL"
                                    tal:content="ad/Title"
                                    />
+                                <span tal:condition="python: view.time > ad['getAdExpirationDate']"
+                                      i18n:translate=""
+                                      class="expired">
+                                  expired
+                                </span>
                             </td>
                         </tr>
                     </tal:ads>
