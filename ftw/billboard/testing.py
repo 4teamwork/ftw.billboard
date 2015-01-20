@@ -22,8 +22,12 @@ class FtwBillboardLayer(PloneSandboxLayer):
             'configure.zcml', plone.app.registry,
             context=configurationContext)
 
-        import ftw.billboard
+        import ftw.calendarwidget
+        xmlconfig.file('configure.zcml',
+                       ftw.calendarwidget,
+                       context=configurationContext)
 
+        import ftw.billboard
         xmlconfig.file(
             'configure.zcml', ftw.billboard,
             context=configurationContext)
@@ -36,6 +40,7 @@ class FtwBillboardLayer(PloneSandboxLayer):
     def setUpPloneSite(self, portal):
         # Install into Plone site using portal_setup
         applyProfile(portal, 'plone.app.registry:default')
+        applyProfile(portal, 'ftw.calendarwidget:default')
         applyProfile(portal, 'ftw.billboard:default')
 
         setRoles(portal, TEST_USER_ID, ['Manager'])

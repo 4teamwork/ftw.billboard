@@ -50,6 +50,14 @@
         template="category_listing.pt"
         />
 
+    <browser:page
+        for="Products.ATContentTypes.interface.folder.IATFolder"
+        name="my_ads"
+        permission="zope2.View"
+        class=".category.MyAdsView"
+        template="category_listing.pt"
+        />
+
     <browser:resourceDirectory
         name="ftw.billboard"
         directory="resources"

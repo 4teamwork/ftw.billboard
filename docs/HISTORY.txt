@@ -5,7 +5,8 @@ CHANGELOG
 1.3.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added separate expiration date.
+  [lknoepfel]
 
 
 1.3.4 (2014-07-11)

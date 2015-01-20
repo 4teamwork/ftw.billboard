@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2014-06-24 06:32+0000\n"
+"POT-Creation-Date: 2015-01-15 08:16+0000\n"
 "PO-Revision-Date: 2010-08-03 14:05+0000\n"
 "Last-Translator: Julian Infanger <julian.infanger@4teamwork.ch>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,11 +23,11 @@ msgstr "Aktionen"
 msgid "Add ${DYNAMIC_CONTENT}"
 msgstr "${DYNAMIC_CONTENT} hinzufügen"
 
-#: ./ftw/billboard/portlets/actions.pt:31
+#: ./ftw/billboard/portlets/actions.pt:36
 msgid "Add File"
 msgstr "Datei hinzufügen"
 
-#: ./ftw/billboard/portlets/actions.pt:26
+#: ./ftw/billboard/portlets/actions.pt:31
 msgid "Add Image"
 msgstr "Bild hinzufügen"
 
@@ -47,21 +47,25 @@ msgstr "Anzeige Kategorie"
 msgid "Contact"
 msgstr "Kontakt"
 
-#: ./ftw/billboard/portlets/actions.pt:11
+#: ./ftw/billboard/portlets/actions.pt:16
 msgid "Create new Billboard Ad"
 msgstr "Anzeige erstellen"
 
-#: ./ftw/billboard/portlets/actions.pt:21
+#: ./ftw/billboard/portlets/actions.pt:26
 msgid "Delete Billboard Ad"
 msgstr "Anzeige löschen"
 
-#: ./ftw/billboard/portlets/actions.pt:16
+#: ./ftw/billboard/portlets/actions.pt:21
 msgid "Edit Billboard Ad"
 msgstr "Anzeige bearbeiten"
 
-#: ./ftw/billboard/content/billboardad.py:33
+#: ./ftw/billboard/content/billboardad.py:34
 msgid "Please accept the conditions."
 msgstr "Bitte akzeptieren Sie die Publikationsbedingungen"
+
+#: ./ftw/billboard/portlets/actions.pt:11
+msgid "Show my Billboard Ads"
+msgstr "Meine Anzeigen"
 
 #: ./ftw/billboard/validators.py:41
 msgid "Validation failed($name: no valid email)"
@@ -71,13 +75,21 @@ msgstr "Validierung gescheitert ($name: keine gültigge E-Mail Adresse)"
 msgid "Validation failed($name: no valid phone number)"
 msgstr "Validierung gescheitert ($name: keine Telefonnummer)"
 
+#: ./ftw/billboard/browser/category.pt:40
+msgid "expired"
+msgstr "Abgelaufen"
+
 #. Default: "Please accept the <a target=\"_blank\" href=\"./billboard_conditions\">conditions<a/>."
-#: ./ftw/billboard/content/billboardad.py:87
+#: ./ftw/billboard/content/billboardad.py:98
 msgid "help_accept_conditions"
 msgstr "Bitte akzeptieren Sie die <a target=\"_blank\" href=\"./billboard_conditions\">Publikationsbedingungen<a/>."
 
+#: ./ftw/billboard/content/billboardad.py:75
+msgid "help_ad_expiration_date"
+msgstr "Die Anzeige wird nach diesem Datum nicht mehr angezeigt."
+
 #. Default: "Leave blank "
-#: ./ftw/billboard/content/billboardad.py:63
+#: ./ftw/billboard/content/billboardad.py:65
 msgid "help_price"
 msgstr "Preis ohne Währung eingeben."
 
@@ -87,9 +99,14 @@ msgid "help_simple_upload"
 msgstr "Erlaubt sind: ${types}"
 
 #. Default: "Conditions"
-#: ./ftw/billboard/content/billboardad.py:86
+#: ./ftw/billboard/content/billboardad.py:97
 msgid "label_accept_conditions"
 msgstr "Publikationsbedingungen akzeptieren"
+
+#. Default: "Ad Expiration Date"
+#: ./ftw/billboard/content/billboardad.py:73
+msgid "label_ad_expiration_date"
+msgstr "Ablaufdatum"
 
 #. Default: "Billboard Actions portlet"
 #: ./ftw/billboard/portlets/actions.py:20
@@ -103,7 +120,7 @@ msgid "label_conditions"
 msgstr "Publikationsbedingungen"
 
 #. Default: "Contact E-Mail"
-#: ./ftw/billboard/content/billboardad.py:74
+#: ./ftw/billboard/content/billboardad.py:85
 msgid "label_contactmail"
 msgstr "Kontakt E-Mail"
 
@@ -122,7 +139,7 @@ msgstr "Bild löschen"
 
 #. Default: "Description"
 #: ./ftw/billboard/browser/ad.pt:39
-#: ./ftw/billboard/content/billboardad.py:50
+#: ./ftw/billboard/content/billboardad.py:52
 msgid "label_description"
 msgstr "Beschreibung"
 
@@ -148,7 +165,7 @@ msgstr "Ungültiger Inhaltstyp (${types})"
 
 #. Default: "price"
 #: ./ftw/billboard/browser/ad.pt:35
-#: ./ftw/billboard/content/billboardad.py:62
+#: ./ftw/billboard/content/billboardad.py:64
 msgid "label_price"
 msgstr "Preis"
 
@@ -157,7 +174,7 @@ msgstr "Preis"
 msgid "label_required"
 msgstr "Bitte eine Datei auswählen"
 
-#: ./ftw/billboard/browser/category.pt:36
+#: ./ftw/billboard/browser/category.pt:49
 msgid "no ads"
 msgstr "Keine Anzeigen gefunden"
 
