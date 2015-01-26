@@ -1,6 +1,5 @@
-from ftw.upgrade import UpgradeStep
-from ftw.billboard.hooks import add_catalog_indexes
 from ftw.billboard.hooks import INDEXES
+from ftw.upgrade import UpgradeStep
 from Products.CMFCore.utils import getToolByName
 
 
@@ -16,12 +15,14 @@ class AddExpirationDate(UpgradeStep):
             'profile-ftw.billboard.upgrades:1221')
 
         catalog = getToolByName(self.portal, 'portal_catalog')
-        brains = catalog(portal_type='BillboardAd')
-        objs = [brain.getObject() for brain in brains]
-        for obj in objs:
+        indexes = catalog.indexes()
+        for name, meta_type in INDEXES:
+            if name not in indexes:
+                catalog.addIndex(name, meta_type)
+
+        query = {'portal_type': 'BillboardAd'}
+        for obj in self.objects(query, 'Reindex BillboardAds'):
             if obj.getExpirationDate():  # prevent deletion on mult. executions
                 obj.setAdExpirationDate(obj.getExpirationDate())
             obj.setExpirationDate(None)
             obj.reindexObject()
-
-        add_catalog_indexes(self.portal, INDEXES)
