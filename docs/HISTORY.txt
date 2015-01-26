@@ -5,6 +5,12 @@ CHANGELOG
 1.3.5 (unreleased)
 ------------------
 
+- Count only visible ads on category overview.
+  [mathias.leimgruber]
+
+- Improve prev. upgrade step by idexing only BillboardAds.
+  [mathias.leimgruber]
+
 - Added separate expiration date.
   [lknoepfel]
 
