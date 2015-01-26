@@ -17,7 +17,7 @@
                         <a tal:attributes="href category/getURL"
                            tal:content="category/Title">
                         </a>
-                        (<span tal:content="python:len(category.getObject().getFolderContents())" />)
+                        (<span tal:content="python:len(category.getObject().restrictedTraverse('@@billboard_category_view').get_ads())" />)
                     </li>
                 </ul>
             </div>

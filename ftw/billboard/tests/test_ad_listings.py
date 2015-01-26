@@ -42,6 +42,6 @@ class TestAdListings(TestCase):
         self.assertEquals(2,
                           len(ads))
 
-        # tests if the expired tag is also present
+        # tests if the expired ad is also present
         self.assertEquals('Expired Ad expired',
                           ads.first.css('td:last-child').first.text)
