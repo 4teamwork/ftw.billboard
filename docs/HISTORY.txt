@@ -5,7 +5,8 @@ CHANGELOG
 1.4.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- The Site Administrator has the same permissions as the Manager now.
+  [mbaechtold]
 
 
 1.4.0 (2015-02-09)
