@@ -57,4 +57,22 @@
         profile="ftw.billboard:default"
         />
 
+    <genericsetup:upgradeStep
+        title="Extend permissions for Site Administrator"
+        description=""
+        source="1221"
+        destination="1222"
+        handler="ftw.billboard.upgrades.to1222.PermissionsForSiteAdministrator"
+        profile="ftw.billboard:default"
+        />
+
+    <genericsetup:registerProfile
+        name="1222"
+        title="ftw.billboard.upgrades.1222"
+        description=""
+        directory="profiles/1222"
+        for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
 </configure>
