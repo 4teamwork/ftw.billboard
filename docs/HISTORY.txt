@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 
-1.4.1 (unreleased)
+1.4.1 (2015-03-25)
 ------------------
 
 - The Site Administrator has the same permissions as the Manager now.
