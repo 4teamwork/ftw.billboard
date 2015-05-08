@@ -33,7 +33,7 @@ setup(name='ftw.billboard',
         ],
 
       keywords='plone billboard ads advertisement ftw',
-      author='4teamwork GmbH',
+      author='4teamwork AG',
       author_email='mailto:info@4teamwork.ch',
       maintainer=maintainer,
       url='https://github.com/4teamwork/ftw.billboard',
