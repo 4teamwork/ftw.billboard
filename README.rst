@@ -28,9 +28,9 @@ Install
 Links
 =====
 
-- Package repository: https://github.com/4teamwork/ftw.billboard
-- Issue tracker: https://github.com/4teamwork/ftw.billboard/issues
-- Package on pypi: http://pypi.python.org/pypi/ftw.billboard
+- Github: https://github.com/4teamwork/ftw.billboard
+- Issues: https://github.com/4teamwork/ftw.billboard/issues
+- Pypi: http://pypi.python.org/pypi/ftw.billboard
 - Continuous integration: https://jenkins.4teamwork.ch/search?q=ftw.billboard
 
 
