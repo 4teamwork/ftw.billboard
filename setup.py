@@ -47,6 +47,7 @@ setup(name='ftw.billboard',
       install_requires=[
         'ftw.calendarwidget',
         'ftw.colorbox',
+        'ftw.lawgiver',
         'ftw.profilehook',
         'ftw.upgrade',
         'plone.api',

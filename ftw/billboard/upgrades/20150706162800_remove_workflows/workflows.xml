@@ -3,6 +3,10 @@
  <property
     name="title">Contains workflow definitions for your portal</property>
 
+
+ <object name="ftw_billboard_category_workflow" meta_type="Workflow" remove="True"/>
+ <object name="ftw_billboard_ad_workflow" meta_type="Workflow" remove="True"/>
+
  <bindings>
   <type type_id="BillboardCategory">
    <bound-workflow workflow_id="(Default)"/>
