@@ -4,10 +4,12 @@
 
     <permission name="ftw.billboard: Add BillboardAd" acquire="True">
       <role name="Contributor" />
+      <role name="Manager" />
     </permission>
 
     <permission name="ftw.billboard: Add BillboardCategory" acquire="True">
       <role name="Contributor" />
+      <role name="Manager" />
     </permission>
 
   </permissions>

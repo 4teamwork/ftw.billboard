@@ -22,6 +22,11 @@ class FtwBillboardLayer(PloneSandboxLayer):
             'configure.zcml', plone.app.registry,
             context=configurationContext)
 
+        import ftw.upgrade
+        xmlconfig.file(
+            'configure.zcml', ftw.upgrade,
+            context=configurationContext)
+
         import ftw.calendarwidget
         xmlconfig.file('configure.zcml',
                        ftw.calendarwidget,
