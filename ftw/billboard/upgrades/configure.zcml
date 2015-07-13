@@ -1,7 +1,10 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
     i18n_domain="ftw.billboard">
+
+    <include package="ftw.upgrade" file="meta.zcml" />
 
     <genericsetup:upgradeStep
         title="Add Registry Records"
@@ -73,6 +76,11 @@
         directory="profiles/1222"
         for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
         provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <upgrade-step:directory
+        profile="ftw.billboard:default"
+        directory="."
         />
 
 </configure>

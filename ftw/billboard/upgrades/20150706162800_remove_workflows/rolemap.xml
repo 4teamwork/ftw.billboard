@@ -2,12 +2,12 @@
 <rolemap>
   <permissions>
 
-    <permission name="ftw.billboard: Add BillboardAd" acquire="True">
+    <permission name="ftw.billboard: Add BillboardAd" acquire="False">
       <role name="Contributor" />
       <role name="Manager" />
     </permission>
 
-    <permission name="ftw.billboard: Add BillboardCategory" acquire="True">
+    <permission name="ftw.billboard: Add BillboardCategory" acquire="False">
       <role name="Contributor" />
       <role name="Manager" />
     </permission>

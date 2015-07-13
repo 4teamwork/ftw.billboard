@@ -5,7 +5,9 @@ CHANGELOG
 1.4.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove default workflows, since workflows should be done on integration level.
+  The default workflow is now used for billboard types.
+  [lknoepfel]
 
 
 1.4.1 (2015-03-25)
