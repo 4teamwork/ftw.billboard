@@ -10,7 +10,8 @@ tests_require = [
     'zope.testing',
     'plone.app.testing',
     'ftw.builder',
-    'ftw.testbrowser'
+    'ftw.testbrowser',
+    'unittest2',
     ]
 
 
