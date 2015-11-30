@@ -5,7 +5,9 @@ CHANGELOG
 1.5.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Include the Products.CMFCore package to be sure the cmf.ModifyPortalContent
+  permission is loaded before used
+  [elioschmutz]
 
 
 1.5.0 (2015-09-21)

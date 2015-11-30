@@ -12,6 +12,8 @@
 
     <i18n:registerTranslations directory="locales" />
 
+    <include package="Products.CMFCore" />
+
     <!-- Include the sub-packages that use their own configure.zcml files. -->
     <include package="ftw.colorbox" />
     <include package="ftw.profilehook" />

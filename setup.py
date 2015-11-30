@@ -46,7 +46,8 @@ setup(name='ftw.billboard',
       zip_safe=False,
 
       install_requires=[
-        'Plone',  
+        'Plone',
+        'Products.CMFCore',
         'ftw.calendarwidget',
         'ftw.colorbox',
         'ftw.lawgiver',
