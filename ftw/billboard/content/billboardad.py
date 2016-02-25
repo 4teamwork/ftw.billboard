@@ -172,7 +172,12 @@ class BillboardAd(folder.ATFolder):
     def getDefaultContactMail(self):
         """Return the mail of the logged-in user"""
         member = self.portal_membership.getAuthenticatedMember()
-        return member.getProperty('email', '').lower()
+        mail = member.getProperty('email', '')
+        # In some AD environements mail returns None ?? O_o ??
+        if mail:
+            return mail.lower()
+        else:
+            return ''
 
     def getDefaultContactName(self):
         """Return the URL of the logged-in user"""

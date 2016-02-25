@@ -5,7 +5,8 @@ CHANGELOG
 1.5.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Implement getting the email of an user in ad form in a more robust way.
+  [mathias.leimgruber]
 
 
 1.5.1 (2015-11-30)
