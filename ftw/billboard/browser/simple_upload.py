@@ -45,7 +45,7 @@ class AddFile(BrowserView):
 
         else:
             _root, extension = os.path.splitext(upload.filename)
-            if extension not in self.allowed_extensions:
+            if extension.lower() not in self.allowed_extensions:
                 return _(
                     u'label_notallowedtype',
                     default=u'Not allowed type (${types})',

@@ -5,7 +5,8 @@ CHANGELOG
 1.5.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix simple-upload: The check for allowed extensions will now be case-insensitive.
+  [elioschmutz]
 
 
 1.5.1 (2015-11-30)
