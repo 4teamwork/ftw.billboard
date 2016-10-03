@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 
-1.5.2 (unreleased)
+1.5.2 (2016-10-03)
 ------------------
 
 - Fix simple-upload: The check for allowed extensions will now be case-insensitive.
