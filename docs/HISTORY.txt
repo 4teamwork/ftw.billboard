@@ -6,6 +6,7 @@ CHANGELOG
 ------------------
 
 - Drop Plone 4.1 support. [jone]
+- Drop Plone 4.2 support. [mathias.leimgruber]
 - Add uninstall profile. [mathias.leimgruber]
 
 
