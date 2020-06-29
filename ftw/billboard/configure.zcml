@@ -34,6 +34,15 @@
         description=""
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
+
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="ftw.billboard : uninstall"
+        directory="profiles/uninstall"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
+        />
+
     <include package=".upgrades" />
 
     <profilehook:hook
@@ -41,4 +50,8 @@
         handler=".hooks.imported"
         />
 
+    <profilehook:hook
+        profile="ftw.billboard:uninstall"
+        handler=".hooks.uninstalled"
+        />
 </configure>

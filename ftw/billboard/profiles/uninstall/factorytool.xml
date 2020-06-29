@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_factory" meta_type="Plone Factory Tool">
+  <factorytypes>
+    <type portal_type="BillboardAd" remove="True"/>
+    <type portal_type="BillboardCategory" remove="True"/>
+  </factorytypes>
+</object>

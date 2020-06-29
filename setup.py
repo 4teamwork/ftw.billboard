@@ -11,6 +11,7 @@ tests_require = [
     'plone.app.testing',
     'ftw.builder',
     'ftw.testbrowser',
+    'ftw.testing',
     'unittest2',
     ]
 

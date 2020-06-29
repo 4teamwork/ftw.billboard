@@ -29,3 +29,16 @@ def add_catalog_indexes(portal, INDEXES):
     if len(indexables) > 0:
         logger.info("Indexing new indexes %s.", ', '.join(indexables))
         catalog.manage_reindexIndex(ids=indexables)
+
+
+def uninstalled(portal):
+    remove_catalog_indexes(portal)
+
+
+def remove_catalog_indexes(portal):
+    catalog = portal.portal_catalog
+    indexes = catalog.indexes()
+
+    for name, meta_type in INDEXES:
+        if name in indexes:
+            catalog.delIndex(name)
