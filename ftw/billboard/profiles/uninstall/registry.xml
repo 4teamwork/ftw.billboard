@@ -1,0 +1,6 @@
+<registry>
+    <record name="ftw.billboard.days_to_expire" remove="True" />
+    <record name="ftw.billboard.currency" remove="True" />
+    <record name="ftw.billboard.decimalmark" remove="True" />
+    <record name="ftw.billboard.thousandsseparator" remove="True" />
+</registry>

@@ -11,6 +11,7 @@ tests_require = [
     'plone.app.testing',
     'ftw.builder',
     'ftw.testbrowser',
+    'ftw.testing',
     'unittest2',
     ]
 
@@ -25,7 +26,6 @@ setup(name='ftw.billboard',
       # http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         'Framework :: Plone',
-        'Framework :: Plone :: 4.2',
         'Framework :: Plone :: 4.3',
         'Framework :: Zope2',
         'Programming Language :: Python',
