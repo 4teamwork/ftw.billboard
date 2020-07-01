@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 
-1.5.3 (unreleased)
+1.6.0 (2020-07-01)
 ------------------
 
 - Drop Plone 4.1 support. [jone]
